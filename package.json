@@ -20,7 +20,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook -s public"
   },
   "eslintConfig": {
     "extends": [
@@ -40,5 +42,16 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "."
+  "homepage": ".",
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@storybook/addon-actions": "^6.0.27",
+    "@storybook/addon-essentials": "^6.0.27",
+    "@storybook/addon-links": "^6.0.27",
+    "@storybook/node-logger": "^6.0.27",
+    "@storybook/preset-create-react-app": "^3.1.4",
+    "@storybook/react": "^6.0.27",
+    "babel-loader": "^8.1.0",
+    "react-is": "^17.0.1"
+  }
 }
