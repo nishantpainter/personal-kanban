@@ -53,6 +53,11 @@ const ThemeProvider: React.FC<ThemeProviderProps> = (props) => {
         },
       },
     },
+    props: {
+      MuiDivider: {
+        light: true,
+      },
+    },
     custom: {
       colors: {
         pastel: {
