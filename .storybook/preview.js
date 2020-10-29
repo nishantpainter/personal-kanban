@@ -4,10 +4,25 @@ export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
 };
 
+export const globalTypes = {
+  darkTheme: {
+    name: "Theme",
+    description: "Global theme for components",
+    defaultValue: "light",
+    toolbar: {
+      icon: "circlehollow",
+      items: [
+        { value: false, title: "Light" },
+        { value: true, title: "Dark" },
+      ],
+    },
+  },
+};
+
 const withThemeProvider = (Story, context) => {
-  const darkMode = context.globals.darkMode;
+  const darkTheme = context.globals.darkTheme;
   return (
-    <ThemeProvider darkMode={darkMode}>
+    <ThemeProvider darkTheme={darkTheme}>
       <Story {...context} />
     </ThemeProvider>
   );
