@@ -26,17 +26,19 @@ declare module "@material-ui/core/styles/createMuiTheme" {
 
 const ThemeContext = React.createContext({});
 
-type ThemeProviderProps = {};
+type ThemeProviderProps = {
+  darkTheme?: boolean;
+};
 
 const pastelCode = 200;
 
 const ThemeProvider: React.FC<ThemeProviderProps> = (props) => {
   const { children } = props;
 
-  const [darkTheme, setDarkTheme] = React.useState(false);
+  const [darkTheme, setDarkTheme] = React.useState(props.darkTheme);
 
   const handleToggleDarkTheme = React.useCallback(() => {
-    setDarkTheme((darkTheme: Boolean) => {
+    setDarkTheme((darkTheme: Boolean | undefined) => {
       return !darkTheme;
     });
   }, []);
