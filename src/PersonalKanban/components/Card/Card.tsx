@@ -23,16 +23,22 @@ const useStyles = makeStyles(() => ({
 type CardProps = {
   record: Record;
   className?: string;
+  style?: any;
+  innerRef?: any;
 };
 
 const Card: React.FC<CardProps> = (props) => {
-  const { record, className } = props;
+  const { record, className, innerRef, style } = props;
   const { title, description, caption } = record;
 
   const classes = useStyles();
 
   return (
-    <Paper className={clsx(classes.paper, className)}>
+    <Paper
+      className={clsx(classes.paper, className)}
+      style={style}
+      ref={innerRef}
+    >
       <Typography title={title} gutterBottom noWrap>
         <b>{title}</b>
       </Typography>
