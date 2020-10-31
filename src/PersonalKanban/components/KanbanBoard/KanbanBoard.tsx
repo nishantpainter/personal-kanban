@@ -2,18 +2,23 @@ import React from "react";
 import { DragDropContext, Droppable } from "react-beautiful-dnd";
 
 import Board from "PersonalKanban/components/Board";
-import Column from "PersonalKanban/components/Column";
-import { Column as ColumnType } from "PersonalKanban/types";
+import KanbanColumn from "PersonalKanban/components/KanbanColumn";
+import { Column } from "PersonalKanban/types";
 
 type KanbanBoardProps = {
-  columns: ColumnType[];
+  columns: Column[];
   onCardMove?: any;
   onColumnMove?: any;
   ColumnComponent?: any;
 };
 
 const KanbanBoard: React.FC<KanbanBoardProps> = (props) => {
-  const { columns, onCardMove, onColumnMove, ColumnComponent = Column } = props;
+  const {
+    columns,
+    onCardMove,
+    onColumnMove,
+    ColumnComponent = KanbanColumn,
+  } = props;
 
   const getColumnById = React.useCallback(
     (columnId) => columns.find((column) => column.id === columnId),
