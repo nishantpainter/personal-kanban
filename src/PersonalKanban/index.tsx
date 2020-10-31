@@ -1,13 +1,14 @@
 import React from "react";
 
 import ThemeProvider from "PersonalKanban/providers/ThemeProvider";
+import KanbanBoardContainer from "PersonalKanban/containers/KanbanBoard";
 
 interface PersonalKanbanProps {}
 
 const PersonalKanban: React.FC<PersonalKanbanProps> = () => {
   return (
     <ThemeProvider>
-      <h3>Personal Kanban</h3>
+      <KanbanBoardContainer />
     </ThemeProvider>
   );
 };
