@@ -37,16 +37,18 @@ const KanbanColumnCardList: React.FC<KanbanColumnCardListProps> = (props) => {
 type KanbanColumnProps = {
   column: ColumnType;
   index: number;
+  className?: string;
 };
 
 const KanbanColumn: React.FC<KanbanColumnProps> = (props) => {
-  const { column, index } = props;
+  const { column, index, className } = props;
   return (
     <Draggable draggableId={column.id} index={index}>
       {(provided) => (
         <Column
           innerRef={provided.innerRef}
           column={column}
+          className={className}
           ColumnCardListComponent={KanbanColumnCardList}
           {...provided.draggableProps}
         />
