@@ -5,8 +5,13 @@ import TextField from "@material-ui/core/TextField";
 import Grid from "@material-ui/core/Grid";
 import Divider from "@material-ui/core/Divider";
 import Typography from "@material-ui/core/Typography";
+import FormLabel from "@material-ui/core/FormLabel";
+import FormControl from "@material-ui/core/FormControl";
+import RadioGroup from "@material-ui/core/RadioGroup";
 
 import { Record } from "PersonalKanban/types";
+import { RecordColor } from "PersonalKanban/enums";
+import Radio from "PersonalKanban/components/Radio";
 
 type RecordFormProps = {
   record: Partial<Record>;
@@ -64,6 +69,23 @@ const RecordForm: React.FC<RecordFormProps> = (props) => {
             disabled={disabled}
             onChange={handleChange}
           />
+        </Grid>
+        <Grid item xs={12}>
+          <FormControl component="fieldset">
+            <FormLabel component="legend">Background</FormLabel>
+            <RadioGroup
+              row
+              aria-label="background"
+              name="color"
+              value={values.color}
+              onChange={handleChange}
+            >
+              {Object.keys(RecordColor).map((value) => (
+                <Radio key={value} value={value} color={value} />
+              ))}
+              <Radio key="default" value="" color="" />
+            </RadioGroup>
+          </FormControl>
         </Grid>
         <Grid item xs={12}>
           <Button variant="outlined" disabled={disabled}>
