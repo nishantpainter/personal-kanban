@@ -29,4 +29,13 @@ Disabled.parameters = {
   ...Default.parameters,
 };
 
+export const CustomFormTitle: any = Template.bind({});
+CustomFormTitle.args = {
+  ...Default.args,
+  formTitle: "Custom Form Title",
+};
+CustomFormTitle.parameters = {
+  ...Default.parameters,
+};
+
 export default stories;
