@@ -67,6 +67,9 @@ const ThemeProvider: React.FC<ThemeProviderProps> = (props) => {
       MuiButton: {
         size: "small",
       },
+      MuiRadio: {
+        size: "small",
+      },
     },
     custom: {
       colors: {
