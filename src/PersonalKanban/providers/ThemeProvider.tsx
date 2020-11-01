@@ -59,6 +59,14 @@ const ThemeProvider: React.FC<ThemeProviderProps> = (props) => {
       MuiDivider: {
         light: true,
       },
+      MuiTextField: {
+        variant: "outlined",
+        margin: "dense",
+        fullWidth: true,
+      },
+      MuiButton: {
+        size: "small",
+      },
     },
     custom: {
       colors: {
