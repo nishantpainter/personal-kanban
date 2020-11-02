@@ -38,8 +38,9 @@ const Board: React.FC<BoardProps> = (props) => {
   return (
     <div className={classes.root} ref={innerRef} {...rest}>
       {columns && columns.length
-        ? columns.map((column) => (
+        ? columns.map((column, index) => (
             <ColumnComponent
+              index={index}
               key={column.id}
               column={column}
               className={classes.column}
