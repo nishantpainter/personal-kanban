@@ -15,6 +15,7 @@
     "@types/react-dom": "^16.9.8",
     "@types/uuid": "^8.3.0",
     "formik": "^2.2.1",
+    "moment": "^2.29.1",
     "react": "^17.0.1",
     "react-beautiful-dnd": "^13.0.0",
     "react-dom": "^17.0.1",
