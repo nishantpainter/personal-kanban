@@ -21,10 +21,17 @@ type BoardProps = {
   columns: ColumnType[];
   innerRef: any;
   ColumnComponent: any;
+  placeholder?: any;
 };
 
 const Board: React.FC<BoardProps> = (props) => {
-  const { columns, innerRef, ColumnComponent = Column, ...rest } = props;
+  const {
+    columns,
+    innerRef,
+    ColumnComponent = Column,
+    placeholder,
+    ...rest
+  } = props;
 
   const classes = useBoardStyles();
 
@@ -39,6 +46,7 @@ const Board: React.FC<BoardProps> = (props) => {
             />
           ))
         : null}
+      {placeholder}
     </div>
   );
 };
