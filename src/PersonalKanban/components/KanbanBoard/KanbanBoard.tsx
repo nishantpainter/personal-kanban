@@ -70,12 +70,15 @@ const KanbanBoard: React.FC<KanbanBoardProps> = (props) => {
     <DragDropContext onDragEnd={handleDragEnd}>
       <Droppable droppableId="BOARD" type="COLUMN" direction="horizontal">
         {(provided) => (
-          <Board
-            innerRef={provided.innerRef}
-            ColumnComponent={ColumnComponent}
-            {...provided.droppableProps}
-            columns={columns}
-          />
+          <>
+            <Board
+              innerRef={provided.innerRef}
+              ColumnComponent={ColumnComponent}
+              {...provided.droppableProps}
+              columns={columns}
+              placeholder={provided.placeholder}
+            />
+          </>
         )}
       </Droppable>
     </DragDropContext>
