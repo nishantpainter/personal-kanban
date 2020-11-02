@@ -8,7 +8,7 @@ export const globalTypes = {
   darkTheme: {
     name: "Theme",
     description: "Global theme for components",
-    defaultValue: "light",
+    defaultValue: false,
     toolbar: {
       icon: "circlehollow",
       items: [
