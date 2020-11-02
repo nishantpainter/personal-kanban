@@ -3,7 +3,7 @@ export type Record = {
   title: string;
   description?: string;
   caption?: string;
-  color: string;
+  color?: string;
 };
 
 export type Column = {
