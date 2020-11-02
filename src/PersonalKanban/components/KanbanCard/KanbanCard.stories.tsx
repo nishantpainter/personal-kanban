@@ -25,11 +25,12 @@ const Template = (args: any) => (
 export const Default: any = Template.bind({});
 Default.args = {
   record: {
-    id: 1,
+    id: "1",
     title: "Make Coffee",
     description: "Brew vanilla coffee",
     caption: "28 Oct 2020 5:40 PM",
   },
+  index: 0,
 };
 Default.parameters = {
   withWrapper: true,
