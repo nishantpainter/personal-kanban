@@ -28,7 +28,7 @@ type CardProps = {
 };
 
 const Card: React.FC<CardProps> = (props) => {
-  const { record, className, innerRef, style } = props;
+  const { record, className, innerRef, style, ...rest } = props;
   const { title, description, caption } = record;
 
   const classes = useStyles();
@@ -38,6 +38,7 @@ const Card: React.FC<CardProps> = (props) => {
       className={clsx(classes.paper, className)}
       style={style}
       ref={innerRef}
+      {...rest}
     >
       <Typography title={title} gutterBottom noWrap>
         <b>{title}</b>
