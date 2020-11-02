@@ -50,10 +50,11 @@ const useColumnCardListStyles = makeStyles((theme) => ({
 type ColumnCardListProps = {
   column: ColumnType;
   innerRef?: any;
+  CardComponent?: any;
 };
 
 export const ColumnCardList: React.FC<ColumnCardListProps> = (props) => {
-  const { column, innerRef } = props;
+  const { column, innerRef, CardComponent = Card } = props;
   const { records = [] } = column;
 
   const classes = useColumnCardListStyles();
@@ -61,8 +62,13 @@ export const ColumnCardList: React.FC<ColumnCardListProps> = (props) => {
   return (
     <div ref={innerRef}>
       {records && records.length
-        ? records.map((record: Record) => (
-            <Card key={record.id} record={record} className={classes.card} />
+        ? records.map((record: Record, index) => (
+            <CardComponent
+              key={record.id}
+              record={record}
+              className={classes.card}
+              index={index}
+            />
           ))
         : null}
     </div>
