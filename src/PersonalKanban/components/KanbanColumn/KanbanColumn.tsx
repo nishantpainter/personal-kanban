@@ -51,6 +51,7 @@ const KanbanColumn: React.FC<KanbanColumnProps> = (props) => {
           className={className}
           ColumnCardListComponent={KanbanColumnCardList}
           {...provided.draggableProps}
+          {...provided.dragHandleProps}
         />
       )}
     </Draggable>
