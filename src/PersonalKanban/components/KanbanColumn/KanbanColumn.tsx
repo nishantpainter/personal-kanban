@@ -1,6 +1,7 @@
 import React from "react";
 import { Draggable, Droppable } from "react-beautiful-dnd";
 
+import KanbanCard from "PersonalKanban/components/KanbanCard";
 import Column, { ColumnCardList } from "PersonalKanban/components/Column";
 import { Column as ColumnType } from "PersonalKanban/types";
 
@@ -11,7 +12,7 @@ type KanbanInnerColumnCardListProps = {
 const KanbanInnerColumnCardList: React.FC<KanbanInnerColumnCardListProps> = React.memo(
   (props) => {
     const { column } = props;
-    return <ColumnCardList column={column} />;
+    return <ColumnCardList column={column} CardComponent={KanbanCard} />;
   }
 );
 
