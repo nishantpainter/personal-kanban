@@ -157,8 +157,8 @@ Default.args = {};
 
 export const Stress: any = Template.bind({});
 Stress.args = {
-  columns: new Array(20).fill(0).map((_, id) => ({
-    id,
+  columns: new Array(20).fill(0).map(() => ({
+    id: getId(),
     title: faker.commerce.department(),
     description: faker.lorem.sentence(),
     caption: faker.lorem.words(),
