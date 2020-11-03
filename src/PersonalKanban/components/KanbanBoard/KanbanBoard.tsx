@@ -58,7 +58,7 @@ const KanbanBoard: React.FC<KanbanBoardProps> = (props) => {
 
       onCardMove({
         source: getColumnById(source.droppableId),
-        destination: getColumnById(destination.droppableId),
+        column: getColumnById(destination.droppableId),
         record,
         index: destination.index,
       });
