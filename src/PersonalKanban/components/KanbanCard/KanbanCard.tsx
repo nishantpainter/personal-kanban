@@ -7,10 +7,11 @@ import { Record } from "PersonalKanban/types";
 type KanbanCardProps = {
   record: Record;
   index: number;
+  className?: string;
 };
 
 const KanbanCard: React.FC<KanbanCardProps> = (props) => {
-  const { record, index } = props;
+  const { record, index, className } = props;
   return (
     <Draggable draggableId={record.id} index={index}>
       {(provided) => (
@@ -21,6 +22,7 @@ const KanbanCard: React.FC<KanbanCardProps> = (props) => {
           {...provided.dragHandleProps}
           style={{ ...provided.draggableProps.style }}
           record={record}
+          className={className}
         />
       )}
     </Draggable>
