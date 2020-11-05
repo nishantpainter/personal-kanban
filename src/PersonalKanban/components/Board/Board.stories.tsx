@@ -68,4 +68,9 @@ Stress.args = {
   })),
 };
 
+export const Empty: any = Template.bind({});
+Empty.args = {
+  columns: [],
+};
+
 export default stories;

@@ -1,4 +1,5 @@
 import React from "react";
+import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 
 import Column from "PersonalKanban/components/Column";
@@ -37,16 +38,18 @@ const Board: React.FC<BoardProps> = (props) => {
 
   return (
     <div className={classes.root} ref={innerRef} {...rest}>
-      {columns && columns.length
-        ? columns.map((column, index) => (
-            <ColumnComponent
-              index={index}
-              key={column.id}
-              column={column}
-              className={classes.column}
-            />
-          ))
-        : null}
+      {columns && columns.length ? (
+        columns.map((column, index) => (
+          <ColumnComponent
+            index={index}
+            key={column.id}
+            column={column}
+            className={classes.column}
+          />
+        ))
+      ) : (
+        <Typography>No columns available.</Typography>
+      )}
       {placeholder}
     </div>
   );
