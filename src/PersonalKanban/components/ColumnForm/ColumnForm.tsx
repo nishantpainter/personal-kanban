@@ -11,12 +11,13 @@ import { Column } from "PersonalKanban/types";
 type ColumnFormProps = {
   column: Partial<Column>;
   onSubmit: any;
+  onCancel: any;
   disabled?: boolean;
   formTitle?: string;
 };
 
 const ColumnForm: React.FC<ColumnFormProps> = (props) => {
-  const { column, disabled, formTitle, onSubmit } = props;
+  const { column, disabled, formTitle, onSubmit, onCancel } = props;
 
   const { values, errors, handleChange, handleSubmit } = useFormik({
     initialValues: Object.assign({}, column),
@@ -66,7 +67,7 @@ const ColumnForm: React.FC<ColumnFormProps> = (props) => {
           />
         </Grid>
         <Grid item xs={12}>
-          <Button variant="outlined" disabled={disabled}>
+          <Button variant="outlined" disabled={disabled} onClick={onCancel}>
             Cancel
           </Button>
           &nbsp;
