@@ -6,6 +6,7 @@ import Divider from "@material-ui/core/Divider";
 import { makeStyles } from "@material-ui/core";
 
 import Card from "PersonalKanban/components/Card";
+import IconButton from "PersonalKanban/components/IconButton";
 import { Record, Column as ColumnType } from "PersonalKanban/types";
 
 const useColumnHeaderStyles = makeStyles((theme) => ({
@@ -61,8 +62,8 @@ export const ColumnAction: React.FC<ColumnActionProps> = (props) => {
   const classes = useColumnActionStyles();
   return (
     <>
-      {onEdit && <Button>Edit</Button>}
-      {onDelete && <Button>Delete</Button>}
+      {onEdit && <IconButton icon="edit" onClick={onEdit} />}
+      {onDelete && <IconButton icon="delete" onClick={onDelete} />}
       <Divider className={classes.divider} />
     </>
   );
