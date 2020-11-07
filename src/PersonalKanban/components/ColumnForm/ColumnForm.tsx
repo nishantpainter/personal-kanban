@@ -9,7 +9,7 @@ import Typography from "@material-ui/core/Typography";
 import { Column } from "PersonalKanban/types";
 
 type ColumnFormProps = {
-  column: Partial<Column>;
+  column?: Partial<Column>;
   onSubmit: any;
   onCancel: any;
   disabled?: boolean;
@@ -20,7 +20,13 @@ const ColumnForm: React.FC<ColumnFormProps> = (props) => {
   const { column, disabled, formTitle, onSubmit, onCancel } = props;
 
   const { values, errors, handleChange, handleSubmit } = useFormik({
-    initialValues: Object.assign({}, column),
+    initialValues: Object.assign(
+      {
+        title: "",
+        description: "",
+      },
+      column
+    ),
     onSubmit: (values) => {
       onSubmit && onSubmit(values);
     },
@@ -71,7 +77,12 @@ const ColumnForm: React.FC<ColumnFormProps> = (props) => {
             Cancel
           </Button>
           &nbsp;
-          <Button color="primary" variant="contained" disabled={disabled}>
+          <Button
+            type="submit"
+            color="primary"
+            variant="contained"
+            disabled={disabled}
+          >
             Submit
           </Button>
         </Grid>
