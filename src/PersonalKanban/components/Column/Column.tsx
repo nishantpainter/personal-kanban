@@ -8,7 +8,7 @@ import { makeStyles } from "@material-ui/core";
 import Card from "PersonalKanban/components/Card";
 import { Record, Column as ColumnType } from "PersonalKanban/types";
 
-const useColumnHeaderProps = makeStyles((theme) => ({
+const useColumnHeaderStyles = makeStyles((theme) => ({
   divider: {
     marginTop: theme.spacing(0.5),
     marginBottom: theme.spacing(1),
@@ -23,7 +23,7 @@ type ColumnHeaderProps = {
 export const ColumnHeader: React.FC<ColumnHeaderProps> = (props) => {
   const { title, description } = props;
 
-  const classes = useColumnHeaderProps();
+  const classes = useColumnHeaderStyles();
   return (
     <>
       <Typography
