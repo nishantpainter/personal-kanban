@@ -82,16 +82,15 @@ LongCaption.parameters = {
   ...Default.parameters,
 };
 
-export const Action: any = Template.bind({});
-Action.args = {
+export const NoRecord: any = Template.bind({});
+NoRecord.args = {
   column: {
     ...Default.args.column,
+    records: [],
   },
-  onEdit: () => {},
-  onDelete: () => {},
 };
 
-Action.parameters = {
+NoRecord.parameters = {
   ...Default.parameters,
 };
 
