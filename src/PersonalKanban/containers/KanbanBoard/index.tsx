@@ -2,6 +2,7 @@ import React from "react";
 import Box from "@material-ui/core/Box";
 
 import AddColumnButton from "PersonalKanban/containers/AddColumnButton";
+import ClearBoardButton from "PersonalKanban/containers/ClearBoardButton";
 import KanbanBoard from "PersonalKanban/components/KanbanBoard";
 import { Column } from "PersonalKanban/types";
 import { getId, reorder } from "PersonalKanban/services/Utils";
@@ -17,6 +18,10 @@ const KanbanBoardContainer: React.FC<KanbanBoardContainerProps> = (props) => {
     },
     [columns]
   );
+
+  const handleClearBoard = React.useCallback(() => {
+    setColumns([]);
+  }, []);
 
   const handleAddColumn = React.useCallback(
     ({ column }: { column: Column }) => {
@@ -38,7 +43,11 @@ const KanbanBoardContainer: React.FC<KanbanBoardContainerProps> = (props) => {
 
   return (
     <Box padding={1}>
-      <AddColumnButton onSubmit={handleAddColumn} />
+      <Box display="flex">
+        <AddColumnButton onSubmit={handleAddColumn} />
+        &nbsp;
+        <ClearBoardButton onClear={handleClearBoard} />
+      </Box>
       <KanbanBoard columns={columns} onColumnMove={handleColumnMove} />
     </Box>
   );
