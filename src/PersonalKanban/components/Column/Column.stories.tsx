@@ -82,4 +82,17 @@ LongCaption.parameters = {
   ...Default.parameters,
 };
 
+export const Action: any = Template.bind({});
+Action.args = {
+  column: {
+    ...Default.args.column,
+  },
+  onEdit: () => {},
+  onDelete: () => {},
+};
+
+Action.parameters = {
+  ...Default.parameters,
+};
+
 export default stories;
