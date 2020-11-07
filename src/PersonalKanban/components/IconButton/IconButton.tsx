@@ -18,7 +18,7 @@ const IconButton: React.FC<IconButtonProps> = (props) => {
   const Icon = icons[icon];
   return Icon ? (
     <MuiIconButton size="small" {...rest}>
-      <Icon />
+      <Icon fontSize="small" />
     </MuiIconButton>
   ) : null;
 };
