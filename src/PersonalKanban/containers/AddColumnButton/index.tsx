@@ -26,7 +26,7 @@ const AddColumnButton: React.FC<AddColumnButtonProps> = (props) => {
 
   const handleSubmit = React.useCallback(
     (column: Column) => {
-      onSubmit(column);
+      onSubmit({ column });
       handleCloseDialog();
     },
     [onSubmit, handleCloseDialog]

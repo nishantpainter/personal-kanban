@@ -18,12 +18,15 @@ const KanbanBoardContainer: React.FC<KanbanBoardContainerProps> = (props) => {
     [columns]
   );
 
-  const handleAddColumn = React.useCallback((column: Column) => {
-    setColumns((columns: Column[]) => [
-      ...columns,
-      Object.assign({ id: getId() }, column),
-    ]);
-  }, []);
+  const handleAddColumn = React.useCallback(
+    ({ column }: { column: Column }) => {
+      setColumns((columns: Column[]) => [
+        ...columns,
+        Object.assign({ id: getId() }, column),
+      ]);
+    },
+    []
+  );
 
   const handleColumnMove = React.useCallback(
     ({ column, index }: { column: Column; index: number }) => {
