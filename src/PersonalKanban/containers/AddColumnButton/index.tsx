@@ -5,10 +5,15 @@ import Dialog from "@material-ui/core/Dialog";
 import DialogContent from "@material-ui/core/DialogContent";
 
 import ColumnForm from "PersonalKanban/components/ColumnForm";
+import { Column } from "PersonalKanban/types";
 
-type AddColumnButtonProps = {};
+type AddColumnButtonProps = {
+  onSubmit: any;
+};
 
 const AddColumnButton: React.FC<AddColumnButtonProps> = (props) => {
+  const { onSubmit } = props;
+
   const [open, setOpen] = React.useState(false);
 
   const handleOpenDialog = React.useCallback(() => {
@@ -19,7 +24,13 @@ const AddColumnButton: React.FC<AddColumnButtonProps> = (props) => {
     setOpen(false);
   }, []);
 
-  const handleSubmit = React.useCallback(() => {}, []);
+  const handleSubmit = React.useCallback(
+    (column: Column) => {
+      onSubmit(column);
+      handleCloseDialog();
+    },
+    [onSubmit, handleCloseDialog]
+  );
 
   return (
     <Box display="block" marginBottom={2}>
@@ -28,11 +39,7 @@ const AddColumnButton: React.FC<AddColumnButtonProps> = (props) => {
       </Button>
       <Dialog onClose={handleCloseDialog} open={open}>
         <DialogContent>
-          <ColumnForm
-            column={{}}
-            onSubmit={handleSubmit}
-            onCancel={handleCloseDialog}
-          />
+          <ColumnForm onSubmit={handleSubmit} onCancel={handleCloseDialog} />
         </DialogContent>
       </Dialog>
     </Box>
