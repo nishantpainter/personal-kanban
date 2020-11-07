@@ -1,61 +1,9 @@
 import React from "react";
 import faker from "faker";
-import { v4 as uuidv4 } from "uuid";
 
 import KanbanBoard from "PersonalKanban/components/KanbanBoard";
 import { Column, Record } from "PersonalKanban/types";
-
-const getId = (): string => {
-  return uuidv4();
-};
-
-const reorder = (list: any[], startIndex: number, endIndex: number) => {
-  const result = Array.from(list);
-  const [removed] = result.splice(startIndex, 1);
-  result.splice(endIndex, 0, removed);
-  return result;
-};
-
-function reorderCards({
-  columns,
-  sourceColumn,
-  destinationColumn,
-  sourceIndex,
-  destinationIndex,
-}: {
-  columns: Column[];
-  sourceColumn: Column;
-  destinationColumn: Column;
-  sourceIndex: number;
-  destinationIndex: number;
-}) {
-  const getColumnIndex = (columnId: string) =>
-    columns.findIndex((c) => c.id === columnId);
-
-  const getRecords = (columnId: string) => [
-    ...columns.find((c) => c.id === columnId)?.records,
-  ];
-
-  const current = getRecords(sourceColumn.id);
-  const next = getRecords(destinationColumn.id);
-  const target = current[sourceIndex];
-
-  // moving to same list
-  if (sourceColumn.id === destinationColumn.id) {
-    const reordered = reorder(current, sourceIndex, destinationIndex);
-    const newColumns = columns.map((c) => ({ ...c }));
-    newColumns[getColumnIndex(sourceColumn.id)].records = reordered;
-    return newColumns;
-  }
-
-  // moving to different list
-  current.splice(sourceIndex, 1);
-  next.splice(destinationIndex, 0, target);
-  const newColumns = columns.map((c) => ({ ...c }));
-  newColumns[getColumnIndex(sourceColumn.id)].records = current;
-  newColumns[getColumnIndex(destinationColumn.id)].records = next;
-  return newColumns;
-}
+import { getId, reorder, reorderCards } from "PersonalKanban/services/Utils";
 
 const getCards = (count: number): Record[] => {
   return new Array(count).fill(0).map(() => ({
