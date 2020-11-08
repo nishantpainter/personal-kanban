@@ -39,10 +39,11 @@ type KanbanColumnProps = {
   column: ColumnType;
   index: number;
   className?: string;
+  onEdit?: any;
 };
 
 const KanbanColumn: React.FC<KanbanColumnProps> = (props) => {
-  const { column, index, className } = props;
+  const { column, index, className, onEdit } = props;
   return (
     <Draggable draggableId={column.id} index={index}>
       {(provided) => (
@@ -51,6 +52,7 @@ const KanbanColumn: React.FC<KanbanColumnProps> = (props) => {
           column={column}
           className={className}
           ColumnCardListComponent={KanbanColumnCardList}
+          onEdit={onEdit}
           {...provided.draggableProps}
           {...provided.dragHandleProps}
         />
