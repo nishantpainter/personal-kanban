@@ -24,6 +24,7 @@ type BoardProps = {
   ColumnComponent: any;
   placeholder?: any;
   onColumnEdit?: any;
+  onColumnDelete?: any;
 };
 
 const Board: React.FC<BoardProps> = (props) => {
@@ -33,6 +34,7 @@ const Board: React.FC<BoardProps> = (props) => {
     ColumnComponent = Column,
     placeholder,
     onColumnEdit,
+    onColumnDelete,
     ...rest
   } = props;
 
@@ -48,6 +50,7 @@ const Board: React.FC<BoardProps> = (props) => {
             column={column}
             className={classes.column}
             onEdit={onColumnEdit}
+            onDelete={onColumnDelete}
           />
         ))
       ) : (
