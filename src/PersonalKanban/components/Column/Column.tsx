@@ -60,17 +60,24 @@ type ColumnActionProps = {
 };
 
 export const ColumnAction: React.FC<ColumnActionProps> = (props) => {
-  const { onEdit, onDelete, onAddRecord } = props;
+  const {
+    showEditAction,
+    showDeleteAction,
+    showAddRecordAction,
+    onEdit,
+    onDelete,
+    onAddRecord,
+  } = props;
   const classes = useColumnActionStyles();
   return (
     <>
-      {onAddRecord && (
+      {showAddRecordAction && (
         <Button variant="contained" onClick={onAddRecord}>
           Add Record
         </Button>
       )}
-      {onEdit && <IconButton icon="edit" onClick={onEdit} />}
-      {onDelete && <IconButton icon="delete" onClick={onDelete} />}
+      {showEditAction && <IconButton icon="edit" onClick={onEdit} />}
+      {showDeleteAction && <IconButton icon="delete" onClick={onDelete} />}
       <Divider className={classes.divider} />
     </>
   );
