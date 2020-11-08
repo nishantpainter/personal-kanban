@@ -53,7 +53,10 @@ const KanbanBoardContainer: React.FC<KanbanBoardContainerProps> = (props) => {
       <Box display="flex">
         <AddColumnButton onSubmit={handleAddColumn} />
         &nbsp;
-        <ClearBoardButton onClear={handleClearBoard} />
+        <ClearBoardButton
+          disabled={!columns.length}
+          onClear={handleClearBoard}
+        />
       </Box>
       <KanbanBoard
         columns={columns}

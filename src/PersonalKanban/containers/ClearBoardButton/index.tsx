@@ -9,10 +9,11 @@ import Typography from "@material-ui/core/Typography";
 
 type ClearBoardButtonProps = {
   onClear: any;
+  disabled?: boolean;
 };
 
 const ClearBoardButton: React.FC<ClearBoardButtonProps> = (props) => {
-  const { onClear } = props;
+  const { disabled, onClear } = props;
 
   const [open, setOpen] = React.useState(false);
 
@@ -34,7 +35,12 @@ const ClearBoardButton: React.FC<ClearBoardButtonProps> = (props) => {
 
   return (
     <Box display="block" marginBottom={2}>
-      <Button variant="contained" color="primary" onClick={handleOpenDialog}>
+      <Button
+        variant="contained"
+        color="primary"
+        disabled={disabled}
+        onClick={handleOpenDialog}
+      >
         Clear Board
       </Button>
       <Dialog onClose={handleCloseDialog} open={open}>
