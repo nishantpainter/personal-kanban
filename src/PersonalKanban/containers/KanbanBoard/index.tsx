@@ -41,6 +41,13 @@ const KanbanBoardContainer: React.FC<KanbanBoardContainerProps> = (props) => {
     [columns, getColumnIndex]
   );
 
+  const handleColumnEdit = React.useCallback(
+    ({ column }: { column: Column }) => {
+      console.log(column);
+    },
+    []
+  );
+
   return (
     <Box padding={1}>
       <Box display="flex">
@@ -48,7 +55,11 @@ const KanbanBoardContainer: React.FC<KanbanBoardContainerProps> = (props) => {
         &nbsp;
         <ClearBoardButton onClear={handleClearBoard} />
       </Box>
-      <KanbanBoard columns={columns} onColumnMove={handleColumnMove} />
+      <KanbanBoard
+        columns={columns}
+        onColumnMove={handleColumnMove}
+        onColumnEdit={handleColumnEdit}
+      />
     </Box>
   );
 };
