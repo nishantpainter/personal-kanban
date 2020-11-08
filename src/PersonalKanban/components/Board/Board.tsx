@@ -23,6 +23,7 @@ type BoardProps = {
   innerRef: any;
   ColumnComponent: any;
   placeholder?: any;
+  onColumnEdit?: any;
 };
 
 const Board: React.FC<BoardProps> = (props) => {
@@ -31,6 +32,7 @@ const Board: React.FC<BoardProps> = (props) => {
     innerRef,
     ColumnComponent = Column,
     placeholder,
+    onColumnEdit,
     ...rest
   } = props;
 
@@ -45,6 +47,7 @@ const Board: React.FC<BoardProps> = (props) => {
             key={column.id}
             column={column}
             className={classes.column}
+            onEdit={onColumnEdit}
           />
         ))
       ) : (
