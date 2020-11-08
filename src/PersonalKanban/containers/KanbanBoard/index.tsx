@@ -55,6 +55,13 @@ const KanbanBoardContainer: React.FC<KanbanBoardContainerProps> = (props) => {
     []
   );
 
+  const handleAddRecord = React.useCallback(
+    ({ column }: { column: Column }) => {
+      console.log(column);
+    },
+    []
+  );
+
   return (
     <Box padding={1}>
       <Box display="flex">
@@ -70,6 +77,7 @@ const KanbanBoardContainer: React.FC<KanbanBoardContainerProps> = (props) => {
         onColumnMove={handleColumnMove}
         onColumnEdit={handleColumnEdit}
         onColumnDelete={handleColumnDelete}
+        onAddRecord={handleAddRecord}
       />
     </Box>
   );
