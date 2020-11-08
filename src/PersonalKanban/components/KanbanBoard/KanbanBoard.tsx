@@ -11,6 +11,7 @@ type KanbanBoardProps = {
   onColumnMove?: any;
   onColumnEdit?: any;
   onColumnDelete?: any;
+  onAddRecord?: any;
   ColumnComponent?: any;
 };
 
@@ -21,6 +22,7 @@ const KanbanBoard: React.FC<KanbanBoardProps> = (props) => {
     onColumnMove,
     onColumnEdit,
     onColumnDelete,
+    onAddRecord,
     ColumnComponent = KanbanColumn,
   } = props;
 
@@ -83,6 +85,7 @@ const KanbanBoard: React.FC<KanbanBoardProps> = (props) => {
               placeholder={provided.placeholder}
               onColumnEdit={onColumnEdit}
               onColumnDelete={onColumnDelete}
+              onAddRecord={onAddRecord}
             />
           </>
         )}

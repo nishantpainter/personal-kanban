@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "@material-ui/core/Button";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
@@ -52,15 +53,22 @@ const useColumnActionStyles = makeStyles((theme) => ({
 type ColumnActionProps = {
   onEdit?: any;
   onDelete?: any;
+  onAddRecord?: any;
   showEditAction?: boolean;
   showDeleteAction?: boolean;
+  showAddRecordAction?: boolean;
 };
 
 export const ColumnAction: React.FC<ColumnActionProps> = (props) => {
-  const { onEdit, onDelete } = props;
+  const { onEdit, onDelete, onAddRecord } = props;
   const classes = useColumnActionStyles();
   return (
     <>
+      {onAddRecord && (
+        <Button variant="contained" onClick={onAddRecord}>
+          Add Record
+        </Button>
+      )}
       {onEdit && <IconButton icon="edit" onClick={onEdit} />}
       {onDelete && <IconButton icon="delete" onClick={onDelete} />}
       <Divider className={classes.divider} />
@@ -71,6 +79,7 @@ export const ColumnAction: React.FC<ColumnActionProps> = (props) => {
 ColumnAction.defaultProps = {
   showEditAction: true,
   showDeleteAction: true,
+  showAddRecordAction: true,
 };
 
 const useColumnCardListStyles = makeStyles((theme) => ({
@@ -140,8 +149,10 @@ type ColumnProps = {
   innerRef?: any;
   onEdit?: any;
   onDelete?: any;
+  onAddRecord?: any;
   showEditAction?: boolean;
   showDeleteAction?: boolean;
+  showAddRecordAction?: boolean;
   ColumnHeaderComponent?: any;
   ColumnActionComponent?: any;
   ColumnCardListComponent?: any;
@@ -155,8 +166,10 @@ const Column: React.FC<ColumnProps> = (props) => {
     innerRef,
     onEdit,
     onDelete,
+    onAddRecord,
     showDeleteAction,
     showEditAction,
+    showAddRecordAction,
     ColumnHeaderComponent = ColumnHeader,
     ColumnActionComponent = ColumnAction,
     ColumnCardListComponent = ColumnCardList,
@@ -179,14 +192,23 @@ const Column: React.FC<ColumnProps> = (props) => {
     [column, onEdit]
   );
 
+  const handleAddRecord = React.useCallback(
+    (e) => {
+      onAddRecord && onAddRecord({ column, e });
+    },
+    [column, onAddRecord]
+  );
+
   return (
     <Paper elevation={4} className={className} ref={innerRef} {...rest}>
       <ColumnHeaderComponent title={title} description={description} />
       <ColumnActionComponent
         showEditAction={showEditAction}
         showDeleteAction={showDeleteAction}
+        showAddRecordAction={showAddRecordAction}
         onEdit={handleEdit}
         onDelete={handleDelete}
+        onAddRecord={handleAddRecord}
       />
       <ColumnCardListComponent column={column} />
       <ColumnFooterComponent content={caption} />
