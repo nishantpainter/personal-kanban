@@ -1,5 +1,4 @@
 import React from "react";
-import Button from "@material-ui/core/Button";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
@@ -71,11 +70,7 @@ export const ColumnAction: React.FC<ColumnActionProps> = (props) => {
   const classes = useColumnActionStyles();
   return (
     <>
-      {showAddRecordAction && (
-        <Button variant="contained" onClick={onAddRecord}>
-          Add Record
-        </Button>
-      )}
+      {showAddRecordAction && <IconButton icon="add" onClick={onAddRecord} />}
       {showEditAction && <IconButton icon="edit" onClick={onEdit} />}
       {showDeleteAction && <IconButton icon="delete" onClick={onDelete} />}
       <Divider className={classes.divider} />
