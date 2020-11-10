@@ -10,7 +10,13 @@ import { getId, reorder } from "PersonalKanban/services/Utils";
 type KanbanBoardContainerProps = {};
 
 const KanbanBoardContainer: React.FC<KanbanBoardContainerProps> = (props) => {
-  const [columns, setColumns] = React.useState<Column[]>([]);
+  const [columns, setColumns] = React.useState<Column[]>([
+    {
+      id: "column-1",
+      title: "Todo",
+      records: [{ id: "record-1", title: "Brew Coffee" }],
+    },
+  ]);
 
   const getColumnIndex = React.useCallback(
     (id: string) => {
