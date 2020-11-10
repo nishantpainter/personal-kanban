@@ -5,10 +5,12 @@ import MuiIconButton, {
 
 import DeleteIcon from "@material-ui/icons/Delete";
 import EditIcon from "@material-ui/icons/Edit";
+import AddIcon from "@material-ui/icons/Add";
 
 const icons = {
   edit: EditIcon,
   delete: DeleteIcon,
+  add: AddIcon,
 };
 
 type IconButtonProps = MuiIconButtonProps & { icon: keyof typeof icons };
