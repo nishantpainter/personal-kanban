@@ -16,6 +16,11 @@ const KanbanBoardContainer: React.FC<KanbanBoardContainerProps> = (props) => {
       title: "Todo",
       records: [{ id: "record-1", title: "Brew Coffee" }],
     },
+    {
+      id: "column-2",
+      title: "In-Progress",
+      records: [],
+    },
   ]);
 
   const getColumnIndex = React.useCallback(
