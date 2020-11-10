@@ -5,7 +5,7 @@ import AddColumnButton from "PersonalKanban/containers/AddColumnButton";
 import ClearBoardButton from "PersonalKanban/containers/ClearBoardButton";
 import KanbanBoard from "PersonalKanban/components/KanbanBoard";
 import { Column, Record } from "PersonalKanban/types";
-import { getId, reorder } from "PersonalKanban/services/Utils";
+import { getId, reorder, reorderCards } from "PersonalKanban/services/Utils";
 
 type KanbanBoardContainerProps = {};
 
@@ -28,6 +28,15 @@ const KanbanBoardContainer: React.FC<KanbanBoardContainerProps> = (props) => {
       return columns.findIndex((c: Column) => c.id === id);
     },
     [columns]
+  );
+
+  const getRecordIndex = React.useCallback(
+    (recordId: string, columnId: string) => {
+      return columns[getColumnIndex(columnId)]?.records?.findIndex(
+        (r: Record) => r.id === recordId
+      );
+    },
+    [columns, getColumnIndex]
   );
 
   const handleClearBoard = React.useCallback(() => {
@@ -66,6 +75,31 @@ const KanbanBoardContainer: React.FC<KanbanBoardContainerProps> = (props) => {
     []
   );
 
+  const handleCardMove = React.useCallback(
+    ({
+      column,
+      index,
+      source,
+      record,
+    }: {
+      column: Column;
+      index: number;
+      source: Column;
+      record: Record;
+    }) => {
+      const updatedColumns = reorderCards({
+        columns,
+        destinationColumn: column,
+        destinationIndex: index,
+        sourceColumn: source,
+        sourceIndex: getRecordIndex(record.id, source.id)!,
+      });
+
+      setColumns(updatedColumns);
+    },
+    [columns, getRecordIndex]
+  );
+
   const handleAddRecord = React.useCallback(
     ({ column }: { column: Column }) => {
       console.log(column);
@@ -102,6 +136,7 @@ const KanbanBoardContainer: React.FC<KanbanBoardContainerProps> = (props) => {
         onColumnMove={handleColumnMove}
         onColumnEdit={handleColumnEdit}
         onColumnDelete={handleColumnDelete}
+        onCardMove={handleCardMove}
         onAddRecord={handleAddRecord}
         onRecordEdit={handleRecordEdit}
         onRecordDelete={handleRecordDelete}
