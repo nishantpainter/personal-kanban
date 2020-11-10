@@ -8,10 +8,12 @@ type KanbanCardProps = {
   record: Record;
   index: number;
   className?: string;
+  onEdit?: any;
+  onDelete?: any;
 };
 
 const KanbanCard: React.FC<KanbanCardProps> = (props) => {
-  const { record, index, className } = props;
+  const { record, index, className, onEdit, onDelete } = props;
   return (
     <Draggable draggableId={record.id} index={index}>
       {(provided) => (
@@ -23,6 +25,8 @@ const KanbanCard: React.FC<KanbanCardProps> = (props) => {
           style={{ ...provided.draggableProps.style }}
           record={record}
           className={className}
+          onEdit={onEdit}
+          onDelete={onDelete}
         />
       )}
     </Draggable>

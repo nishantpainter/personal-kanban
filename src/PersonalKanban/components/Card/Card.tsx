@@ -49,6 +49,13 @@ const Card: React.FC<CardProps> = (props) => {
 
   const classes = useStyles();
 
+  const handleEdit = React.useCallback(() => onEdit(record), [record, onEdit]);
+
+  const handleDelete = React.useCallback(() => onDelete(record), [
+    record,
+    onDelete,
+  ]);
+
   return (
     <Paper
       className={clsx(classes.paper, className)}
@@ -61,8 +68,10 @@ const Card: React.FC<CardProps> = (props) => {
           <b>{title}</b>
         </Typography>
         <Box display="flex" alignItems="center">
-          {showEditAction && <IconButton icon="edit" onClick={onEdit} />}
-          {showDeleteAction && <IconButton icon="delete" onClick={onDelete} />}
+          {showEditAction && <IconButton icon="edit" onClick={handleEdit} />}
+          {showDeleteAction && (
+            <IconButton icon="delete" onClick={handleDelete} />
+          )}
         </Box>
       </Box>
       <Typography

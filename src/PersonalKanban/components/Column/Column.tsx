@@ -94,10 +94,18 @@ type ColumnCardListProps = {
   column: ColumnType;
   innerRef?: any;
   CardComponent?: any;
+  onRecordEdit?: any;
+  onRecordDelete?: any;
 };
 
 export const ColumnCardList: React.FC<ColumnCardListProps> = (props) => {
-  const { column, innerRef, CardComponent = Card } = props;
+  const {
+    column,
+    innerRef,
+    CardComponent = Card,
+    onRecordEdit,
+    onRecordDelete,
+  } = props;
   const { records = [] } = column;
 
   const classes = useColumnCardListStyles();
@@ -111,6 +119,8 @@ export const ColumnCardList: React.FC<ColumnCardListProps> = (props) => {
             record={record}
             className={classes.card}
             index={index}
+            onEdit={onRecordEdit}
+            onDelete={onRecordDelete}
           />
         ))
       ) : (
@@ -152,6 +162,8 @@ type ColumnProps = {
   onEdit?: any;
   onDelete?: any;
   onAddRecord?: any;
+  onRecordEdit?: any;
+  onRecordDelete?: any;
   showEditAction?: boolean;
   showDeleteAction?: boolean;
   showAddRecordAction?: boolean;
@@ -171,6 +183,8 @@ const Column: React.FC<ColumnProps> = (props) => {
     onAddRecord,
     showDeleteAction,
     showEditAction,
+    onRecordEdit,
+    onRecordDelete,
     showAddRecordAction,
     ColumnHeaderComponent = ColumnHeader,
     ColumnActionComponent = ColumnAction,
@@ -201,6 +215,20 @@ const Column: React.FC<ColumnProps> = (props) => {
     [column, onAddRecord]
   );
 
+  const handleRecordEdit = React.useCallback(
+    (record: Record) => {
+      onRecordEdit({ column, record });
+    },
+    [column, onRecordEdit]
+  );
+
+  const handleRecordDelete = React.useCallback(
+    (record: Record) => {
+      onRecordDelete({ column, record });
+    },
+    [column, onRecordDelete]
+  );
+
   return (
     <Paper elevation={4} className={className} ref={innerRef} {...rest}>
       <ColumnHeaderComponent title={title} description={description} />
@@ -212,7 +240,11 @@ const Column: React.FC<ColumnProps> = (props) => {
         onDelete={handleDelete}
         onAddRecord={handleAddRecord}
       />
-      <ColumnCardListComponent column={column} />
+      <ColumnCardListComponent
+        column={column}
+        onRecordEdit={handleRecordEdit}
+        onRecordDelete={handleRecordDelete}
+      />
       <ColumnFooterComponent content={caption} />
     </Paper>
   );

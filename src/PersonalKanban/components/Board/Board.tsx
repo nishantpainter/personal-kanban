@@ -26,6 +26,8 @@ type BoardProps = {
   onColumnEdit?: any;
   onColumnDelete?: any;
   onAddRecord?: any;
+  onRecordEdit?: any;
+  onRecordDelete?: any;
 };
 
 const Board: React.FC<BoardProps> = (props) => {
@@ -37,6 +39,8 @@ const Board: React.FC<BoardProps> = (props) => {
     onColumnEdit,
     onColumnDelete,
     onAddRecord,
+    onRecordEdit,
+    onRecordDelete,
     ...rest
   } = props;
 
@@ -54,6 +58,8 @@ const Board: React.FC<BoardProps> = (props) => {
             onEdit={onColumnEdit}
             onDelete={onColumnDelete}
             onAddRecord={onAddRecord}
+            onRecordEdit={onRecordEdit}
+            onRecordDelete={onRecordEdit}
           />
         ))
       ) : (
