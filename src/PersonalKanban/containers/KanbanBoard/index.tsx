@@ -47,7 +47,7 @@ const KanbanBoardContainer: React.FC<KanbanBoardContainerProps> = (props) => {
     ({ column }: { column: Column }) => {
       setColumns((columns: Column[]) => [
         ...columns,
-        Object.assign({ id: getId() }, column),
+        Object.assign({ id: getId(), records: [] }, column),
       ]);
     },
     []
