@@ -1,10 +1,12 @@
 import React from "react";
 import clsx from "clsx";
+import Box from "@material-ui/core/Box";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 
 import { Record } from "PersonalKanban/types";
+import IconButton from "PersonalKanban/components/IconButton";
 
 const useStyles = makeStyles(() => ({
   paper: {
@@ -25,10 +27,24 @@ type CardProps = {
   className?: string;
   style?: any;
   innerRef?: any;
+  showEditAction?: boolean;
+  showDeleteAction?: boolean;
+  onDelete?: any;
+  onEdit?: any;
 };
 
 const Card: React.FC<CardProps> = (props) => {
-  const { record, className, innerRef, style, ...rest } = props;
+  const {
+    record,
+    className,
+    innerRef,
+    style,
+    showEditAction,
+    showDeleteAction,
+    onDelete,
+    onEdit,
+    ...rest
+  } = props;
   const { title, description, caption } = record;
 
   const classes = useStyles();
@@ -40,9 +56,15 @@ const Card: React.FC<CardProps> = (props) => {
       ref={innerRef}
       {...rest}
     >
-      <Typography title={title} gutterBottom noWrap>
-        <b>{title}</b>
-      </Typography>
+      <Box display="flex" alignItems="center" justifyContent="space-between">
+        <Typography title={title} gutterBottom noWrap>
+          <b>{title}</b>
+        </Typography>
+        <Box display="flex" alignItems="center">
+          {showEditAction && <IconButton icon="edit" onClick={onEdit} />}
+          {showDeleteAction && <IconButton icon="delete" onClick={onDelete} />}
+        </Box>
+      </Box>
       <Typography
         title={description}
         className={classes.description}
@@ -56,6 +78,11 @@ const Card: React.FC<CardProps> = (props) => {
       </Typography>
     </Paper>
   );
+};
+
+Card.defaultProps = {
+  showDeleteAction: true,
+  showEditAction: true,
 };
 
 export default Card;
