@@ -1,11 +1,17 @@
 import React from "react";
 import Paper from "@material-ui/core/Paper";
+import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
+import Dialog from "@material-ui/core/Dialog";
+import DialogTitle from "@material-ui/core/DialogTitle";
+import DialogActions from "@material-ui/core/DialogActions";
+import DialogContent from "@material-ui/core/DialogContent";
 import { makeStyles } from "@material-ui/core";
 
 import Card from "PersonalKanban/components/Card";
 import IconButton from "PersonalKanban/components/IconButton";
+import ColumnForm from "PersonalKanban/components/ColumnForm";
 import { Record, Column as ColumnType } from "PersonalKanban/types";
 
 const useColumnHeaderStyles = makeStyles((theme) => ({
@@ -194,6 +200,13 @@ const Column: React.FC<ColumnProps> = (props) => {
   } = props;
   const { title, description, caption } = column;
 
+  const [dialog, setDialog] = React.useState({
+    open: false,
+    title: "",
+    content: null,
+    actions: null,
+  });
+
   const handleDelete = React.useCallback(
     (e) => {
       onDelete && onDelete({ column, e });
@@ -202,10 +215,10 @@ const Column: React.FC<ColumnProps> = (props) => {
   );
 
   const handleEdit = React.useCallback(
-    (e) => {
-      onEdit && onEdit({ column, e });
+    (column: ColumnType) => {
+      onEdit && onEdit({ column });
     },
-    [column, onEdit]
+    [onEdit]
   );
 
   const handleAddRecord = React.useCallback(
@@ -229,6 +242,51 @@ const Column: React.FC<ColumnProps> = (props) => {
     [column, onRecordDelete]
   );
 
+  const handleOpenDialog = React.useCallback(({ content, title, actions }) => {
+    setDialog({ content, title, actions, open: true });
+  }, []);
+
+  const handleCloseDialog = React.useCallback(() => {
+    setDialog(() => ({ content: null, title: "", actions: null, open: false }));
+  }, []);
+
+  const handleOpenDeleteDialog = React.useCallback(() => {
+    const content = <Typography>Do you want to delete column ?</Typography>;
+    const actions = (
+      <>
+        <Button onClick={handleCloseDialog}>Cancel</Button>&nbsp;
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={(e) => {
+            handleCloseDialog();
+            handleDelete(e);
+          }}
+        >
+          Delete
+        </Button>
+      </>
+    );
+
+    handleOpenDialog({ content, actions, title: "Delete Column" });
+  }, [handleOpenDialog, handleDelete, handleCloseDialog]);
+
+  const handleOpenEditDialog = React.useCallback(() => {
+    const content = (
+      <ColumnForm
+        column={column}
+        formTitle="Edit Column"
+        onSubmit={(column: any) => {
+          handleCloseDialog();
+          handleEdit(column);
+        }}
+        onCancel={handleCloseDialog}
+      ></ColumnForm>
+    );
+
+    handleOpenDialog({ content });
+  }, [column, handleOpenDialog, handleCloseDialog, handleEdit]);
+
   return (
     <Paper elevation={4} className={className} ref={innerRef} {...rest}>
       <ColumnHeaderComponent title={title} description={description} />
@@ -236,8 +294,8 @@ const Column: React.FC<ColumnProps> = (props) => {
         showEditAction={showEditAction}
         showDeleteAction={showDeleteAction}
         showAddRecordAction={showAddRecordAction}
-        onEdit={handleEdit}
-        onDelete={handleDelete}
+        onEdit={handleOpenEditDialog}
+        onDelete={handleOpenDeleteDialog}
         onAddRecord={handleAddRecord}
       />
       <ColumnCardListComponent
@@ -246,6 +304,11 @@ const Column: React.FC<ColumnProps> = (props) => {
         onRecordDelete={handleRecordDelete}
       />
       <ColumnFooterComponent content={caption} />
+      <Dialog open={dialog.open} onClose={handleCloseDialog}>
+        <DialogTitle>{dialog.title}</DialogTitle>
+        <DialogContent>{dialog.content}</DialogContent>
+        <DialogActions>{dialog.actions}</DialogActions>
+      </Dialog>
     </Paper>
   );
 };
