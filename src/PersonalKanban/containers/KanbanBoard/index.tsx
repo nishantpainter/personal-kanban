@@ -23,6 +23,13 @@ const KanbanBoardContainer: React.FC<KanbanBoardContainerProps> = (props) => {
     },
   ]);
 
+  const cloneColumns = React.useCallback((columns: Column[]) => {
+    return columns.map((column: Column) => ({
+      ...column,
+      records: [...column.records],
+    }));
+  }, []);
+
   const getColumnIndex = React.useCallback(
     (id: string) => {
       return columns.findIndex((c: Column) => c.id === id);
@@ -63,16 +70,26 @@ const KanbanBoardContainer: React.FC<KanbanBoardContainerProps> = (props) => {
 
   const handleColumnEdit = React.useCallback(
     ({ column }: { column: Column }) => {
-      console.log(column);
+      setColumns((_columns: Column[]) => {
+        const columnIndex = getColumnIndex(column.id);
+        const columns = cloneColumns(_columns);
+        columns[columnIndex].title = column.title;
+        columns[columnIndex].description = column.description;
+        return columns;
+      });
     },
-    []
+    [getColumnIndex, cloneColumns]
   );
 
   const handleColumnDelete = React.useCallback(
     ({ column }: { column: Column }) => {
-      console.log(column);
+      setColumns((_columns: Column[]) => {
+        const columns = cloneColumns(_columns);
+        columns.splice(getColumnIndex(column.id), 1);
+        return columns;
+      });
     },
-    []
+    [cloneColumns, getColumnIndex]
   );
 
   const handleCardMove = React.useCallback(
