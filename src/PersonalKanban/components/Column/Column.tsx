@@ -12,6 +12,7 @@ import { makeStyles } from "@material-ui/core";
 import Card from "PersonalKanban/components/Card";
 import IconButton from "PersonalKanban/components/IconButton";
 import ColumnForm from "PersonalKanban/components/ColumnForm";
+import RecordForm from "PersonalKanban/components/RecordForm";
 import { Record, Column as ColumnType } from "PersonalKanban/types";
 
 const useColumnHeaderStyles = makeStyles((theme) => ({
@@ -222,8 +223,8 @@ const Column: React.FC<ColumnProps> = (props) => {
   );
 
   const handleAddRecord = React.useCallback(
-    (e) => {
-      onAddRecord && onAddRecord({ column, e });
+    (record: Record) => {
+      onAddRecord && onAddRecord({ column, record });
     },
     [column, onAddRecord]
   );
@@ -287,6 +288,20 @@ const Column: React.FC<ColumnProps> = (props) => {
     handleOpenDialog({ content });
   }, [column, handleOpenDialog, handleCloseDialog, handleEdit]);
 
+  const handleOpenAddRecordDialog = React.useCallback(() => {
+    const content = (
+      <RecordForm
+        onSubmit={(record: Record) => {
+          handleCloseDialog();
+          handleAddRecord(record);
+        }}
+        onCancel={handleCloseDialog}
+      ></RecordForm>
+    );
+
+    handleOpenDialog({ content });
+  }, [handleOpenDialog, handleCloseDialog, handleAddRecord]);
+
   return (
     <Paper elevation={4} className={className} ref={innerRef} {...rest}>
       <ColumnHeaderComponent title={title} description={description} />
@@ -296,7 +311,7 @@ const Column: React.FC<ColumnProps> = (props) => {
         showAddRecordAction={showAddRecordAction}
         onEdit={handleOpenEditDialog}
         onDelete={handleOpenDeleteDialog}
-        onAddRecord={handleAddRecord}
+        onAddRecord={handleOpenAddRecordDialog}
       />
       <ColumnCardListComponent
         column={column}
