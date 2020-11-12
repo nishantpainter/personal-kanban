@@ -14,17 +14,25 @@ import { RecordColor } from "PersonalKanban/enums";
 import Radio from "PersonalKanban/components/Radio";
 
 type RecordFormProps = {
-  record: Partial<Record>;
+  record?: Record;
   onSubmit: any;
+  onCancel?: any;
   disabled?: boolean;
   formTitle?: string;
 };
 
 const RecordForm: React.FC<RecordFormProps> = (props) => {
-  const { record, disabled, formTitle, onSubmit } = props;
+  const { record, disabled, formTitle, onSubmit, onCancel } = props;
 
   const { values, errors, handleChange, handleSubmit } = useFormik({
-    initialValues: Object.assign({}, record),
+    initialValues: Object.assign(
+      {
+        title: "",
+        description: "",
+        color: "",
+      },
+      record
+    ),
     onSubmit: (values) => {
       onSubmit && onSubmit(values);
     },
@@ -33,6 +41,7 @@ const RecordForm: React.FC<RecordFormProps> = (props) => {
       if (!values.title) {
         errors.title = "Title is required.";
       }
+
       return errors;
     },
   });
@@ -88,11 +97,16 @@ const RecordForm: React.FC<RecordFormProps> = (props) => {
           </FormControl>
         </Grid>
         <Grid item xs={12}>
-          <Button variant="outlined" disabled={disabled}>
+          <Button variant="outlined" disabled={disabled} onClick={onCancel}>
             Cancel
           </Button>
           &nbsp;
-          <Button color="primary" variant="contained" disabled={disabled}>
+          <Button
+            type="submit"
+            color="primary"
+            variant="contained"
+            disabled={disabled}
+          >
             Submit
           </Button>
         </Grid>
