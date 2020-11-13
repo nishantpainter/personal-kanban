@@ -302,6 +302,24 @@ const Column: React.FC<ColumnProps> = (props) => {
     handleOpenDialog({ content });
   }, [handleOpenDialog, handleCloseDialog, handleAddRecord]);
 
+  const handleOpenEditRecordDialog = React.useCallback(
+    (record: Record) => {
+      const content = (
+        <RecordForm
+          record={record}
+          onSubmit={(record: Record) => {
+            handleCloseDialog();
+            handleRecordEdit(record);
+          }}
+          onCancel={handleCloseDialog}
+        ></RecordForm>
+      );
+
+      handleOpenDialog({ content });
+    },
+    [handleOpenDialog, handleCloseDialog, handleRecordEdit]
+  );
+
   return (
     <Paper elevation={4} className={className} ref={innerRef} {...rest}>
       <ColumnHeaderComponent title={title} description={description} />
@@ -315,7 +333,7 @@ const Column: React.FC<ColumnProps> = (props) => {
       />
       <ColumnCardListComponent
         column={column}
-        onRecordEdit={handleRecordEdit}
+        onRecordEdit={handleOpenEditRecordDialog}
         onRecordDelete={handleRecordDelete}
       />
       <ColumnFooterComponent content={caption} />
