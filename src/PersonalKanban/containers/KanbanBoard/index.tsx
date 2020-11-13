@@ -140,9 +140,18 @@ const KanbanBoardContainer: React.FC<KanbanBoardContainerProps> = (props) => {
 
   const handleRecordEdit = React.useCallback(
     ({ column, record }: { column: Column; record: Record }) => {
-      console.log(column, record);
+      const columnIndex = getColumnIndex(column.id);
+      const recordIndex = getRecordIndex(record.id, column.id);
+      setColumns((_columns) => {
+        const columns = cloneColumns(_columns);
+        const _record = columns[columnIndex].records[recordIndex!];
+        _record.title = record.title;
+        _record.description = record.description;
+        _record.color = record.color;
+        return columns;
+      });
     },
-    []
+    [getColumnIndex, getRecordIndex, cloneColumns]
   );
 
   const handleRecordDelete = React.useCallback(
