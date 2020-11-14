@@ -16,4 +16,5 @@ export const RecordColor = {
   Yellow: yellow[SHADE],
   Orange: orange[SHADE],
   Red: red[SHADE],
+  Default: "",
 };
