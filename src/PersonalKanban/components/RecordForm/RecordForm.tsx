@@ -89,10 +89,16 @@ const RecordForm: React.FC<RecordFormProps> = (props) => {
               value={values.color}
               onChange={handleChange}
             >
-              {Object.keys(RecordColor).map((value) => (
-                <Radio key={value} value={value} color={value} />
-              ))}
-              <Radio key="default" value="" color="" />
+              {Object.keys(RecordColor).map((key) => {
+                const colorKey = key as keyof typeof RecordColor;
+                return (
+                  <Radio
+                    key={colorKey}
+                    value={colorKey}
+                    color={RecordColor[colorKey]}
+                  />
+                );
+              })}
             </RadioGroup>
           </FormControl>
         </Grid>
