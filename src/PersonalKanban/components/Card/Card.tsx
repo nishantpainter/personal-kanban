@@ -70,7 +70,7 @@ const Card: React.FC<CardProps> = (props) => {
         <Box display="flex" alignItems="center">
           {showEditAction && <IconButton icon="edit" onClick={handleEdit} />}
           {showDeleteAction && (
-            <IconButton icon="delete" onClick={handleDelete} />
+            <IconButton icon="deleteForever" onClick={handleDelete} />
           )}
         </Box>
       </Box>
