@@ -88,9 +88,10 @@ const ThemeProvider: React.FC<ThemeProviderProps> = (props) => {
 
   const value = React.useMemo(
     () => ({
+      darkTheme,
       handleToggleDarkTheme,
     }),
-    [handleToggleDarkTheme]
+    [darkTheme, handleToggleDarkTheme]
   );
 
   return (
