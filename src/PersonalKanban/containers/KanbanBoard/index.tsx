@@ -79,6 +79,7 @@ const KanbanBoardContainer: React.FC<KanbanBoardContainerProps> = (props) => {
         const columns = cloneColumns(_columns);
         columns[columnIndex].title = column.title;
         columns[columnIndex].description = column.description;
+        columns[columnIndex].color = column.color;
         return columns;
       });
     },

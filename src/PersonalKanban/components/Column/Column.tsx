@@ -1,4 +1,5 @@
 import React from "react";
+import clsx from "clsx";
 import Paper from "@material-ui/core/Paper";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
@@ -7,12 +8,13 @@ import Dialog from "@material-ui/core/Dialog";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
-import { makeStyles } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
 
 import Card from "PersonalKanban/components/Card";
 import IconButton from "PersonalKanban/components/IconButton";
 import ColumnForm from "PersonalKanban/components/ColumnForm";
 import RecordForm from "PersonalKanban/components/RecordForm";
+import { ColumnColor } from "PersonalKanban/enums";
 import { Record, Column as ColumnType } from "PersonalKanban/types";
 
 const useColumnHeaderStyles = makeStyles((theme) => ({
@@ -172,6 +174,12 @@ export const ColumnFooter: React.FC<ColumnFooterProps> = (props) => {
   );
 };
 
+const useColumnStyles = makeStyles(() => ({
+  paper: (props: any) => ({
+    backgroundColor: props.color,
+  }),
+}));
+
 type ColumnProps = {
   column: ColumnType;
   className?: string;
@@ -213,7 +221,12 @@ const Column: React.FC<ColumnProps> = (props) => {
     ColumnFooterComponent = ColumnFooter,
     ...rest
   } = props;
-  const { title, description, caption } = column;
+
+  const { title, description, caption, color } = column;
+
+  const columnColor = color as keyof typeof ColumnColor;
+
+  const classes = useColumnStyles({ color: ColumnColor[columnColor] });
 
   const [dialog, setDialog] = React.useState({
     open: false,
@@ -389,7 +402,12 @@ const Column: React.FC<ColumnProps> = (props) => {
   );
 
   return (
-    <Paper elevation={4} className={className} ref={innerRef} {...rest}>
+    <Paper
+      elevation={4}
+      className={clsx(className, classes.paper)}
+      ref={innerRef}
+      {...rest}
+    >
       <ColumnHeaderComponent title={title} description={description} />
       <ColumnActionComponent
         showEditAction={showEditAction}
