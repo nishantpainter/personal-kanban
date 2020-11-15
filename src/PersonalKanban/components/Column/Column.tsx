@@ -15,8 +15,9 @@ import Card from "PersonalKanban/components/Card";
 import IconButton from "PersonalKanban/components/IconButton";
 import ColumnForm from "PersonalKanban/components/ColumnForm";
 import RecordForm from "PersonalKanban/components/RecordForm";
-import { ColumnColor } from "PersonalKanban/enums";
+import { ColumnColor, DarkColumnColor } from "PersonalKanban/enums";
 import { Record, Column as ColumnType } from "PersonalKanban/types";
+import { useTheme } from "PersonalKanban/providers/ThemeProvider";
 
 const useColumnHeaderStyles = makeStyles((theme) => ({
   divider: {
@@ -236,7 +237,11 @@ const Column: React.FC<ColumnProps> = (props) => {
 
   const columnColor = color as keyof typeof ColumnColor;
 
-  const classes = useColumnStyles({ color: ColumnColor[columnColor] });
+  const { darkTheme } = useTheme();
+
+  const classes = useColumnStyles({
+    color: darkTheme ? DarkColumnColor[columnColor] : ColumnColor[columnColor],
+  });
 
   const [dialog, setDialog] = React.useState({
     open: false,

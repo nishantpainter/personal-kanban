@@ -19,6 +19,19 @@ export const RecordColor = {
   Default: "",
 };
 
+export const DARK_RECORD_SHADE = 700;
+
+export const DarkRecordColor = {
+  Purple: purple[DARK_RECORD_SHADE],
+  Indigo: indigo[DARK_RECORD_SHADE],
+  Blue: blue[DARK_RECORD_SHADE],
+  Green: green[DARK_RECORD_SHADE],
+  Yellow: yellow[DARK_RECORD_SHADE],
+  Orange: orange[DARK_RECORD_SHADE],
+  Red: red[DARK_RECORD_SHADE],
+  Default: "",
+};
+
 const COLUMN_SHADE = 100;
 
 export const ColumnColor = {
@@ -29,5 +42,18 @@ export const ColumnColor = {
   Yellow: yellow[COLUMN_SHADE],
   Orange: orange[COLUMN_SHADE],
   Red: red[COLUMN_SHADE],
+  Default: "",
+};
+
+export const DARK_COLUMN_SHADE = 600;
+
+export const DarkColumnColor = {
+  Purple: purple[DARK_COLUMN_SHADE],
+  Indigo: indigo[DARK_COLUMN_SHADE],
+  Blue: blue[DARK_COLUMN_SHADE],
+  Green: green[DARK_COLUMN_SHADE],
+  Yellow: yellow[DARK_COLUMN_SHADE],
+  Orange: orange[DARK_COLUMN_SHADE],
+  Red: red[DARK_COLUMN_SHADE],
   Default: "",
 };

@@ -3,7 +3,8 @@ import { Draggable } from "react-beautiful-dnd";
 
 import Card from "PersonalKanban/components/Card";
 import { Record } from "PersonalKanban/types";
-import { RecordColor } from "PersonalKanban/enums";
+import { RecordColor, DarkRecordColor } from "PersonalKanban/enums";
+import { useTheme } from "PersonalKanban/providers/ThemeProvider";
 
 type KanbanCardProps = {
   record: Record;
@@ -17,7 +18,9 @@ const KanbanCard: React.FC<KanbanCardProps> = (props) => {
   const { record, index, className, onEdit, onDelete } = props;
 
   const recordColor = record.color as keyof typeof RecordColor;
-  
+
+  const { darkTheme } = useTheme();
+
   return (
     <Draggable draggableId={record.id} index={index}>
       {(provided) => (
@@ -28,7 +31,9 @@ const KanbanCard: React.FC<KanbanCardProps> = (props) => {
           {...provided.dragHandleProps}
           style={{
             ...provided.draggableProps.style,
-            backgroundColor: RecordColor[recordColor],
+            backgroundColor: darkTheme
+              ? DarkRecordColor[recordColor]
+              : RecordColor[recordColor],
           }}
           record={record}
           className={className}
