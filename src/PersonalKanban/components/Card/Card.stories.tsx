@@ -15,7 +15,7 @@ Default.args = {
     id: 1,
     title: "Make Coffee",
     description: "Brew vanilla coffee",
-    caption: "28 Oct 2020 5:40 PM",
+    createdAt: "28 Oct 2020 5:40 PM",
   },
 };
 Default.parameters = {
@@ -49,7 +49,7 @@ export const LongCaption: any = Template.bind({});
 LongCaption.args = {
   record: {
     ...Default.args.record,
-    caption: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    createdAt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   },
 };
 LongCaption.parameters = {

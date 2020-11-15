@@ -45,7 +45,7 @@ const Card: React.FC<CardProps> = (props) => {
     onEdit,
     ...rest
   } = props;
-  const { title, description, caption } = record;
+  const { title, description, createdAt } = record;
 
   const classes = useStyles();
 
@@ -83,7 +83,7 @@ const Card: React.FC<CardProps> = (props) => {
         {description}
       </Typography>
       <Typography component="p" variant="caption" noWrap>
-        {caption}
+        {createdAt}
       </Typography>
     </Paper>
   );
