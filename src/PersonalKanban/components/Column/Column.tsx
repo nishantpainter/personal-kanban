@@ -60,9 +60,11 @@ type ColumnActionProps = {
   onEdit?: any;
   onDelete?: any;
   onAddRecord?: any;
+  onDeleteAllRecord?: any;
   showEditAction?: boolean;
   showDeleteAction?: boolean;
   showAddRecordAction?: boolean;
+  showAllRecordDeleteAction?: boolean;
 };
 
 export const ColumnAction: React.FC<ColumnActionProps> = (props) => {
@@ -70,16 +72,23 @@ export const ColumnAction: React.FC<ColumnActionProps> = (props) => {
     showEditAction,
     showDeleteAction,
     showAddRecordAction,
+    showAllRecordDeleteAction,
     onEdit,
     onDelete,
     onAddRecord,
+    onDeleteAllRecord,
   } = props;
   const classes = useColumnActionStyles();
   return (
     <>
       {showAddRecordAction && <IconButton icon="add" onClick={onAddRecord} />}
       {showEditAction && <IconButton icon="edit" onClick={onEdit} />}
-      {showDeleteAction && <IconButton icon="delete" onClick={onDelete} />}
+      {showAllRecordDeleteAction && (
+        <IconButton icon="delete" onClick={onDeleteAllRecord} />
+      )}
+      {showDeleteAction && (
+        <IconButton icon="deleteForever" onClick={onDelete} />
+      )}
       <Divider className={classes.divider} />
     </>
   );
@@ -89,6 +98,7 @@ ColumnAction.defaultProps = {
   showEditAction: true,
   showDeleteAction: true,
   showAddRecordAction: true,
+  showAllRecordDeleteAction: true,
 };
 
 const useColumnCardListStyles = makeStyles((theme) => ({
@@ -171,9 +181,11 @@ type ColumnProps = {
   onAddRecord?: any;
   onRecordEdit?: any;
   onRecordDelete?: any;
+  onAllRecordDelete?: any;
   showEditAction?: boolean;
   showDeleteAction?: boolean;
   showAddRecordAction?: boolean;
+  showDeleteAllRecordAction?: boolean;
   ColumnHeaderComponent?: any;
   ColumnActionComponent?: any;
   ColumnCardListComponent?: any;
@@ -188,11 +200,13 @@ const Column: React.FC<ColumnProps> = (props) => {
     onEdit,
     onDelete,
     onAddRecord,
+    onAllRecordDelete,
     showDeleteAction,
     showEditAction,
     onRecordEdit,
     onRecordDelete,
     showAddRecordAction,
+    showDeleteAllRecordAction,
     ColumnHeaderComponent = ColumnHeader,
     ColumnActionComponent = ColumnAction,
     ColumnCardListComponent = ColumnCardList,
@@ -242,6 +256,10 @@ const Column: React.FC<ColumnProps> = (props) => {
     },
     [column, onRecordDelete]
   );
+
+  const handleAllRecordDelete = React.useCallback(() => {
+    onAllRecordDelete({ column });
+  }, [column, onAllRecordDelete]);
 
   const handleOpenDialog = React.useCallback(({ content, title, actions }) => {
     setDialog({ content, title, actions, open: true });
@@ -344,6 +362,32 @@ const Column: React.FC<ColumnProps> = (props) => {
     [handleOpenDialog, handleCloseDialog, handleRecordDelete]
   );
 
+  const handleOpenDeleteAllRecordDialog = React.useCallback(
+    (record: Record) => {
+      const content = (
+        <Typography>Do you want to delete all records ?</Typography>
+      );
+      const actions = (
+        <>
+          <Button onClick={handleCloseDialog}>Cancel</Button>&nbsp;
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={(e) => {
+              handleCloseDialog();
+              handleAllRecordDelete();
+            }}
+          >
+            Delete
+          </Button>
+        </>
+      );
+
+      handleOpenDialog({ content, actions, title: "Delete All Records" });
+    },
+    [handleOpenDialog, handleCloseDialog, handleAllRecordDelete]
+  );
+
   return (
     <Paper elevation={4} className={className} ref={innerRef} {...rest}>
       <ColumnHeaderComponent title={title} description={description} />
@@ -351,9 +395,11 @@ const Column: React.FC<ColumnProps> = (props) => {
         showEditAction={showEditAction}
         showDeleteAction={showDeleteAction}
         showAddRecordAction={showAddRecordAction}
+        showDeleteAllRecordAction={showDeleteAllRecordAction}
         onEdit={handleOpenEditDialog}
         onDelete={handleOpenDeleteDialog}
         onAddRecord={handleOpenAddRecordDialog}
+        onDeleteAllRecord={handleOpenDeleteAllRecordDialog}
       />
       <ColumnCardListComponent
         column={column}

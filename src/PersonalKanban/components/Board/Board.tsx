@@ -28,6 +28,7 @@ type BoardProps = {
   onAddRecord?: any;
   onRecordEdit?: any;
   onRecordDelete?: any;
+  onAllRecordDelete?: any;
 };
 
 const Board: React.FC<BoardProps> = (props) => {
@@ -41,6 +42,7 @@ const Board: React.FC<BoardProps> = (props) => {
     onAddRecord,
     onRecordEdit,
     onRecordDelete,
+    onAllRecordDelete,
     ...rest
   } = props;
 
@@ -60,6 +62,7 @@ const Board: React.FC<BoardProps> = (props) => {
             onAddRecord={onAddRecord}
             onRecordEdit={onRecordEdit}
             onRecordDelete={onRecordDelete}
+            onAllRecordDelete={onAllRecordDelete}
           />
         ))
       ) : (
