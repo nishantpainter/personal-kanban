@@ -59,7 +59,7 @@ const Board: React.FC<BoardProps> = (props) => {
             onDelete={onColumnDelete}
             onAddRecord={onAddRecord}
             onRecordEdit={onRecordEdit}
-            onRecordDelete={onRecordEdit}
+            onRecordDelete={onRecordDelete}
           />
         ))
       ) : (
