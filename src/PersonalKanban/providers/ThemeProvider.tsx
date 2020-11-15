@@ -15,6 +15,8 @@ import {
   red,
 } from "@material-ui/core/colors";
 
+import StorageService from "PersonalKanban/services/StorageService";
+
 declare module "@material-ui/core/styles/createMuiTheme" {
   interface Theme {
     custom?: any;
@@ -35,10 +37,13 @@ const pastelCode = 200;
 const ThemeProvider: React.FC<ThemeProviderProps> = (props) => {
   const { children } = props;
 
-  const [darkTheme, setDarkTheme] = React.useState(props.darkTheme);
+  const [darkTheme, setDarkTheme] = React.useState(
+    props.darkTheme || StorageService.getDarkMode()
+  );
 
   const handleToggleDarkTheme = React.useCallback(() => {
     setDarkTheme((darkTheme: Boolean | undefined) => {
+      StorageService.setDarkMode(!darkTheme);
       return !darkTheme;
     });
   }, []);

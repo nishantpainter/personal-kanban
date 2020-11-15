@@ -8,22 +8,14 @@ import IconButton from "PersonalKanban/components/IconButton";
 import { useTheme } from "PersonalKanban/providers/ThemeProvider";
 import { Column, Record } from "PersonalKanban/types";
 import { getId, reorder, reorderCards } from "PersonalKanban/services/Utils";
+import StorageService from "PersonalKanban/services/StorageService";
 
 type KanbanBoardContainerProps = {};
 
+const initialState = StorageService.getColumns() || [];
+
 const KanbanBoardContainer: React.FC<KanbanBoardContainerProps> = (props) => {
-  const [columns, setColumns] = React.useState<Column[]>([
-    {
-      id: "column-1",
-      title: "Todo",
-      records: [{ id: "record-1", title: "Brew Coffee" }],
-    },
-    {
-      id: "column-2",
-      title: "In-Progress",
-      records: [],
-    },
-  ]);
+  const [columns, setColumns] = React.useState<Column[]>(initialState);
 
   const { darkTheme, handleToggleDarkTheme } = useTheme();
 
@@ -183,6 +175,10 @@ const KanbanBoardContainer: React.FC<KanbanBoardContainerProps> = (props) => {
     },
     [cloneColumns, getColumnIndex]
   );
+
+  React.useEffect(() => {
+    StorageService.setColumns(columns);
+  }, [columns]);
 
   return (
     <Box padding={1}>
