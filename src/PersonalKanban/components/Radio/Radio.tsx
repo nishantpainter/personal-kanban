@@ -5,10 +5,8 @@ import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles(() => ({
   root: {
     color: (props: any) => props.color,
-    "&$checked": {
-      color: (props: any) => props.color,
-    },
   },
+  checked: {},
 }));
 
 type RadioProps = Omit<MuiRadioProps, "color"> & { color?: string };
