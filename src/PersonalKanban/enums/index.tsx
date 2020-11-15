@@ -19,7 +19,7 @@ export const RecordColor = {
   Default: "",
 };
 
-export const DARK_RECORD_SHADE = 700;
+export const DARK_RECORD_SHADE = 500;
 
 export const DarkRecordColor = {
   Purple: purple[DARK_RECORD_SHADE],
@@ -45,7 +45,7 @@ export const ColumnColor = {
   Default: "",
 };
 
-export const DARK_COLUMN_SHADE = 600;
+export const DARK_COLUMN_SHADE = 400;
 
 export const DarkColumnColor = {
   Purple: purple[DARK_COLUMN_SHADE],
