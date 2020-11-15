@@ -1,5 +1,6 @@
 import React from "react";
 import clsx from "clsx";
+import Box from "@material-ui/core/Box";
 import Paper from "@material-ui/core/Paper";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
@@ -27,29 +28,51 @@ const useColumnHeaderStyles = makeStyles((theme) => ({
 type ColumnHeaderProps = {
   title: string;
   description?: string;
+  onEdit?: any;
+  onDelete?: any;
+  showEditAction?: boolean;
+  showDeleteAction?: boolean;
 };
 
 export const ColumnHeader: React.FC<ColumnHeaderProps> = (props) => {
-  const { title, description } = props;
+  const {
+    title,
+    description,
+    showEditAction,
+    showDeleteAction,
+    onEdit,
+    onDelete,
+  } = props;
 
   const classes = useColumnHeaderStyles();
   return (
     <>
-      <Typography
-        variant="h5"
-        title={title}
-        gutterBottom={Boolean(description)}
-        noWrap
+      <Box
+        display="flex"
+        alignItems="center"
+        justifyContent="space-between"
+        marginBottom={Boolean(description) ? 0.5 : 0}
       >
-        {title}
-      </Typography>
+        <Typography variant="h5" title={title} noWrap>
+          <b>{title}</b>
+        </Typography>
+        <Box display="flex" alignItems="center">
+          {showEditAction && <IconButton icon="edit" onClick={onEdit} />}
+          {showDeleteAction && (
+            <IconButton icon="deleteForever" onClick={onDelete} />
+          )}
+        </Box>
+      </Box>
       <Typography title={description} noWrap gutterBottom>
         {description}
       </Typography>
+
       <Divider className={classes.divider} />
     </>
   );
 };
+
+ColumnHeader.defaultProps = { showEditAction: true, showDeleteAction: true };
 
 const useColumnActionStyles = makeStyles((theme) => ({
   divider: {
@@ -59,24 +82,16 @@ const useColumnActionStyles = makeStyles((theme) => ({
 }));
 
 type ColumnActionProps = {
-  onEdit?: any;
-  onDelete?: any;
   onAddRecord?: any;
   onDeleteAllRecord?: any;
-  showEditAction?: boolean;
-  showDeleteAction?: boolean;
   showAddRecordAction?: boolean;
   showAllRecordDeleteAction?: boolean;
 };
 
 export const ColumnAction: React.FC<ColumnActionProps> = (props) => {
   const {
-    showEditAction,
-    showDeleteAction,
     showAddRecordAction,
     showAllRecordDeleteAction,
-    onEdit,
-    onDelete,
     onAddRecord,
     onDeleteAllRecord,
   } = props;
@@ -84,21 +99,16 @@ export const ColumnAction: React.FC<ColumnActionProps> = (props) => {
   return (
     <>
       {showAddRecordAction && <IconButton icon="add" onClick={onAddRecord} />}
-      {showEditAction && <IconButton icon="edit" onClick={onEdit} />}
       {showAllRecordDeleteAction && (
         <IconButton icon="delete" onClick={onDeleteAllRecord} />
       )}
-      {showDeleteAction && (
-        <IconButton icon="deleteForever" onClick={onDelete} />
-      )}
+
       <Divider className={classes.divider} />
     </>
   );
 };
 
 ColumnAction.defaultProps = {
-  showEditAction: true,
-  showDeleteAction: true,
   showAddRecordAction: true,
   showAllRecordDeleteAction: true,
 };
@@ -408,14 +418,17 @@ const Column: React.FC<ColumnProps> = (props) => {
       ref={innerRef}
       {...rest}
     >
-      <ColumnHeaderComponent title={title} description={description} />
-      <ColumnActionComponent
+      <ColumnHeaderComponent
+        title={title}
+        description={description}
         showEditAction={showEditAction}
         showDeleteAction={showDeleteAction}
-        showAddRecordAction={showAddRecordAction}
-        showDeleteAllRecordAction={showDeleteAllRecordAction}
         onEdit={handleOpenEditDialog}
         onDelete={handleOpenDeleteDialog}
+      />
+      <ColumnActionComponent
+        showAddRecordAction={showAddRecordAction}
+        showDeleteAllRecordAction={showDeleteAllRecordAction}
         onAddRecord={handleOpenAddRecordDialog}
         onDeleteAllRecord={handleOpenDeleteAllRecordDialog}
       />
