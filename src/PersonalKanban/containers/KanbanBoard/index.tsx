@@ -1,4 +1,5 @@
 import React from "react";
+import moment from "moment";
 import Box from "@material-ui/core/Box";
 
 import AddColumnButton from "PersonalKanban/containers/AddColumnButton";
@@ -126,6 +127,9 @@ const KanbanBoardContainer: React.FC<KanbanBoardContainerProps> = (props) => {
             title: record.title,
             description: record.description,
             color: record.color,
+            createdAt: `${moment().format("DD-MM-YYYY")} ${moment().format(
+              "h:mm:ss a"
+            )}`,
           },
           ...columns[columnIndex].records,
         ];

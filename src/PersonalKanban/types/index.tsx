@@ -4,6 +4,7 @@ export type Record = {
   description?: string;
   caption?: string;
   color?: string;
+  createdAt?: string;
 };
 
 export type Column = {
