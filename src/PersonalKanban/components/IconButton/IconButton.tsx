@@ -6,6 +6,7 @@ import MuiIconButton, {
 import DeleteIcon from "@material-ui/icons/Delete";
 import EditIcon from "@material-ui/icons/Edit";
 import AddIcon from "@material-ui/icons/Add";
+import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
 import DeleteSweepIcon from "@material-ui/icons/DeleteSweep";
 
 const icons = {
@@ -13,6 +14,7 @@ const icons = {
   delete: DeleteIcon,
   add: AddIcon,
   deleteSweep: DeleteSweepIcon,
+  deleteForever: DeleteForeverIcon,
 };
 
 type IconButtonProps = MuiIconButtonProps & { icon: keyof typeof icons };
