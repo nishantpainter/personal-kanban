@@ -187,7 +187,7 @@ export const ColumnFooter: React.FC<ColumnFooterProps> = (props) => {
 
 const useColumnStyles = makeStyles(() => ({
   paper: (props: any) => ({
-    backgroundColor: props.color,
+    backgroundColor: props.backgroundColor,
   }),
 }));
 
@@ -240,7 +240,9 @@ const Column: React.FC<ColumnProps> = (props) => {
   const { darkTheme } = useTheme();
 
   const classes = useColumnStyles({
-    color: darkTheme ? DarkColumnColor[columnColor] : ColumnColor[columnColor],
+    backgroundColor: darkTheme
+      ? DarkColumnColor[columnColor]
+      : ColumnColor[columnColor],
   });
 
   const [dialog, setDialog] = React.useState({
