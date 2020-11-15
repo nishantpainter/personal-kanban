@@ -320,6 +320,30 @@ const Column: React.FC<ColumnProps> = (props) => {
     [handleOpenDialog, handleCloseDialog, handleRecordEdit]
   );
 
+  const handleOpenDeleteRecordDialog = React.useCallback(
+    (record: Record) => {
+      const content = <Typography>Do you want to delete record ?</Typography>;
+      const actions = (
+        <>
+          <Button onClick={handleCloseDialog}>Cancel</Button>&nbsp;
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={(e) => {
+              handleCloseDialog();
+              handleRecordDelete(record);
+            }}
+          >
+            Delete
+          </Button>
+        </>
+      );
+
+      handleOpenDialog({ content, actions, title: "Delete Record" });
+    },
+    [handleOpenDialog, handleCloseDialog, handleRecordDelete]
+  );
+
   return (
     <Paper elevation={4} className={className} ref={innerRef} {...rest}>
       <ColumnHeaderComponent title={title} description={description} />
@@ -334,7 +358,7 @@ const Column: React.FC<ColumnProps> = (props) => {
       <ColumnCardListComponent
         column={column}
         onRecordEdit={handleOpenEditRecordDialog}
-        onRecordDelete={handleRecordDelete}
+        onRecordDelete={handleOpenDeleteRecordDialog}
       />
       <ColumnFooterComponent content={caption} />
       <Dialog open={dialog.open} onClose={handleCloseDialog}>
