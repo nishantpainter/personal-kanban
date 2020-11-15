@@ -8,6 +8,8 @@ import EditIcon from "@material-ui/icons/Edit";
 import AddIcon from "@material-ui/icons/Add";
 import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
 import DeleteSweepIcon from "@material-ui/icons/DeleteSweep";
+import InvertColorsIcon from "@material-ui/icons/InvertColors";
+import InvertColorsOffIcon from "@material-ui/icons/InvertColorsOff";
 
 const icons = {
   edit: EditIcon,
@@ -15,6 +17,8 @@ const icons = {
   add: AddIcon,
   deleteSweep: DeleteSweepIcon,
   deleteForever: DeleteForeverIcon,
+  invertColors: InvertColorsIcon,
+  invertColorsOff: InvertColorsOffIcon,
 };
 
 type IconButtonProps = MuiIconButtonProps & { icon: keyof typeof icons };
