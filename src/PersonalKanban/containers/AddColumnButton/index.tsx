@@ -1,10 +1,10 @@
 import React from "react";
 import Box from "@material-ui/core/Box";
-import Button from "@material-ui/core/Button";
 import Dialog from "@material-ui/core/Dialog";
 import DialogContent from "@material-ui/core/DialogContent";
 
 import ColumnForm from "PersonalKanban/components/ColumnForm";
+import IconButton from "PersonalKanban/components/IconButton";
 import { Column } from "PersonalKanban/types";
 
 type AddColumnButtonProps = {
@@ -33,10 +33,10 @@ const AddColumnButton: React.FC<AddColumnButtonProps> = (props) => {
   );
 
   return (
-    <Box display="block" marginBottom={2}>
-      <Button variant="contained" color="primary" onClick={handleOpenDialog}>
+    <Box display="block">
+      <IconButton icon="add" onClick={handleOpenDialog}>
         Add Column
-      </Button>
+      </IconButton>
       <Dialog onClose={handleCloseDialog} open={open}>
         <DialogContent>
           <ColumnForm onSubmit={handleSubmit} onCancel={handleCloseDialog} />

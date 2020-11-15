@@ -7,6 +7,8 @@ import DialogContent from "@material-ui/core/DialogContent";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 
+import IconButton from "PersonalKanban/components/IconButton";
+
 type ClearBoardButtonProps = {
   onClear: any;
   disabled?: boolean;
@@ -34,15 +36,12 @@ const ClearBoardButton: React.FC<ClearBoardButtonProps> = (props) => {
   );
 
   return (
-    <Box display="block" marginBottom={2}>
-      <Button
-        variant="contained"
-        color="primary"
+    <Box display="block">
+      <IconButton
+        icon="delete"
         disabled={disabled}
         onClick={handleOpenDialog}
-      >
-        Clear Board
-      </Button>
+      ></IconButton>
       <Dialog onClose={handleCloseDialog} open={open}>
         <DialogContent>
           <Grid container spacing={1}>
