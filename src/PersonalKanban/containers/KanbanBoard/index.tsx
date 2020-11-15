@@ -167,6 +167,18 @@ const KanbanBoardContainer: React.FC<KanbanBoardContainerProps> = (props) => {
     [cloneColumns, getColumnIndex, getRecordIndex]
   );
 
+  const handleAllRecordDelete = React.useCallback(
+    ({ column }: { column: Column }) => {
+      const columnIndex = getColumnIndex(column.id);
+      setColumns((_columns) => {
+        const columns = cloneColumns(_columns);
+        columns[columnIndex].records = [];
+        return columns;
+      });
+    },
+    [cloneColumns, getColumnIndex]
+  );
+
   return (
     <Box padding={1}>
       <Box display="flex">
@@ -186,6 +198,7 @@ const KanbanBoardContainer: React.FC<KanbanBoardContainerProps> = (props) => {
         onAddRecord={handleAddRecord}
         onRecordEdit={handleRecordEdit}
         onRecordDelete={handleRecordDelete}
+        onAllRecordDelete={handleAllRecordDelete}
       />
     </Box>
   );
