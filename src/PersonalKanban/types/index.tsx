@@ -11,5 +11,6 @@ export type Column = {
   title: string;
   description?: string;
   caption?: string;
+  color?: string;
   records?: Record[];
 };
