@@ -4,6 +4,8 @@ import Box from "@material-ui/core/Box";
 import AddColumnButton from "PersonalKanban/containers/AddColumnButton";
 import ClearBoardButton from "PersonalKanban/containers/ClearBoardButton";
 import KanbanBoard from "PersonalKanban/components/KanbanBoard";
+import IconButton from "PersonalKanban/components/IconButton";
+import { useTheme } from "PersonalKanban/providers/ThemeProvider";
 import { Column, Record } from "PersonalKanban/types";
 import { getId, reorder, reorderCards } from "PersonalKanban/services/Utils";
 
@@ -22,6 +24,8 @@ const KanbanBoardContainer: React.FC<KanbanBoardContainerProps> = (props) => {
       records: [],
     },
   ]);
+
+  const { darkTheme, handleToggleDarkTheme } = useTheme();
 
   const cloneColumns = React.useCallback((columns: Column[]) => {
     return columns.map((column: Column) => ({
@@ -181,12 +185,17 @@ const KanbanBoardContainer: React.FC<KanbanBoardContainerProps> = (props) => {
 
   return (
     <Box padding={1}>
-      <Box display="flex">
+      <Box display="flex" alignItems="center" marginBottom={2}>
         <AddColumnButton onSubmit={handleAddColumn} />
         &nbsp;
         <ClearBoardButton
           disabled={!columns.length}
           onClear={handleClearBoard}
+        />
+        &nbsp;
+        <IconButton
+          icon={darkTheme ? "invertColors" : "invertColorsOff"}
+          onClick={handleToggleDarkTheme}
         />
       </Box>
       <KanbanBoard
