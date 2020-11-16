@@ -10,6 +10,7 @@ import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
 import DeleteSweepIcon from "@material-ui/icons/DeleteSweep";
 import InvertColorsIcon from "@material-ui/icons/InvertColors";
 import InvertColorsOffIcon from "@material-ui/icons/InvertColorsOff";
+import LanguageIcon from "@material-ui/icons/Language";
 
 const icons = {
   edit: EditIcon,
@@ -19,6 +20,7 @@ const icons = {
   deleteForever: DeleteForeverIcon,
   invertColors: InvertColorsIcon,
   invertColorsOff: InvertColorsOffIcon,
+  language: LanguageIcon,
 };
 
 type IconButtonProps = MuiIconButtonProps & { icon: keyof typeof icons };
