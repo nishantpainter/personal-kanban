@@ -198,6 +198,8 @@ const KanbanBoardContainer: React.FC<KanbanBoardContainerProps> = (props) => {
           icon={darkTheme ? "invertColors" : "invertColorsOff"}
           onClick={handleToggleDarkTheme}
         />
+        &nbsp;
+        <IconButton icon={"language"} />
       </Box>
       <KanbanBoard
         columns={columns}
