@@ -3,8 +3,13 @@ import { I18nextProvider, initReactI18next } from "react-i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 import i18next from "i18next";
 
+import cn from "PersonalKanban/assets/locales/cn/translations.json";
+import de from "PersonalKanban/assets/locales/de/translations.json";
 import en from "PersonalKanban/assets/locales/en/translations.json";
+import es from "PersonalKanban/assets/locales/es/translations.json";
 import fr from "PersonalKanban/assets/locales/fr/translations.json";
+import ind from "PersonalKanban/assets/locales/in/translations.json";
+import ru from "PersonalKanban/assets/locales/ru/translations.json";
 
 export { useTranslation } from "react-i18next";
 
@@ -16,8 +21,13 @@ i18n
   .init({
     fallbackLng: "en",
     resources: {
+      cn: { translation: { ...cn } },
+      de: { translation: { ...de } },
       en: { translation: { ...en } },
+      es: { translation: { ...es } },
       fr: { translation: { ...fr } },
+      in: { translation: { ...ind } },
+      ru: { translation: { ...ru } },
     },
     interpolation: {
       escapeValue: false,
