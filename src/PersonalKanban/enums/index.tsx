@@ -26,7 +26,7 @@ export const DarkRecordColor = {
   Indigo: indigo[DARK_RECORD_SHADE],
   Blue: blue[DARK_RECORD_SHADE],
   Green: green[DARK_RECORD_SHADE],
-  Yellow: yellow[DARK_RECORD_SHADE],
+  Yellow: yellow[700],
   Orange: orange[DARK_RECORD_SHADE],
   Red: red[DARK_RECORD_SHADE],
   Default: "",
