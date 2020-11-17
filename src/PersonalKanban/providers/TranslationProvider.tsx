@@ -6,6 +6,8 @@ import i18next from "i18next";
 import en from "PersonalKanban/assets/locales/en/translations.json";
 import fr from "PersonalKanban/assets/locales/fr/translations.json";
 
+export { useTranslation } from "react-i18next";
+
 const i18n = i18next.createInstance();
 
 i18n
