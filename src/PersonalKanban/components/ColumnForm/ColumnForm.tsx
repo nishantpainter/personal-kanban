@@ -12,6 +12,7 @@ import RadioGroup from "@material-ui/core/RadioGroup";
 import { Column } from "PersonalKanban/types";
 import { ColumnColor } from "PersonalKanban/enums/index";
 import Radio from "PersonalKanban/components/Radio";
+import { useTranslation } from "PersonalKanban/providers/TranslationProvider";
 
 type ColumnFormProps = {
   column?: Partial<Column>;
@@ -22,7 +23,15 @@ type ColumnFormProps = {
 };
 
 const ColumnForm: React.FC<ColumnFormProps> = (props) => {
-  const { column, disabled, formTitle, onSubmit, onCancel } = props;
+  const { t } = useTranslation();
+
+  const {
+    column,
+    disabled,
+    formTitle = t("addColumn"),
+    onSubmit,
+    onCancel,
+  } = props;
 
   const { values, errors, handleChange, handleSubmit } = useFormik({
     initialValues: Object.assign(
@@ -118,10 +127,6 @@ const ColumnForm: React.FC<ColumnFormProps> = (props) => {
       </Grid>
     </form>
   );
-};
-
-ColumnForm.defaultProps = {
-  formTitle: "Add Column",
 };
 
 export default ColumnForm;
