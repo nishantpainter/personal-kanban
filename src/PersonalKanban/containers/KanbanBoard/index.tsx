@@ -10,6 +10,7 @@ import { useTheme } from "PersonalKanban/providers/ThemeProvider";
 import { Column, Record } from "PersonalKanban/types";
 import { getId, reorder, reorderCards } from "PersonalKanban/services/Utils";
 import StorageService from "PersonalKanban/services/StorageService";
+import LanguageButton from "PersonalKanban/containers/LanguageButton";
 
 type KanbanBoardContainerProps = {};
 
@@ -199,7 +200,7 @@ const KanbanBoardContainer: React.FC<KanbanBoardContainerProps> = (props) => {
           onClick={handleToggleDarkTheme}
         />
         &nbsp;
-        <IconButton icon={"language"} />
+        <LanguageButton />
       </Box>
       <KanbanBoard
         columns={columns}
