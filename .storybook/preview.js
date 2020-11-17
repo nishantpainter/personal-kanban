@@ -1,4 +1,5 @@
 import ThemeProvider from "../src/PersonalKanban/providers/ThemeProvider";
+import TranslationProvider from "../src/PersonalKanban/providers/TranslationProvider";
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -37,4 +38,16 @@ const withDivWrapper = (Story, context) => {
   );
 };
 
-export const decorators = [withThemeProvider, withDivWrapper];
+const withTranslationProvider = (Story, context) => {
+  return (
+    <TranslationProvider>
+      <Story {...context} />
+    </TranslationProvider>
+  );
+};
+
+export const decorators = [
+  withThemeProvider,
+  withDivWrapper,
+  withTranslationProvider,
+];
