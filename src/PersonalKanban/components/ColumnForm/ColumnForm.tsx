@@ -1,11 +1,13 @@
 import React from "react";
 import { useFormik } from "formik";
 import Button from "@material-ui/core/Button";
+import Checkbox from "@material-ui/core/Checkbox";
 import TextField from "@material-ui/core/TextField";
 import Grid from "@material-ui/core/Grid";
 import Divider from "@material-ui/core/Divider";
 import Typography from "@material-ui/core/Typography";
 import FormControl from "@material-ui/core/FormControl";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormLabel from "@material-ui/core/FormLabel";
 import RadioGroup from "@material-ui/core/RadioGroup";
 
@@ -39,6 +41,8 @@ const ColumnForm: React.FC<ColumnFormProps> = (props) => {
         title: "",
         description: "",
         color: "",
+        wipEnabled: false,
+        wipLimit: 0,
       },
       column
     ),
@@ -50,9 +54,28 @@ const ColumnForm: React.FC<ColumnFormProps> = (props) => {
       if (!values.title) {
         errors.title = "Title is required.";
       }
+
+      if (values.wipEnabled && !values.wipLimit) {
+        errors.wipLimit = "Limit is required when enabled.";
+      }
+
       return errors;
     },
   });
+
+  const handleWipLimitChange = React.useCallback(
+    (e) => {
+      e.persist();
+      const { value } = e.target;
+      const integerRegex = /^[0-9]*$/;
+      if (value && !integerRegex.test(value)) {
+        return;
+      }
+
+      handleChange(e);
+    },
+    [handleChange]
+  );
 
   return (
     <form onSubmit={handleSubmit}>
@@ -87,6 +110,30 @@ const ColumnForm: React.FC<ColumnFormProps> = (props) => {
             onChange={handleChange}
           />
         </Grid>
+        <Grid item xs={12}>
+          <FormControlLabel
+            control={
+              <Checkbox
+                checked={values.wipEnabled}
+                onChange={handleChange}
+                name="wipEnabled"
+              />
+            }
+            label="WIP Limit Enabled"
+          />
+        </Grid>
+        <Grid item xs={12}>
+          <TextField
+            name="wipLimit"
+            label="WIP Limit"
+            value={values.wipLimit}
+            error={Boolean(errors.wipLimit)}
+            helperText={errors.wipLimit}
+            disabled={disabled || !values.wipEnabled}
+            onChange={handleWipLimitChange}
+          />
+        </Grid>
+
         <Grid item xs={12}>
           <FormControl component="fieldset">
             <FormLabel component="legend">Background</FormLabel>
