@@ -1,0 +1,3 @@
+# Personal Kanban
+
+[English](https://github.com/nishantpainter/personal-kanban/README.md) - [Français](https://github.com/nishantpainter/personal-kanban/README_FR.md) - [Español](https://github.com/nishantpainter/personal-kanban/README_ES.md) - [Pусский](https://github.com/nishantpainter/personal-kanban/README_RU.md) - [Deutsche](https://github.com/nishantpainter/personal-kanban/README_DE.md) - [हिंदी](https://github.com/nishantpainter/personal-kanban/README_IN.md) - [中文](https://github.com/nishantpainter/personal-kanban/README_CN.md)
