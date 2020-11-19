@@ -74,12 +74,19 @@ const KanbanColumn: React.FC<KanbanColumnProps> = (props) => {
     onRecordDelete,
     onAllRecordDelete,
   } = props;
+
+  const _column = Object.assign({}, column, {
+    caption: column.wipEnabled
+      ? `WIP Limit :${column.wipLimit}`
+      : column.createdAt,
+  });
+
   return (
     <Draggable draggableId={column.id} index={index}>
       {(provided) => (
         <Column
           innerRef={provided.innerRef}
-          column={column}
+          column={_column}
           className={className}
           ColumnCardListComponent={KanbanColumnCardList}
           onEdit={onEdit}
