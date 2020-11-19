@@ -14,6 +14,7 @@ export type Column = {
   caption?: string;
   color?: string;
   records?: Record[];
-  wip?: number;
+  wipLimit?: number;
   wipEnabled?: boolean;
+  createdAt?: string;
 };
