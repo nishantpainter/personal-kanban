@@ -21,6 +21,10 @@ const KanbanBoardContainer: React.FC<KanbanBoardContainerProps> = (props) => {
 
   const { darkTheme, handleToggleDarkTheme } = useTheme();
 
+  const getCreatedAt = React.useCallback(() => {
+    return `${moment().format("DD-MM-YYYY")} ${moment().format("h:mm:ss a")}`;
+  }, []);
+
   const cloneColumns = React.useCallback((columns: Column[]) => {
     return columns.map((column: Column) => ({
       ...column,
@@ -52,10 +56,13 @@ const KanbanBoardContainer: React.FC<KanbanBoardContainerProps> = (props) => {
     ({ column }: { column: Column }) => {
       setColumns((columns: Column[]) => [
         ...columns,
-        Object.assign({ id: getId(), records: [] }, column),
+        Object.assign(
+          { id: getId(), records: [], createdAt: getCreatedAt() },
+          column
+        ),
       ]);
     },
-    []
+    [getCreatedAt]
   );
 
   const handleColumnMove = React.useCallback(
@@ -128,16 +135,14 @@ const KanbanBoardContainer: React.FC<KanbanBoardContainerProps> = (props) => {
             title: record.title,
             description: record.description,
             color: record.color,
-            createdAt: `${moment().format("DD-MM-YYYY")} ${moment().format(
-              "h:mm:ss a"
-            )}`,
+            createdAt: getCreatedAt(),
           },
           ...columns[columnIndex].records,
         ];
         return columns;
       });
     },
-    [cloneColumns, getColumnIndex]
+    [cloneColumns, getColumnIndex, getCreatedAt]
   );
 
   const handleRecordEdit = React.useCallback(
