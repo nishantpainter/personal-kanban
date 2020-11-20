@@ -33,9 +33,10 @@ type KanbanColumnCardListProps = {
 
 const KanbanColumnCardList: React.FC<KanbanColumnCardListProps> = (props) => {
   const { column, onRecordEdit, onRecordDelete } = props;
-  const { id: columnId } = column;
+  const { id: columnId, records = [], wipEnabled, wipLimit = false } = column;
+  const isDropDisabled = wipEnabled && wipLimit <= records?.length;
   return (
-    <Droppable droppableId={columnId}>
+    <Droppable droppableId={columnId} isDropDisabled={isDropDisabled}>
       {(provided) => (
         <div ref={provided.innerRef} {...provided.droppableProps}>
           <KanbanInnerColumnCardList
