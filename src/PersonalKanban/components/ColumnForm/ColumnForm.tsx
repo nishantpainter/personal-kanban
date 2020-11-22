@@ -89,7 +89,7 @@ const ColumnForm: React.FC<ColumnFormProps> = (props) => {
         <Grid item xs={12}>
           <TextField
             name="title"
-            label="Title"
+            label={t("title")}
             value={values.title}
             error={Boolean(errors.title)}
             helperText={errors.title}
@@ -102,7 +102,7 @@ const ColumnForm: React.FC<ColumnFormProps> = (props) => {
             multiline
             rows={3}
             name="description"
-            label="Description"
+            label={t("description")}
             value={values.description}
             error={Boolean(errors.description)}
             helperText={errors.description}
@@ -119,13 +119,13 @@ const ColumnForm: React.FC<ColumnFormProps> = (props) => {
                 name="wipEnabled"
               />
             }
-            label="WIP Limit Enabled"
+            label={t("wipLimitEnabled")}
           />
         </Grid>
         <Grid item xs={12}>
           <TextField
             name="wipLimit"
-            label="WIP Limit"
+            label={t("wipLimit")}
             value={values.wipLimit}
             error={Boolean(errors.wipLimit)}
             helperText={errors.wipLimit}
@@ -136,7 +136,7 @@ const ColumnForm: React.FC<ColumnFormProps> = (props) => {
 
         <Grid item xs={12}>
           <FormControl component="fieldset">
-            <FormLabel component="legend">Background</FormLabel>
+            <FormLabel component="legend">{t("background")}</FormLabel>
             <RadioGroup
               row
               aria-label="background"
@@ -159,7 +159,7 @@ const ColumnForm: React.FC<ColumnFormProps> = (props) => {
         </Grid>
         <Grid item xs={12}>
           <Button variant="outlined" disabled={disabled} onClick={onCancel}>
-            Cancel
+            {t("cancel")}
           </Button>
           &nbsp;
           <Button
@@ -168,7 +168,7 @@ const ColumnForm: React.FC<ColumnFormProps> = (props) => {
             variant="contained"
             disabled={disabled}
           >
-            Submit
+            {t("submit")}
           </Button>
         </Grid>
       </Grid>

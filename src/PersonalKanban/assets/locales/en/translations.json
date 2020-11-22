@@ -1,3 +1,10 @@
 {
-  "addColumn": "Add Column"
+  "title": "Title",
+  "description": "Description",
+  "cancel": "Cancel",
+  "submit": "Submit",
+  "addColumn": "Add Column",
+  "wipLimitEnabled": "WIP Limit Enabled",
+  "wipLimit": "WIP Limit",
+  "background": "Background"
 }
