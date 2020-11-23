@@ -82,6 +82,8 @@ const KanbanBoardContainer: React.FC<KanbanBoardContainerProps> = (props) => {
         columns[columnIndex].title = column.title;
         columns[columnIndex].description = column.description;
         columns[columnIndex].color = column.color;
+        columns[columnIndex].wipEnabled = column.wipEnabled;
+        columns[columnIndex].wipLimit = column.wipLimit;
         return columns;
       });
     },
