@@ -12,6 +12,7 @@ import RadioGroup from "@material-ui/core/RadioGroup";
 import { Record } from "PersonalKanban/types";
 import { RecordColor } from "PersonalKanban/enums";
 import Radio from "PersonalKanban/components/Radio";
+import { useTranslation } from "PersonalKanban/providers/TranslationProvider";
 
 type RecordFormProps = {
   record?: Record;
@@ -23,6 +24,8 @@ type RecordFormProps = {
 
 const RecordForm: React.FC<RecordFormProps> = (props) => {
   const { record, disabled, formTitle, onSubmit, onCancel } = props;
+
+  const { t } = useTranslation();
 
   const { values, errors, handleChange, handleSubmit } = useFormik({
     initialValues: Object.assign(
@@ -58,7 +61,7 @@ const RecordForm: React.FC<RecordFormProps> = (props) => {
         <Grid item xs={12}>
           <TextField
             name="title"
-            label="Title"
+            label={t("title")}
             value={values.title}
             error={Boolean(errors.title)}
             helperText={errors.title}
@@ -71,7 +74,7 @@ const RecordForm: React.FC<RecordFormProps> = (props) => {
             multiline
             rows={3}
             name="description"
-            label="Description"
+            label={t("description")}
             value={values.description}
             error={Boolean(errors.description)}
             helperText={errors.description}
@@ -81,7 +84,7 @@ const RecordForm: React.FC<RecordFormProps> = (props) => {
         </Grid>
         <Grid item xs={12}>
           <FormControl component="fieldset">
-            <FormLabel component="legend">Background</FormLabel>
+            <FormLabel component="legend">{t("background")}</FormLabel>
             <RadioGroup
               row
               aria-label="background"
@@ -104,7 +107,7 @@ const RecordForm: React.FC<RecordFormProps> = (props) => {
         </Grid>
         <Grid item xs={12}>
           <Button variant="outlined" disabled={disabled} onClick={onCancel}>
-            Cancel
+            {t("cancel")}
           </Button>
           &nbsp;
           <Button
@@ -113,7 +116,7 @@ const RecordForm: React.FC<RecordFormProps> = (props) => {
             variant="contained"
             disabled={disabled}
           >
-            Submit
+            {t("submit")}
           </Button>
         </Grid>
       </Grid>
