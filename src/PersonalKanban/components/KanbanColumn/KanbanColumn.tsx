@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { Draggable, Droppable } from "react-beautiful-dnd";
 
 import KanbanCard from "PersonalKanban/components/KanbanCard";
@@ -76,9 +77,11 @@ const KanbanColumn: React.FC<KanbanColumnProps> = (props) => {
     onAllRecordDelete,
   } = props;
 
+  const { t } = useTranslation();
+
   const _column = Object.assign({}, column, {
     caption: column.wipEnabled
-      ? `WIP Limit :${column.wipLimit}`
+      ? `${t("wipLimit")} :${column.wipLimit}`
       : column.createdAt,
   });
 
