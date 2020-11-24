@@ -23,9 +23,15 @@ type RecordFormProps = {
 };
 
 const RecordForm: React.FC<RecordFormProps> = (props) => {
-  const { record, disabled, formTitle, onSubmit, onCancel } = props;
-
   const { t } = useTranslation();
+
+  const {
+    record,
+    disabled,
+    formTitle = t("addRecord"),
+    onSubmit,
+    onCancel,
+  } = props;
 
   const { values, errors, handleChange, handleSubmit } = useFormik({
     initialValues: Object.assign(
@@ -42,7 +48,7 @@ const RecordForm: React.FC<RecordFormProps> = (props) => {
     validate: (values) => {
       const errors: any = {};
       if (!values.title) {
-        errors.title = "Title is required.";
+        errors.title = t("titleRequired");
       }
 
       return errors;
@@ -122,10 +128,6 @@ const RecordForm: React.FC<RecordFormProps> = (props) => {
       </Grid>
     </form>
   );
-};
-
-RecordForm.defaultProps = {
-  formTitle: "Add Record",
 };
 
 export default RecordForm;

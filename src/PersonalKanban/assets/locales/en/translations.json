@@ -6,5 +6,7 @@
   "addColumn": "Add Column",
   "wipLimitEnabled": "WIP Limit Enabled",
   "wipLimit": "WIP Limit",
-  "background": "Background"
+  "background": "Background",
+  "addRecord": "Add Record",
+  "titleRequired": "Title is required"
 }
