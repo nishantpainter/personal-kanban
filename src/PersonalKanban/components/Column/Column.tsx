@@ -18,6 +18,7 @@ import RecordForm from "PersonalKanban/components/RecordForm";
 import { ColumnColor, DarkColumnColor } from "PersonalKanban/enums";
 import { Record, Column as ColumnType } from "PersonalKanban/types";
 import { useTheme } from "PersonalKanban/providers/ThemeProvider";
+import { useTranslation } from "PersonalKanban/providers/TranslationProvider";
 
 const useColumnHeaderStyles = makeStyles((theme) => ({
   divider: {
@@ -239,6 +240,8 @@ const Column: React.FC<ColumnProps> = (props) => {
 
   const { darkTheme } = useTheme();
 
+  const { t } = useTranslation();
+
   const classes = useColumnStyles({
     backgroundColor: darkTheme
       ? DarkColumnColor[columnColor]
@@ -303,7 +306,7 @@ const Column: React.FC<ColumnProps> = (props) => {
     const content = <Typography>Do you want to delete column ?</Typography>;
     const actions = (
       <>
-        <Button onClick={handleCloseDialog}>Cancel</Button>&nbsp;
+        <Button onClick={handleCloseDialog}>{t("cancel")}</Button>&nbsp;
         <Button
           variant="contained"
           color="primary"
@@ -312,13 +315,13 @@ const Column: React.FC<ColumnProps> = (props) => {
             handleDelete(e);
           }}
         >
-          Delete
+          {t("delete")}
         </Button>
       </>
     );
 
     handleOpenDialog({ content, actions, title: "Delete Column" });
-  }, [handleOpenDialog, handleDelete, handleCloseDialog]);
+  }, [handleOpenDialog, handleDelete, handleCloseDialog, t]);
 
   const handleOpenEditDialog = React.useCallback(() => {
     const content = (

@@ -3,6 +3,7 @@
   "description": "Description",
   "cancel": "Cancel",
   "submit": "Submit",
+  "delete": "Delete",
   "addColumn": "Add Column",
   "wipLimitEnabled": "WIP Limit Enabled",
   "wipLimit": "WIP Limit",
