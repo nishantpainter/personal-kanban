@@ -9,6 +9,7 @@ import { COLUMN_WIDTH } from "PersonalKanban/constants";
 
 const useBoardStyles = makeStyles((theme) => ({
   root: {
+    height: "100vh",
     display: "inline-flex",
     width: "fit-content",
   },

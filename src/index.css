@@ -20,4 +20,5 @@ code {
 #root {
   height: 100%;
   overflow: hidden;
+  width: fit-content;
 }
