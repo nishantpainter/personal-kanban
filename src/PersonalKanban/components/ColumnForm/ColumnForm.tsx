@@ -52,11 +52,11 @@ const ColumnForm: React.FC<ColumnFormProps> = (props) => {
     validate: (values) => {
       const errors: any = {};
       if (!values.title) {
-        errors.title = "Title is required.";
+        errors.title = t("titleRequired");
       }
 
       if (values.wipEnabled && !values.wipLimit) {
-        errors.wipLimit = "Limit is required when enabled.";
+        errors.wipLimit = t("limitRequired");
       }
 
       return errors;

@@ -3,6 +3,7 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 
 import Column from "PersonalKanban/components/Column";
+import { useTranslation } from "PersonalKanban/providers/TranslationProvider";
 import { Column as ColumnType } from "PersonalKanban/types";
 import { COLUMN_WIDTH } from "PersonalKanban/constants";
 
@@ -48,6 +49,8 @@ const Board: React.FC<BoardProps> = (props) => {
 
   const classes = useBoardStyles();
 
+  const { t } = useTranslation();
+
   return (
     <div className={classes.root} ref={innerRef} {...rest}>
       {columns && columns.length ? (
@@ -66,7 +69,7 @@ const Board: React.FC<BoardProps> = (props) => {
           />
         ))
       ) : (
-        <Typography>No columns available.</Typography>
+        <Typography>{t("noColumn")}</Typography>
       )}
       {placeholder}
     </div>

@@ -8,6 +8,10 @@
   "wipLimit": "WIP Limit",
   "background": "Background",
   "titleRequired": "Title is required",
+  "limitRequired": "Limit is required when enabled.",
+  "clear": "Clear",
+  "clearBoard": "Clear Board",
+  "clearBoardConfirmation": "Do you want to remove all columns and records ?",
   "addColumn": "Add Column",
   "editColumn": "Edit Column",
   "deleteColumn": "Delete Column",
@@ -18,5 +22,6 @@
   "deleteAllRecord": "Delete All Records",
   "deleteRecordConfirmation": "Do you want to delete record ?",
   "deleteAllRecordConfirmation": "Do you want to delete all records ?",
-  "noRecord":"No records available."
+  "noRecord": "No records available.",
+  "noColumn": "No columns available."
 }

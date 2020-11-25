@@ -11,13 +11,13 @@ import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
+import { makeStyles } from "@material-ui/core/styles";
 
 import { useTranslation } from "PersonalKanban/providers/TranslationProvider";
 import ColumnForm from "PersonalKanban/components/ColumnForm";
 import IconButton from "PersonalKanban/components/IconButton";
 import { Column } from "PersonalKanban/types";
 import { useTheme } from "PersonalKanban/providers/ThemeProvider";
-import { makeStyles } from "@material-ui/core";
 
 type AddColumnButtonProps = {
   onSubmit: any;
@@ -25,6 +25,8 @@ type AddColumnButtonProps = {
 
 const AddColumnButton: React.FC<AddColumnButtonProps> = (props) => {
   const { onSubmit } = props;
+
+  const { t } = useTranslation();
 
   const [open, setOpen] = React.useState(false);
 
@@ -47,7 +49,7 @@ const AddColumnButton: React.FC<AddColumnButtonProps> = (props) => {
   return (
     <Box display="block">
       <IconButton icon="add" color="inherit" onClick={handleOpenDialog}>
-        Add Column
+        {t("addColumn")}
       </IconButton>
       <Dialog onClose={handleCloseDialog} open={open}>
         <DialogContent>
@@ -65,6 +67,8 @@ type ClearBoardButtonProps = {
 
 const ClearBoardButton: React.FC<ClearBoardButtonProps> = (props) => {
   const { disabled, onClear } = props;
+
+  const { t } = useTranslation();
 
   const [open, setOpen] = React.useState(false);
 
@@ -97,22 +101,22 @@ const ClearBoardButton: React.FC<ClearBoardButtonProps> = (props) => {
           <Grid container spacing={1}>
             <Grid item xs={12}>
               <Typography gutterBottom variant="h6">
-                Clear Board
+                {t("clearBoard")}
               </Typography>
               <Divider />
             </Grid>
             <Grid item xs={12}>
               <Typography gutterBottom>
-                Do you want to remove all columns and records ?
+                {t("clearBoardConfirmation")}
               </Typography>
             </Grid>
             <Grid item xs={12}>
               <Button variant="outlined" onClick={handleCloseDialog}>
-                Cancel
+                {t("cancel")}
               </Button>
               &nbsp;
               <Button color="primary" variant="contained" onClick={handleClear}>
-                Clear
+                {t("clear")}
               </Button>
             </Grid>
           </Grid>
