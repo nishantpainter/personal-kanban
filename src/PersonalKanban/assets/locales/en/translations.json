@@ -4,10 +4,19 @@
   "cancel": "Cancel",
   "submit": "Submit",
   "delete": "Delete",
-  "addColumn": "Add Column",
   "wipLimitEnabled": "WIP Limit Enabled",
   "wipLimit": "WIP Limit",
   "background": "Background",
+  "titleRequired": "Title is required",
+  "addColumn": "Add Column",
+  "editColumn": "Edit Column",
+  "deleteColumn": "Delete Column",
+  "deleteColumnConfirmation": "Do you want to delete column ?",
   "addRecord": "Add Record",
-  "titleRequired": "Title is required"
+  "editRecord": "Edit Record",
+  "deleteRecord": "Delete Record",
+  "deleteAllRecord": "Delete All Records",
+  "deleteRecordConfirmation": "Do you want to delete record ?",
+  "deleteAllRecordConfirmation": "Do you want to delete all records ?",
+  "noRecord":"No records available."
 }

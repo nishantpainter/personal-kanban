@@ -139,6 +139,8 @@ export const ColumnCardList: React.FC<ColumnCardListProps> = (props) => {
   } = props;
   const { records = [] } = column;
 
+  const { t } = useTranslation();
+
   const classes = useColumnCardListStyles();
 
   return (
@@ -155,7 +157,7 @@ export const ColumnCardList: React.FC<ColumnCardListProps> = (props) => {
           />
         ))
       ) : (
-        <Typography>No records available.</Typography>
+        <Typography>{t("noRecord")}</Typography>
       )}
     </div>
   );
@@ -303,7 +305,7 @@ const Column: React.FC<ColumnProps> = (props) => {
   }, []);
 
   const handleOpenDeleteDialog = React.useCallback(() => {
-    const content = <Typography>Do you want to delete column ?</Typography>;
+    const content = <Typography>{t("deleteColumnConfirmation")}</Typography>;
     const actions = (
       <>
         <Button onClick={handleCloseDialog}>{t("cancel")}</Button>&nbsp;
@@ -320,14 +322,14 @@ const Column: React.FC<ColumnProps> = (props) => {
       </>
     );
 
-    handleOpenDialog({ content, actions, title: "Delete Column" });
-  }, [handleOpenDialog, handleDelete, handleCloseDialog, t]);
+    handleOpenDialog({ content, actions, title: t("deleteColumn") });
+  }, [t, handleOpenDialog, handleDelete, handleCloseDialog]);
 
   const handleOpenEditDialog = React.useCallback(() => {
     const content = (
       <ColumnForm
         column={column}
-        formTitle="Edit Column"
+        formTitle={t("editColumn")}
         onSubmit={(column: any) => {
           handleCloseDialog();
           handleEdit(column);
@@ -337,7 +339,7 @@ const Column: React.FC<ColumnProps> = (props) => {
     );
 
     handleOpenDialog({ content });
-  }, [column, handleOpenDialog, handleCloseDialog, handleEdit]);
+  }, [column, t, handleOpenDialog, handleCloseDialog, handleEdit]);
 
   const handleOpenAddRecordDialog = React.useCallback(() => {
     const content = (
@@ -373,10 +375,10 @@ const Column: React.FC<ColumnProps> = (props) => {
 
   const handleOpenDeleteRecordDialog = React.useCallback(
     (record: Record) => {
-      const content = <Typography>Do you want to delete record ?</Typography>;
+      const content = <Typography>{t("deleteRecordConfirmation")}</Typography>;
       const actions = (
         <>
-          <Button onClick={handleCloseDialog}>Cancel</Button>&nbsp;
+          <Button onClick={handleCloseDialog}>{t("cancel")}</Button>&nbsp;
           <Button
             variant="contained"
             color="primary"
@@ -385,24 +387,24 @@ const Column: React.FC<ColumnProps> = (props) => {
               handleRecordDelete(record);
             }}
           >
-            Delete
+            {t("delete")}
           </Button>
         </>
       );
 
-      handleOpenDialog({ content, actions, title: "Delete Record" });
+      handleOpenDialog({ content, actions, title: t("deleteRecord") });
     },
-    [handleOpenDialog, handleCloseDialog, handleRecordDelete]
+    [t, handleOpenDialog, handleCloseDialog, handleRecordDelete]
   );
 
   const handleOpenDeleteAllRecordDialog = React.useCallback(
     (record: Record) => {
       const content = (
-        <Typography>Do you want to delete all records ?</Typography>
+        <Typography>{t("deleteAllRecordConfirmation")}</Typography>
       );
       const actions = (
         <>
-          <Button onClick={handleCloseDialog}>Cancel</Button>&nbsp;
+          <Button onClick={handleCloseDialog}>{t("cancel")}</Button>&nbsp;
           <Button
             variant="contained"
             color="primary"
@@ -411,14 +413,14 @@ const Column: React.FC<ColumnProps> = (props) => {
               handleAllRecordDelete();
             }}
           >
-            Delete
+            {t("delete")}
           </Button>
         </>
       );
 
-      handleOpenDialog({ content, actions, title: "Delete All Records" });
+      handleOpenDialog({ content, actions, title: t("deleteAllRecord") });
     },
-    [handleOpenDialog, handleCloseDialog, handleAllRecordDelete]
+    [t, handleOpenDialog, handleCloseDialog, handleAllRecordDelete]
   );
 
   return (
