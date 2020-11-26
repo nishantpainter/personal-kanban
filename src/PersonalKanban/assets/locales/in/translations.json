@@ -1,3 +1,27 @@
 {
-  "addColumn": "स्तंभ जोड़ें"
+  "addColumn": "कॉलम जोड़ें",
+  "addRecord": "रिकॉर्ड जोड़ें",
+  "background": "पीछे का रंग",
+  "clear": "मिटाएँ",
+  "clearBoard": "मिटाएँ बोर्ड",
+  "clearBoardConfirmation": "क्या आप सभी कॉलम और रिकॉर्ड हटाना चाहते हैं?",
+  "cancel": "रद्द करें",
+  "description": "विवरण",
+  "delete": "हटाएं",
+  "deleteColumn": "कॉलम हटाएं",
+  "deleteColumnConfirmation": "क्या आप कॉलम हटाना चाहते हैं?",
+  "deleteRecord": "रिकॉर्ड हटाएं",
+  "deleteAllRecord": "सभी रिकॉर्ड हटाएं",
+  "deleteRecordConfirmation": "क्या आप रिकॉर्ड हटाना चाहते हैं?",
+  "deleteAllRecordConfirmation": "क्या आप सभी रिकॉर्ड हटाना चाहते हैं?",
+  "editColumn": "कॉलम संपादित करें",
+  "editRecord": "रिकॉर्ड संपादित करें",
+  "limitRequired": "सक्षम होने पर सीमा आवश्यक है।",
+  "noRecord": "कोई रिकॉर्ड उपलब्ध नहीं है।",
+  "noColumn": "कोई कॉलम उपलब्ध नहीं है।",
+  "submit": "दर्ज करें",
+  "title": "शीर्षक",
+  "titleRequired": "शीर्षक आवश्यक है",
+  "wipLimitEnabled": "WIP सीमा सक्षम",
+  "wipLimit": "WIP की सीमा"
 }
