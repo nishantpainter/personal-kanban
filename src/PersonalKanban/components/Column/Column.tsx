@@ -88,12 +88,14 @@ type ColumnActionProps = {
   onDeleteAllRecord?: any;
   showAddRecordAction?: boolean;
   showAllRecordDeleteAction?: boolean;
+  disableAllRecordDeleteAction?: boolean;
 };
 
 export const ColumnAction: React.FC<ColumnActionProps> = (props) => {
   const {
     showAddRecordAction,
     showAllRecordDeleteAction,
+    disableAllRecordDeleteAction,
     onAddRecord,
     onDeleteAllRecord,
   } = props;
@@ -102,7 +104,11 @@ export const ColumnAction: React.FC<ColumnActionProps> = (props) => {
     <>
       {showAddRecordAction && <IconButton icon="add" onClick={onAddRecord} />}
       {showAllRecordDeleteAction && (
-        <IconButton icon="delete" onClick={onDeleteAllRecord} />
+        <IconButton
+          icon="delete"
+          disabled={disableAllRecordDeleteAction}
+          onClick={onDeleteAllRecord}
+        />
       )}
 
       <Divider className={classes.divider} />
@@ -441,6 +447,7 @@ const Column: React.FC<ColumnProps> = (props) => {
       <ColumnActionComponent
         showAddRecordAction={showAddRecordAction}
         showDeleteAllRecordAction={showDeleteAllRecordAction}
+        disableAllRecordDeleteAction={!column?.records?.length}
         onAddRecord={handleOpenAddRecordDialog}
         onDeleteAllRecord={handleOpenDeleteAllRecordDialog}
       />
