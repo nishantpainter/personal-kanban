@@ -1,3 +1,27 @@
 {
-  "addColumn": "Ajouter une colonne"
+  "addColumn": "Ajouter une colonne",
+  "addRecord": "Ajouter un enregistrement",
+  "background": "Couleur de l'arrière plan",
+  "clear": "Clair",
+  "clearBoard": "Conseil clair",
+  "clearBoardConfirmation": "Voulez-vous supprimer toutes les colonnes et tous les enregistrements?",
+  "cancel": "Annuler",
+  "description": "La description",
+  "delete": "Supprimer",
+  "deleteColumn": "Supprimer la colonne",
+  "deleteColumnConfirmation": "Voulez-vous supprimer la colonne?",
+  "deleteRecord": "Supprimer l'enregistrement",
+  "deleteAllRecord": "Supprimer tous les enregistrements",
+  "deleteRecordConfirmation": "Voulez-vous supprimer l'enregistrement?",
+  "deleteAllRecordConfirmation": "Voulez-vous supprimer tous les enregistrements?",
+  "editColumn": "Modifier la colonne",
+  "editRecord": "Modifier l'enregistrement",
+  "limitRequired": "La limite est requise lorsqu'elle est activée.",
+  "noRecord": "Aucun enregistrement disponible.",
+  "noColumn": "Aucune colonne disponible.",
+  "submit": "Soumettre",
+  "title": "Titre",
+  "titleRequired": "Le titre est requis",
+  "wipLimitEnabled": "Limite WIP activée",
+  "wipLimit": "Limite WIP"
 }
