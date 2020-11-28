@@ -89,6 +89,7 @@ type ColumnActionProps = {
   showAddRecordAction?: boolean;
   showAllRecordDeleteAction?: boolean;
   disableAllRecordDeleteAction?: boolean;
+  disableAddRecordAction?: boolean;
 };
 
 export const ColumnAction: React.FC<ColumnActionProps> = (props) => {
@@ -96,13 +97,20 @@ export const ColumnAction: React.FC<ColumnActionProps> = (props) => {
     showAddRecordAction,
     showAllRecordDeleteAction,
     disableAllRecordDeleteAction,
+    disableAddRecordAction,
     onAddRecord,
     onDeleteAllRecord,
   } = props;
   const classes = useColumnActionStyles();
   return (
     <>
-      {showAddRecordAction && <IconButton icon="add" onClick={onAddRecord} />}
+      {showAddRecordAction && (
+        <IconButton
+          icon="add"
+          disabled={disableAddRecordAction}
+          onClick={onAddRecord}
+        />
+      )}
       {showAllRecordDeleteAction && (
         <IconButton
           icon="delete"
@@ -242,7 +250,19 @@ const Column: React.FC<ColumnProps> = (props) => {
     ...rest
   } = props;
 
-  const { title, description, caption, color } = column;
+  const {
+    title,
+    description,
+    caption,
+    color,
+    records = [],
+    wipEnabled,
+    wipLimit = Infinity,
+  } = column;
+
+  const disableAddRecordAction = wipEnabled && wipLimit <= records.length;
+
+  const disableAllRecordDeleteAction = !records.length;
 
   const columnColor = color as keyof typeof ColumnColor;
 
@@ -447,7 +467,8 @@ const Column: React.FC<ColumnProps> = (props) => {
       <ColumnActionComponent
         showAddRecordAction={showAddRecordAction}
         showDeleteAllRecordAction={showDeleteAllRecordAction}
-        disableAllRecordDeleteAction={!column?.records?.length}
+        disableAddRecordAction={disableAddRecordAction}
+        disableAllRecordDeleteAction={disableAllRecordDeleteAction}
         onAddRecord={handleOpenAddRecordDialog}
         onDeleteAllRecord={handleOpenDeleteAllRecordDialog}
       />
