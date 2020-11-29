@@ -206,15 +206,21 @@ const Toolbar: React.FC<ToolbarProps> = (props) => {
   return (
     <AppBar color="default" className={classes.paper}>
       <MuiToolbar>
-        <AddColumnButton onSubmit={onNewColumn} />
-        &nbsp;
-        <ClearBoardButton
-          disabled={clearButtonDisabled}
-          onClear={onClearBoard}
-        />
-        &nbsp;
-        <DarkThemeButton /> &nbsp;
-        <LanguageButton />
+        <Typography variant="h6">
+          <b>Personal Kanban</b>
+        </Typography>
+        <Box display="flex" flexGrow={1} />
+        <Box display="flex">
+          <AddColumnButton onSubmit={onNewColumn} />
+          &nbsp;
+          <ClearBoardButton
+            disabled={clearButtonDisabled}
+            onClear={onClearBoard}
+          />
+          &nbsp;
+          <DarkThemeButton /> &nbsp;
+          <LanguageButton />
+        </Box>
       </MuiToolbar>
     </AppBar>
   );
