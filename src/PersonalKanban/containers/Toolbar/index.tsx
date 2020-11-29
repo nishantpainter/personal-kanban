@@ -174,6 +174,18 @@ const LanguageButton: React.FC<LanguageButtonProps> = (props) => {
   );
 };
 
+const DarkThemeButton: React.FC<{}> = () => {
+  const { darkTheme, handleToggleDarkTheme } = useTheme();
+
+  return (
+    <IconButton
+      color="inherit"
+      icon={darkTheme ? "invertColors" : "invertColorsOff"}
+      onClick={handleToggleDarkTheme}
+    />
+  );
+};
+
 const useToolbarStyles = makeStyles(() => ({
   paper: {
     padding: 0,
@@ -189,8 +201,6 @@ type ToolbarProps = {
 const Toolbar: React.FC<ToolbarProps> = (props) => {
   const { clearButtonDisabled, onNewColumn, onClearBoard } = props;
 
-  const { darkTheme, handleToggleDarkTheme } = useTheme();
-
   const classes = useToolbarStyles();
 
   return (
@@ -203,12 +213,7 @@ const Toolbar: React.FC<ToolbarProps> = (props) => {
           onClear={onClearBoard}
         />
         &nbsp;
-        <IconButton
-          color="inherit"
-          icon={darkTheme ? "invertColors" : "invertColorsOff"}
-          onClick={handleToggleDarkTheme}
-        />
-        &nbsp;
+        <DarkThemeButton /> &nbsp;
         <LanguageButton />
       </MuiToolbar>
     </AppBar>
