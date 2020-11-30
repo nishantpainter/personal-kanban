@@ -187,6 +187,10 @@ const DarkThemeButton: React.FC<{}> = () => {
   );
 };
 
+const GitHubButton: React.FC<{}> = () => {
+  return <IconButton color="inherit" icon="gitHub" />;
+};
+
 const useToolbarStyles = makeStyles(() => ({
   paper: {
     padding: 0,
@@ -222,7 +226,8 @@ const Toolbar: React.FC<ToolbarProps> = (props) => {
           />
           &nbsp;
           <DarkThemeButton /> &nbsp;
-          <LanguageButton />
+          <LanguageButton /> &nbsp;
+          <GitHubButton />
         </Box>
       </MuiToolbar>
     </AppBar>
