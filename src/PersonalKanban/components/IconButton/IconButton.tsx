@@ -12,6 +12,7 @@ import InvertColorsIcon from "@material-ui/icons/InvertColors";
 import InvertColorsOffIcon from "@material-ui/icons/InvertColorsOff";
 import LanguageIcon from "@material-ui/icons/Translate";
 import GitHubIcon from "@material-ui/icons/GitHub";
+import DeveloperBoardIcon from "@material-ui/icons/DeveloperBoard";
 
 const icons = {
   edit: EditIcon,
@@ -21,18 +22,22 @@ const icons = {
   deleteForever: DeleteForeverIcon,
   invertColors: InvertColorsIcon,
   invertColorsOff: InvertColorsOffIcon,
-  language: LanguageIcon,
   gitHub: GitHubIcon,
+  language: LanguageIcon,
+  personalKanban: DeveloperBoardIcon,
 };
 
-type IconButtonProps = MuiIconButtonProps & { icon: keyof typeof icons };
+type IconButtonProps = MuiIconButtonProps & {
+  icon: keyof typeof icons;
+  iconProps?: any;
+};
 
 const IconButton: React.FC<IconButtonProps> = (props) => {
-  const { icon, ...rest } = props;
+  const { icon, iconProps = {}, ...rest } = props;
   const Icon = icons[icon];
   return Icon ? (
     <MuiIconButton size="small" {...rest}>
-      <Icon fontSize="small" />
+      <Icon fontSize="small" {...iconProps} />
     </MuiIconButton>
   ) : null;
 };
