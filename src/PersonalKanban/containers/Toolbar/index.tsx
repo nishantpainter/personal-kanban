@@ -213,9 +213,21 @@ const Toolbar: React.FC<ToolbarProps> = (props) => {
   return (
     <AppBar color="default" elevation={6} className={classes.paper}>
       <MuiToolbar>
-        <Typography variant="h6">
-          <b>{t("personalKanban")}</b>
-        </Typography>
+        <Box display="flex" alignItems="center">
+          <IconButton
+            icon="personalKanban"
+            color="inherit"
+            size="small"
+            iconProps={{ fontSize: "large" }}
+            disableRipple
+            disableTouchRipple
+            disableFocusRipple
+          />
+          &nbsp;
+          <Typography variant="h6">
+            <b>{t("personalKanban")}</b>
+          </Typography>
+        </Box>
         <Box display="flex" flexGrow={1} />
         <Box display="flex">
           <AddColumnButton onSubmit={onNewColumn} />
