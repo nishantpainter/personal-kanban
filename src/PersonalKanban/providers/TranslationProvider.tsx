@@ -10,6 +10,7 @@ import es from "PersonalKanban/assets/locales/es/translations.json";
 import fr from "PersonalKanban/assets/locales/fr/translations.json";
 import ind from "PersonalKanban/assets/locales/in/translations.json";
 import ru from "PersonalKanban/assets/locales/ru/translations.json";
+import jp from "PersonalKanban/assets/locales/jp/translations.json";
 
 export { useTranslation } from "react-i18next";
 
@@ -27,6 +28,7 @@ i18n
       es: { translation: { ...es } },
       fr: { translation: { ...fr } },
       in: { translation: { ...ind } },
+      jp: { translation: { ...jp } },
       ru: { translation: { ...ru } },
     },
     interpolation: {
