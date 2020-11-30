@@ -10,7 +10,7 @@ import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
 import DeleteSweepIcon from "@material-ui/icons/DeleteSweep";
 import InvertColorsIcon from "@material-ui/icons/InvertColors";
 import InvertColorsOffIcon from "@material-ui/icons/InvertColorsOff";
-import LanguageIcon from "@material-ui/icons/Language";
+import LanguageIcon from "@material-ui/icons/Translate";
 import GitHubIcon from "@material-ui/icons/GitHub";
 
 const icons = {
