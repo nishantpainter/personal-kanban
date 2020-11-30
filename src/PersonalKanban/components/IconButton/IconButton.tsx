@@ -11,6 +11,7 @@ import DeleteSweepIcon from "@material-ui/icons/DeleteSweep";
 import InvertColorsIcon from "@material-ui/icons/InvertColors";
 import InvertColorsOffIcon from "@material-ui/icons/InvertColorsOff";
 import LanguageIcon from "@material-ui/icons/Language";
+import GitHubIcon from "@material-ui/icons/GitHub";
 
 const icons = {
   edit: EditIcon,
@@ -21,6 +22,7 @@ const icons = {
   invertColors: InvertColorsIcon,
   invertColorsOff: InvertColorsOffIcon,
   language: LanguageIcon,
+  gitHub: GitHubIcon,
 };
 
 type IconButtonProps = MuiIconButtonProps & { icon: keyof typeof icons };
