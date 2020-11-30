@@ -19,6 +19,7 @@
   "limitRequired": "Limit is required when enabled.",
   "noRecord": "No records available.",
   "noColumn": "No columns available.",
+  "personalKanban": "Personal Kanban",
   "submit": "Submit",
   "title": "Title",
   "titleRequired": "Title is required",

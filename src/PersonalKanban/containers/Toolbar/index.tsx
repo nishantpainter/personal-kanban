@@ -201,13 +201,15 @@ type ToolbarProps = {
 const Toolbar: React.FC<ToolbarProps> = (props) => {
   const { clearButtonDisabled, onNewColumn, onClearBoard } = props;
 
+  const { t } = useTranslation();
+
   const classes = useToolbarStyles();
 
   return (
-    <AppBar color="default" elevation={6} className={classes.paper} >
+    <AppBar color="default" elevation={6} className={classes.paper}>
       <MuiToolbar>
         <Typography variant="h6">
-          <b>Personal Kanban</b>
+          <b>{t("personalKanban")}</b>
         </Typography>
         <Box display="flex" flexGrow={1} />
         <Box display="flex">
