@@ -204,7 +204,7 @@ const Toolbar: React.FC<ToolbarProps> = (props) => {
   const classes = useToolbarStyles();
 
   return (
-    <AppBar color="default" className={classes.paper}>
+    <AppBar color="default" elevation={6} className={classes.paper} >
       <MuiToolbar>
         <Typography variant="h6">
           <b>Personal Kanban</b>
