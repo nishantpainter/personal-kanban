@@ -60,6 +60,13 @@ const ThemeProvider: React.FC<ThemeProviderProps> = (props) => {
         },
       },
     },
+    typography: {
+      fontFamily: "'Nunito', sans-serif",
+      fontWeightLight: 300,
+      fontWeightMedium: 400,
+      fontWeightRegular: 400,
+      fontWeightBold: 700,
+    },
     props: {
       MuiDivider: {
         light: true,
