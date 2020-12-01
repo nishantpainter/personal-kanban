@@ -11,7 +11,8 @@ import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
-import { makeStyles } from "@material-ui/core/styles";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
+import { makeStyles, useTheme as useMuiTheme } from "@material-ui/core/styles";
 
 import { useTranslation } from "PersonalKanban/providers/TranslationProvider";
 import ColumnForm from "PersonalKanban/components/ColumnForm";
@@ -210,6 +211,10 @@ const Toolbar: React.FC<ToolbarProps> = (props) => {
 
   const classes = useToolbarStyles();
 
+  const muiTheme = useMuiTheme();
+
+  const isMobile = useMediaQuery(muiTheme.breakpoints.down("sm"));
+
   return (
     <AppBar color="default" elevation={6} className={classes.paper}>
       <MuiToolbar>
@@ -224,7 +229,7 @@ const Toolbar: React.FC<ToolbarProps> = (props) => {
             disableFocusRipple
           />
           &nbsp;
-          <Typography variant="h6">
+          <Typography variant={isMobile ? "body1" : "h6"}>
             <b>{t("personalKanban")}</b>
           </Typography>
         </Box>
