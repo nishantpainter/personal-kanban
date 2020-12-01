@@ -49,7 +49,7 @@ const AddColumnButton: React.FC<AddColumnButtonProps> = (props) => {
 
   return (
     <Box display="block">
-      <IconButton icon="add" color="inherit" onClick={handleOpenDialog}>
+      <IconButton icon="add" color="primary" onClick={handleOpenDialog}>
         {t("addColumn")}
       </IconButton>
       <Dialog onClose={handleCloseDialog} open={open}>
@@ -93,7 +93,7 @@ const ClearBoardButton: React.FC<ClearBoardButtonProps> = (props) => {
     <Box display="flex">
       <IconButton
         icon="delete"
-        color="inherit"
+        color="primary"
         disabled={disabled}
         onClick={handleOpenDialog}
       ></IconButton>
@@ -221,7 +221,7 @@ const Toolbar: React.FC<ToolbarProps> = (props) => {
         <Box display="flex" alignItems="center">
           <IconButton
             icon="personalKanban"
-            color="inherit"
+            color="primary"
             size="small"
             iconProps={{ fontSize: "large" }}
             disableRipple
