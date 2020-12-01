@@ -13,6 +13,9 @@ import {
   yellow,
   orange,
   red,
+  brown,
+  blueGrey,
+  lightGreen,
 } from "@material-ui/core/colors";
 
 import StorageService from "PersonalKanban/services/StorageService";
@@ -50,6 +53,8 @@ const ThemeProvider: React.FC<ThemeProviderProps> = (props) => {
 
   const theme: Theme = createMuiTheme({
     palette: {
+      primary: darkTheme ? lightGreen : brown,
+      secondary: blueGrey,
       type: darkTheme ? "dark" : "light",
     },
     overrides: {
