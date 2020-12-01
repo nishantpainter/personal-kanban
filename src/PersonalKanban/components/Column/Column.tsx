@@ -404,7 +404,10 @@ const Column: React.FC<ColumnProps> = (props) => {
       const content = <Typography>{t("deleteRecordConfirmation")}</Typography>;
       const actions = (
         <>
-          <Button onClick={handleCloseDialog}>{t("cancel")}</Button>&nbsp;
+          <Button variant="outlined" onClick={handleCloseDialog}>
+            {t("cancel")}
+          </Button>
+          &nbsp;
           <Button
             variant="contained"
             color="primary"
@@ -430,7 +433,10 @@ const Column: React.FC<ColumnProps> = (props) => {
       );
       const actions = (
         <>
-          <Button onClick={handleCloseDialog}>{t("cancel")}</Button>&nbsp;
+          <Button variant="outlined" onClick={handleCloseDialog}>
+            {t("cancel")}
+          </Button>
+          &nbsp;
           <Button
             variant="contained"
             color="primary"
