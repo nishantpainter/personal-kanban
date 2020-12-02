@@ -19,6 +19,7 @@
   "limitRequired": "La limite est requise lorsqu'elle est activée.",
   "noRecord": "Aucun enregistrement disponible.",
   "noColumn": "Aucune colonne disponible.",
+  "personalKanban":"Kanban Personnel",
   "submit": "Soumettre",
   "title": "Titre",
   "titleRequired": "Le titre est requis",
