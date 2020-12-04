@@ -1,4 +1,5 @@
 import React from "react";
+import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -70,7 +71,9 @@ const Board: React.FC<BoardProps> = (props) => {
           />
         ))
       ) : (
-        <Typography>{t("noColumn")}</Typography>
+        <Box display="flex" justifyContent="center">
+          <Typography>{t("noColumn")}</Typography>
+        </Box>
       )}
       {placeholder}
     </div>
