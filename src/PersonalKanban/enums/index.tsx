@@ -52,7 +52,7 @@ export const DarkColumnColor = {
   Indigo: indigo[DARK_COLUMN_SHADE],
   Blue: blue[DARK_COLUMN_SHADE],
   Green: green[DARK_COLUMN_SHADE],
-  Yellow: yellow[DARK_COLUMN_SHADE],
+  Yellow: yellow[700],
   Orange: orange[DARK_COLUMN_SHADE],
   Red: red[DARK_COLUMN_SHADE],
   Default: "",
