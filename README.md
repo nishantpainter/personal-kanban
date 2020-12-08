@@ -2,7 +2,7 @@
 
 [English](https://github.com/nishantpainter/personal-kanban/blob/main/README.md) - [Français](https://github.com/nishantpainter/personal-kanban/blob/main/README_FR.md) - [Español](https://github.com/nishantpainter/personal-kanban/blob/main/README_ES.md) - [Pусский](https://github.com/nishantpainter/personal-kanban/blob/main/README_RU.md) - [Deutsche](https://github.com/nishantpainter/personal-kanban/blob/main/README_DE.md) - [हिंदी](https://github.com/nishantpainter/personal-kanban/blob/main/README_IN.md) - [中文](https://github.com/nishantpainter/personal-kanban/blob/main/README_CN.md) - [日本人](https://github.com/nishantpainter/personal-kanban/blob/main/README_JP.md)
 
-Personal Kanban is an offline capable application or tool that implements kanban to manage work at personal level. Work items can be represented as cards and columns to depict each stage of your work process. Columns can be as simple as "todo", "in-progess" and "done", or it can be complex to suite your flow.
+Personal Kanban is an offline capable application or tool that implements kanban to manage work at personal level. Work items can be represented as records and columns to depict each stage of your work process. Columns can be as simple as "todo", "in-progess" and "done", or it can be complex to suite your flow.
 
 It's a tool to visualize and optimize your work flow. Physical board are popular among few, while virtual board like Personal Kanban plays a critical role in agile software development considering their accessibility, simplicity and elegant display. Regardless of whether a board is physical or virtual, it must depict work visually along with clearly identifying the blockage and other dependencies. Each of this feature are offered seamlessly by Personal Kanban.
 
@@ -15,11 +15,12 @@ Plan your work with flexibility, identify and resolve bottlenecks and overview y
   - **[Add Column](https://github.com/nishantpainter/personal-kanban#add-column)**
   - **[Edit Column](https://github.com/nishantpainter/personal-kanban#edit-column)**
   - **[Delete Column](https://github.com/nishantpainter/personal-kanban#delete-column)**
-  - **[Move Column](https://github.com/nishantpainter/personal-kanban#move-card)**
-  - **[Add Card](https://github.com/nishantpainter/personal-kanban#add-card)**
-  - **[Edit Card](https://github.com/nishantpainter/personal-kanban#edit-card)**
-  - **[Delete Card](https://github.com/nishantpainter/personal-kanban#delete-card)**
-  - **[Move Card](https://github.com/nishantpainter/personal-kanban#move-card)**
+  - **[Move Column](https://github.com/nishantpainter/personal-kanban#move-record)**
+  - **[Add Record](https://github.com/nishantpainter/personal-kanban#add-record)**
+  - **[Edit Record](https://github.com/nishantpainter/personal-kanban#edit-record)**
+  - **[Delete Record](https://github.com/nishantpainter/personal-kanban#delete-record)**
+  - **[Move Record](https://github.com/nishantpainter/personal-kanban#move-record)**
+  - **[Delete All Records](https://github.com/nishantpainter/personal-kanban#delete-all-records)**
   - **[Clear Board](https://github.com/nishantpainter/personal-kanban#clear-board)**
   - **[Change Language](https://github.com/nishantpainter/personal-kanban#change-language)**
   - **[Toggle Dark Mode](https://github.com/nishantpainter/personal-kanban#toggle-dark-mode)**
@@ -32,7 +33,7 @@ Plan your work with flexibility, identify and resolve bottlenecks and overview y
 
 ## What is Kanban Board
 
-It is an agile project management tool that helps you visualize your work, limit your work-in-progress(wip) and to craft & optimize your work flow to get the maximum output. To achieve this, it makes use of columns and cards. Personal kanban offers visual clue, columns, wip limits, start point and end point to set you up for success.
+It is an agile project management tool that helps you visualize your work, limit your work-in-progress(wip) and to craft & optimize your work flow to get the maximum output. To achieve this, it makes use of columns and records. Personal kanban offers visual clue, columns, wip limits, start point and end point to set you up for success.
 
 ## How to Use
 
@@ -54,29 +55,29 @@ Delete the column by click on delete icon button besides edit icon button. This 
 
 Hold and drag the column from it's body or column header to move it across other columns on the board.
 
-### Add Card
+### Add Record
 
-Add a new card by click on add icon button beneath column title / description. Enter the details of the card title ( mandatory ), description and background color. On submitting a new card will be added to column with created timestamp as caption.
+Add a new record by click on add icon button beneath column title / description. Enter the details of the record title ( mandatory ), description and background color. On submitting a new record will be added to column with created timestamp as caption.
 
-### Edit Card
+### Edit Record
 
-Edit the card by click on edit icon button besides card title. Update the form and click submit for commiting change or cancel to close the dialog.
+Edit the record by click on edit icon button besides record title. Update the form and click submit for commiting change or cancel to close the dialog.
 
-### Delete Card
+### Delete Record
 
-Delete the card by click on delete icon button besides card edit icon button. This will delete the card from the column.
+Delete the record by click on delete icon button besides record edit icon button. This will delete the record from the column.
 
-### Delete All Card
+### Delete All Records
 
-Delete all the card belonging to the column by clicking on the delete icon button besides add card icon button. It will remove entire card list from column.
+Delete all the record belonging to the column by clicking on the delete icon button besides add record icon button. It will remove entire record list from column.
 
-### Move Card
+### Move Record
 
-Hold and drag the card from it's body or card header to move it across other columns card list on the board.
+Hold and drag the record from it's body or record header to move it across other columns record list on the board.
 
 ### Clear Board
 
-Click on the delete icon button from the toolbar to clear entire board. It will delete all the columns and cards from the board.
+Click on the delete icon button from the toolbar to clear entire board. It will delete all the columns and records from the board.
 
 ### Change Language
 
@@ -101,6 +102,7 @@ Personal kanban offers local support for language including :
 - Deutsche
 - हिंदी
 - 中文
+- 日本人
 
 ## Offline Usage
 
@@ -115,7 +117,7 @@ The application is scaffolded using create-react-app ([CRA](https://create-react
 The application makes use of local storage for persisting your work hour lines and does not store any timesheet data on any sort of server. The application uses Google analytics to get an overview of the application usage.
 
 ## Other References
-
-- [What is kanban](https://www.atlassian.com/agile/kanban)
+- [What is Agile Software Development](https://en.wikipedia.org/wiki/Agile_software_development)
+- [What is Kanban](https://www.atlassian.com/agile/kanban)
 - [What is Kanban Board](https://en.wikipedia.org/wiki/Kanban_board#:~:text=A%20Kanban%20board%20is%20one,each%20stage%20of%20the%20process.)
 - [Kanban vs Scrum](https://www.atlassian.com/agile/kanban/kanban-vs-scrum)
