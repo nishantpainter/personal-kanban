@@ -1,3 +1,7 @@
+<p align="center">
+  <a href="https://nishantpainter.github.io/personal-kanban/" rel="noopener" target="_blank"><img width="756" src="https://nishantpainter.github.io/personal-kanban/readme_logo.png" alt="Timesheet logo"></a></p>
+</p>
+
 # Personal Kanban
 
 [English](https://github.com/nishantpainter/personal-kanban/blob/main/README.md) - [Français](https://github.com/nishantpainter/personal-kanban/blob/main/README_FR.md) - [Español](https://github.com/nishantpainter/personal-kanban/blob/main/README_ES.md) - [Pусский](https://github.com/nishantpainter/personal-kanban/blob/main/README_RU.md) - [Deutsche](https://github.com/nishantpainter/personal-kanban/blob/main/README_DE.md) - [हिंदी](https://github.com/nishantpainter/personal-kanban/blob/main/README_IN.md) - [中文](https://github.com/nishantpainter/personal-kanban/blob/main/README_CN.md) - [日本人](https://github.com/nishantpainter/personal-kanban/blob/main/README_JP.md)
@@ -117,6 +121,7 @@ The application is scaffolded using create-react-app ([CRA](https://create-react
 The application makes use of local storage for persisting your work hour lines and does not store any timesheet data on any sort of server. The application uses Google analytics to get an overview of the application usage.
 
 ## Other References
+
 - [What is Agile Software Development](https://en.wikipedia.org/wiki/Agile_software_development)
 - [What is Kanban](https://www.atlassian.com/agile/kanban)
 - [What is Kanban Board](https://en.wikipedia.org/wiki/Kanban_board#:~:text=A%20Kanban%20board%20is%20one,each%20stage%20of%20the%20process.)
