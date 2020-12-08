@@ -2,9 +2,9 @@
 
 [English](https://github.com/nishantpainter/personal-kanban/blob/main/README.md) - [Français](https://github.com/nishantpainter/personal-kanban/blob/main/README_FR.md) - [Español](https://github.com/nishantpainter/personal-kanban/blob/main/README_ES.md) - [Pусский](https://github.com/nishantpainter/personal-kanban/blob/main/README_RU.md) - [Deutsche](https://github.com/nishantpainter/personal-kanban/blob/main/README_DE.md) - [हिंदी](https://github.com/nishantpainter/personal-kanban/blob/main/README_IN.md) - [中文](https://github.com/nishantpainter/personal-kanban/blob/main/README_CN.md) - [日本人](https://github.com/nishantpainter/personal-kanban/blob/main/README_JP.md)
 
-Personal Kanban is an offline capable application or tool that implements kanban to manage work at personal level. Work items can be represented as records and columns to depict each stage of your work process. Columns can be as simple as "todo", "in-progess" and "done", or it can be complex to suite your flow.
+Personal Kanban is an offline capable application or tool that implements kanban to manage work at personal level. Work items can be represented as records and columns to depict each stage of your work process. Columns can be as simple as "todo", "in-progress" and "done", or it can be complex to suit your flow.
 
-It's a tool to visualize and optimize your work flow. Physical board are popular among few, while virtual board like Personal Kanban plays a critical role in agile software development considering their accessibility, simplicity and elegant display. Regardless of whether a board is physical or virtual, it must depict work visually along with clearly identifying the blockage and other dependencies. Each of this feature are offered seamlessly by Personal Kanban.
+It's a tool to visualize and optimize your workflow. Physical boards are popular among few, while virtual boards like Personal Kanban play a critical role in agile software development considering their accessibility, simplicity and elegant display. Regardless of whether a board is physical or virtual, it must depict work visually along with clearly identifying the blockage and other dependencies. Each of these features are offered seamlessly by Personal Kanban.
 
 Plan your work with flexibility, identify and resolve bottlenecks and overview your complete work visually.
 
