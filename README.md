@@ -1,8 +1,18 @@
 <p align="center">
-  <a href="https://nishantpainter.github.io/personal-kanban/" rel="noopener" target="_blank"><img width="756" src="https://nishantpainter.github.io/personal-kanban/readme_logo.png" alt="Timesheet logo"></a></p>
+  <a href="https://nishantpainter.github.io/personal-kanban/" rel="noopener" target="_blank"><img width="756" src="https://nishantpainter.github.io/personal-kanban/readme_logo.png" alt="Personal Kanban logo"></a></p>
 </p>
 
 #
+
+<p align="center">
+  A virtual offline Kanban Board for your personal projects and work flows.
+</p>
+
+<p align="center">
+  <img width="650" src="https://nishantpainter.github.io/personal-kanban/description.gif" alt="Description GIF" style="border-radius:16px"></p>
+</p>
+
+[![Current Version](https://img.shields.io/badge/version-1.0.0-green.svg)](https://nishantpainter.github.io/personal-kanban) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-orange.svg?style=flat-square)](http://makeapullrequest.com) [![License](https://img.shields.io/github/license/day8/re-frame.svg)](https://github.com/nishantpainter/personal-kanban/blob/main/license.txt) [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-blue.svg)](https://github.com/nishantpainter/personal-kanban/commits/main) [![GitHub issues](https://img.shields.io/github/issues/Naereen/StrapDown.js.svg)](https://github.com/nishantpainter/personal-kanban/issues)
 
 [English](https://github.com/nishantpainter/personal-kanban/blob/main/README.md) - [Français](https://github.com/nishantpainter/personal-kanban/blob/main/README_FR.md) - [Español](https://github.com/nishantpainter/personal-kanban/blob/main/README_ES.md) - [Pусский](https://github.com/nishantpainter/personal-kanban/blob/main/README_RU.md) - [Deutsche](https://github.com/nishantpainter/personal-kanban/blob/main/README_DE.md) - [हिंदी](https://github.com/nishantpainter/personal-kanban/blob/main/README_IN.md) - [中文](https://github.com/nishantpainter/personal-kanban/blob/main/README_CN.md) - [日本人](https://github.com/nishantpainter/personal-kanban/blob/main/README_JP.md)
 
@@ -14,7 +24,8 @@ Plan your work with flexibility, identify and resolve bottlenecks and overview y
 
 # Table of Contents
 
-- **[What is Kanban Board](https://github.com/nishantpainter/personal-kanban#what-is-kanban-board)**
+- **[Introduction](https://github.com/nishantpainter/personal-kanban#introduction)**
+- **[Features](https://github.com/nishantpainter/personal-kanban#features)**
 - **[How to Use](https://github.com/nishantpainter/personal-kanban#how-to-use)**
   - **[Add Column](https://github.com/nishantpainter/personal-kanban#add-column)**
   - **[Edit Column](https://github.com/nishantpainter/personal-kanban#edit-column)**
@@ -35,9 +46,24 @@ Plan your work with flexibility, identify and resolve bottlenecks and overview y
 - **[Privacy](https://github.com/nishantpainter/personal-kanban#privacy)**
 - **[Other References](https://github.com/nishantpainter/personal-kanban#other-references)**
 
-## What is Kanban Board
+## Introduction
 
 It is an agile project management tool that helps you visualize your work, limit your work-in-progress(wip) and to craft & optimize your work flow to get the maximum output. To achieve this, it makes use of columns and records. Personal kanban offers visual clue, columns, wip limits, start point and end point to set you up for success.
+
+## Features
+
+A few of the things you can do with Personal Kanban:
+
+- Add, Edit, Delete Columns
+- Move Columns
+- Add, Edit, Delete Records
+- Move Records
+- Restrict WIP limits for Columns
+- Manage Column and Records Background Colors
+- Clear Board
+- Dark Mode
+- Localization Support
+- Offline local storage
 
 ## How to Use
 
@@ -48,7 +74,7 @@ You can access the application by visiting [Website](https://nishantpainter.gith
 Add a new column by click on + icon button from the toolbar. Enter the details of the column, including title ( mandatory ), description, background color and wip limit.
 
 <p align="center">
-  <img width="650" src="https://nishantpainter.github.io/personal-kanban/add_column.gif" alt="Add Column" style="border-radius:16px"></p>
+  <img width="650" src="https://nishantpainter.github.io/personal-kanban/add_column.gif" alt="Add Column GIF" style="border-radius:16px"></p>
 </p>
 
 ### Edit Column
@@ -56,7 +82,7 @@ Add a new column by click on + icon button from the toolbar. Enter the details o
 Edit the column by click on edit icon button besides column title. Update the form and click submit for commiting change or cancel to close the dialog.
 
 <p align="center">
-  <img width="650" src="https://nishantpainter.github.io/personal-kanban/edit_column.gif" alt="Edit Column" style="border-radius:16px"></p>
+  <img width="650" src="https://nishantpainter.github.io/personal-kanban/edit_column.gif" alt="Edit Column GIF" style="border-radius:16px"></p>
 </p>
 
 ### Delete Column
@@ -64,7 +90,7 @@ Edit the column by click on edit icon button besides column title. Update the fo
 Delete the column by click on delete icon button besides edit icon button. This will delete the column along with all the records for the column.
 
 <p align="center">
-  <img width="650" src="https://nishantpainter.github.io/personal-kanban/delete_column.gif" alt="Delete Column" style="border-radius:16px"></p>
+  <img width="650" src="https://nishantpainter.github.io/personal-kanban/delete_column.gif" alt="Delete Column GIF" style="border-radius:16px"></p>
 </p>
 
 ### Move Column
@@ -72,7 +98,7 @@ Delete the column by click on delete icon button besides edit icon button. This 
 Hold and drag the column from it's body or column header to move it across other columns on the board.
 
 <p align="center">
-  <img width="650" src="https://nishantpainter.github.io/personal-kanban/move_column.gif" alt="Move Column" style="border-radius:16px"></p>
+  <img width="650" src="https://nishantpainter.github.io/personal-kanban/move_column.gif" alt="Move Column GIF" style="border-radius:16px"></p>
 </p>
 
 ### Add Record
@@ -80,7 +106,7 @@ Hold and drag the column from it's body or column header to move it across other
 Add a new record by click on add icon button beneath column title / description. Enter the details of the record title ( mandatory ), description and background color. On submitting a new record will be added to column with created timestamp as caption.
 
 <p align="center">
-  <img width="650" src="https://nishantpainter.github.io/personal-kanban/add_record.gif" alt="Add Record" style="border-radius:16px"></p>
+  <img width="650" src="https://nishantpainter.github.io/personal-kanban/add_record.gif" alt="Add Record GIF" style="border-radius:16px"></p>
 </p>
 
 ### Edit Record
@@ -88,7 +114,7 @@ Add a new record by click on add icon button beneath column title / description.
 Edit the record by click on edit icon button besides record title. Update the form and click submit for commiting change or cancel to close the dialog.
 
 <p align="center">
-  <img width="650" src="https://nishantpainter.github.io/personal-kanban/edit_record.gif" alt="Edit Record" style="border-radius:16px"></p>
+  <img width="650" src="https://nishantpainter.github.io/personal-kanban/edit_record.gif" alt="Edit Record GIF" style="border-radius:16px"></p>
 </p>
 
 ### Delete Record
@@ -96,7 +122,7 @@ Edit the record by click on edit icon button besides record title. Update the fo
 Delete the record by click on delete icon button besides record edit icon button. This will delete the record from the column.
 
 <p align="center">
-  <img width="650" src="https://nishantpainter.github.io/personal-kanban/delete_record.gif" alt="Delete Record" style="border-radius:16px"></p>
+  <img width="650" src="https://nishantpainter.github.io/personal-kanban/delete_record.gif" alt="Delete Record GIF" style="border-radius:16px"></p>
 </p>
 
 ### Delete All Records
@@ -104,7 +130,7 @@ Delete the record by click on delete icon button besides record edit icon button
 Delete all the record belonging to the column by clicking on the delete icon button besides add record icon button. It will remove entire record list from column.
 
 <p align="center">
-  <img width="650" src="https://nishantpainter.github.io/personal-kanban/delete_all_record.gif" alt="Delete All Record" style="border-radius:16px"></p>
+  <img width="650" src="https://nishantpainter.github.io/personal-kanban/delete_all_record.gif" alt="Delete All Record GIF" style="border-radius:16px"></p>
 </p>
 
 ### Move Record
@@ -112,7 +138,7 @@ Delete all the record belonging to the column by clicking on the delete icon but
 Hold and drag the record from it's body or record header to move it across other columns record list on the board.
 
 <p align="center">
-  <img width="650" src="https://nishantpainter.github.io/personal-kanban/move_record.gif" alt="Move Record" style="border-radius:16px"></p>
+  <img width="650" src="https://nishantpainter.github.io/personal-kanban/move_record.gif" alt="Move Record GIF" style="border-radius:16px"></p>
 </p>
 
 ### Clear Board
@@ -120,7 +146,7 @@ Hold and drag the record from it's body or record header to move it across other
 Click on the delete icon button from the toolbar to clear entire board. It will delete all the columns and records from the board.
 
 <p align="center">
-  <img width="650" src="https://nishantpainter.github.io/personal-kanban/clear_board.gif" alt="Clear Board" style="border-radius:16px"></p>
+  <img width="650" src="https://nishantpainter.github.io/personal-kanban/clear_board.gif" alt="Clear Board GIF" style="border-radius:16px"></p>
 </p>
 
 ### Change Language
@@ -128,7 +154,7 @@ Click on the delete icon button from the toolbar to clear entire board. It will 
 You can change language of the application by clicking on the globe icon button in the toolbar. Select suitable language from the menu and the application locale will be change to selected language
 
 <p align="center">
-  <img width="650" src="https://nishantpainter.github.io/personal-kanban/change_language.gif" alt="Change Language" style="border-radius:16px"></p>
+  <img width="650" src="https://nishantpainter.github.io/personal-kanban/change_language.gif" alt="Change Language GIF" style="border-radius:16px"></p>
 </p>
 
 ### Toggle Dark Mode
@@ -136,7 +162,7 @@ You can change language of the application by clicking on the globe icon button 
 You can toggle between the dark mode by clicking on the icon button from the toolbar.
 
 <p align="center">
-  <img width="650" src="https://nishantpainter.github.io/personal-kanban/toggle_dark_mode.gif" alt="Toggle Dark Mode" style="border-radius:16px"></p>
+  <img width="650" src="https://nishantpainter.github.io/personal-kanban/toggle_dark_mode.gif" alt="Toggle Dark Mode GIF" style="border-radius:16px"></p>
 </p>
 
 ## Dark Mode
@@ -166,7 +192,7 @@ The application is scaffolded using create-react-app ([CRA](https://create-react
 
 ## Privacy
 
-The application makes use of local storage for persisting your work hour lines and does not store any timesheet data on any sort of server. The application uses Google analytics to get an overview of the application usage.
+The application makes use of local storage for persisting your work columns & records and does not store any personal kanban data on any sort of server. The application uses Google analytics to get an overview of the application usage.
 
 ## Other References
 
