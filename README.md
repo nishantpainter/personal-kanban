@@ -39,8 +39,8 @@ Plan your work with flexibility, identify and resolve bottlenecks and overview y
   - **[Clear Board](https://github.com/nishantpainter/personal-kanban#clear-board)**
   - **[Change Language](https://github.com/nishantpainter/personal-kanban#change-language)**
   - **[Toggle Dark Mode](https://github.com/nishantpainter/personal-kanban#toggle-dark-mode)**
-- **[Localization](https://github.com/nishantpainter/personal-kanban#localization)**
 - **[Dark Mode](https://github.com/nishantpainter/personal-kanban#dark-mode)**
+- **[Localization](https://github.com/nishantpainter/personal-kanban#localization)**
 - **[Offline Usage](https://github.com/nishantpainter/personal-kanban#offline-usage)**
 - **[Development](https://github.com/nishantpainter/personal-kanban#development)**
 - **[Privacy](https://github.com/nishantpainter/personal-kanban#privacy)**
@@ -125,20 +125,20 @@ Delete the record by click on delete icon button besides record edit icon button
   <img width="650" src="https://nishantpainter.github.io/personal-kanban/delete_record.gif" alt="Delete Record GIF" style="border-radius:16px"></p>
 </p>
 
-### Delete All Records
-
-Delete all the record belonging to the column by clicking on the delete icon button besides add record icon button. It will remove entire record list from column.
-
-<p align="center">
-  <img width="650" src="https://nishantpainter.github.io/personal-kanban/delete_all_record.gif" alt="Delete All Record GIF" style="border-radius:16px"></p>
-</p>
-
 ### Move Record
 
 Hold and drag the record from it's body or record header to move it across other columns record list on the board.
 
 <p align="center">
   <img width="650" src="https://nishantpainter.github.io/personal-kanban/move_record.gif" alt="Move Record GIF" style="border-radius:16px"></p>
+</p>
+
+### Delete All Records
+
+Delete all the record belonging to the column by clicking on the delete icon button besides add record icon button. It will remove entire record list from column.
+
+<p align="center">
+  <img width="650" src="https://nishantpainter.github.io/personal-kanban/delete_all_record.gif" alt="Delete All Record GIF" style="border-radius:16px"></p>
 </p>
 
 ### Clear Board
@@ -151,7 +151,7 @@ Click on the delete icon button from the toolbar to clear entire board. It will 
 
 ### Change Language
 
-You can change language of the application by clicking on the globe icon button in the toolbar. Select suitable language from the menu and the application locale will be change to selected language
+You can change language of the application by clicking on the globe icon button in the toolbar. Select suitable language from the menu and the application locale will be change to selected language.
 
 <p align="center">
   <img width="650" src="https://nishantpainter.github.io/personal-kanban/change_language.gif" alt="Change Language GIF" style="border-radius:16px"></p>
