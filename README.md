@@ -24,27 +24,27 @@ Plan your work with flexibility, identify and resolve bottlenecks and overview y
 
 # Table of Contents
 
-- **[Introduction](https://github.com/nishantpainter/personal-kanban#introduction)**
-- **[Features](https://github.com/nishantpainter/personal-kanban#features)**
-- **[How to Use](https://github.com/nishantpainter/personal-kanban#how-to-use)**
-  - **[Add Column](https://github.com/nishantpainter/personal-kanban#add-column)**
-  - **[Edit Column](https://github.com/nishantpainter/personal-kanban#edit-column)**
-  - **[Delete Column](https://github.com/nishantpainter/personal-kanban#delete-column)**
-  - **[Move Column](https://github.com/nishantpainter/personal-kanban#move-record)**
-  - **[Add Record](https://github.com/nishantpainter/personal-kanban#add-record)**
-  - **[Edit Record](https://github.com/nishantpainter/personal-kanban#edit-record)**
-  - **[Delete Record](https://github.com/nishantpainter/personal-kanban#delete-record)**
-  - **[Move Record](https://github.com/nishantpainter/personal-kanban#move-record)**
-  - **[Delete All Records](https://github.com/nishantpainter/personal-kanban#delete-all-records)**
-  - **[Clear Board](https://github.com/nishantpainter/personal-kanban#clear-board)**
-  - **[Change Language](https://github.com/nishantpainter/personal-kanban#change-language)**
-  - **[Toggle Dark Mode](https://github.com/nishantpainter/personal-kanban#toggle-dark-mode)**
-- **[Dark Mode](https://github.com/nishantpainter/personal-kanban#dark-mode)**
-- **[Localization](https://github.com/nishantpainter/personal-kanban#localization)**
-- **[Offline Usage](https://github.com/nishantpainter/personal-kanban#offline-usage)**
-- **[Development](https://github.com/nishantpainter/personal-kanban#development)**
-- **[Privacy](https://github.com/nishantpainter/personal-kanban#privacy)**
-- **[Other References](https://github.com/nishantpainter/personal-kanban#other-references)**
+- **[Introduction](#introduction)**
+- **[Features](#features)**
+- **[How to Use](#how-to-use)**
+  - **[Add Column](#add-column)**
+  - **[Edit Column](#edit-column)**
+  - **[Delete Column](#delete-column)**
+  - **[Move Column](#move-record)**
+  - **[Add Record](#add-record)**
+  - **[Edit Record](#edit-record)**
+  - **[Delete Record](#delete-record)**
+  - **[Move Record](#move-record)**
+  - **[Delete All Records](#delete-all-records)**
+  - **[Clear Board](#clear-board)**
+  - **[Change Language](#change-language)**
+  - **[Toggle Dark Mode](#toggle-dark-mode)**
+- **[Dark Mode](#dark-mode)**
+- **[Localization](#localization)**
+- **[Offline Usage](#offline-usage)**
+- **[Development](#development)**
+- **[Privacy](#privacy)**
+- **[Other References](#other-references)**
 
 ## Introduction
 
