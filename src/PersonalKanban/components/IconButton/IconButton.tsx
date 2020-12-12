@@ -30,6 +30,9 @@ const icons = {
 type IconButtonProps = MuiIconButtonProps & {
   icon: keyof typeof icons;
   iconProps?: any;
+  component?: any;
+  href?: string;
+  target?: string;
 };
 
 const IconButton: React.FC<IconButtonProps> = (props) => {

@@ -11,6 +11,7 @@ import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
+import Link from "@material-ui/core/Link";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { makeStyles, useTheme as useMuiTheme } from "@material-ui/core/styles";
 
@@ -189,7 +190,15 @@ const DarkThemeButton: React.FC<{}> = () => {
 };
 
 const GitHubButton: React.FC<{}> = () => {
-  return <IconButton color="inherit" icon="gitHub" />;
+  return (
+    <IconButton
+      color="inherit"
+      icon="gitHub"
+      component={Link}
+      href="https://github.com/nishantpainter/personal-kanban"
+      target="_blank"
+    />
+  );
 };
 
 const useToolbarStyles = makeStyles(() => ({
