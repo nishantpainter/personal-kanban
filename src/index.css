@@ -19,6 +19,5 @@ code {
 
 #root {
   width: fit-content;
-  height: 100%;
-  overflow: hidden;
+  height: 100vh;
 }
