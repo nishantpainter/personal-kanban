@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>個人かんばん - オフラインパーソナルかんばんボード</title>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-171631214-4"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "UA-171631214-4");
+    </script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Nunito", sans-serif;
+        font-size: 18px;
+      }
+
+      a,
+      a:focus,
+      a:visited,
+      a:active,
+      a:checked {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      hr {
+        width: 100%;
+      }
+
+      #header {
+        padding: 0 20px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: white;
+        box-shadow: 0 8px 40px -12px rgba(0, 0, 0, 0.3);
+      }
+
+      #header ul {
+        display: flex;
+        list-style-type: none;
+        margin: 0px;
+        padding: 0px;
+        width: 100%;
+        justify-content: flex-end;
+      }
+
+      #header li {
+        text-decoration: none;
+        position: relative;
+        white-space: nowrap;
+        padding: 12px;
+        display: list-item;
+      }
+
+      #header li a {
+        text-decoration: none;
+        transition: 0.3s;
+        font-weight: bold;
+        font-size: 1.025rem;
+      }
+
+      #content {
+        padding: 8px;
+        padding-top: 60px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      #footer {
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .pointer {
+        cursor: pointer;
+      }
+
+      .grow {
+        flex-grow: 1;
+      }
+
+      .mt-1 {
+        margin-top: 8px;
+      }
+
+      .mb-1 {
+        margin-bottom: 8px;
+      }
+
+      .shadow {
+        box-shadow: 0 8px 40px -12px rgba(0, 0, 0, 0.3);
+      }
+
+      .primary-text {
+        color: #795548;
+      }
+
+      .error-text {
+        color: red;
+      }
+
+      .white-text {
+        color: white;
+      }
+
+      a.primary-button {
+        color: white;
+      }
+
+      .primary-button {
+        padding: 8px 4px;
+        text-align: center;
+        border-radius: 4px;
+        font-weight: bold;
+        transition: all 0.3s ease-in-out;
+        cursor: pointer;
+        background-color: #795548;
+        border: 1px solid transparent;
+        color: white;
+      }
+
+      .primary-button:hover {
+        color: #795548;
+        border-color: #795548;
+        background-color: white;
+      }
+
+      .readme-logo {
+        height: 150px;
+      }
+
+      .readme-gif {
+        height: 220px;
+      }
+
+      .github-li {
+        margin-top: 5px;
+      }
+
+      @media only screen and (max-width: 600px) {
+        #content {
+          padding: 16px;
+          padding-top: 60px;
+        }
+
+        .readme-logo {
+          height: 100px;
+        }
+
+        .readme-gif {
+          height: 190px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header">
+      <img src="./readme_logo.png" alt="Logo" height="40" />
+      <div class="grow"></div>
+      <ul>
+        <li class="github-li">
+          <a href="https://github.com/nishantpainter/personal-kanban"
+            ><img src="./github.svg" alt="Github logo" height="20"
+          /></a>
+        </li>
+      </ul>
+    </div>
+    <div id="content">
+      <img src="./readme_logo_jp.png" class="readme-logo" alt="logo" />
+      <p align="center" class="primary-text">
+        <a href="./showcase.html" class="pointer primary-text">English</a
+        >&nbsp;-&nbsp; <a class="pointer primary-text">Français</a>&nbsp;-&nbsp;
+        <a class="pointer primary-text">Español</a>&nbsp;-&nbsp;
+        <a class="pointer primary-text">Pусский</a>&nbsp;-&nbsp;
+        <a class="pointer primary-text">Deutsche</a>&nbsp;-&nbsp;
+        <a href="./showcase_in.html" class="pointer primary-text">हिंदी</a
+        >&nbsp;-&nbsp; <a class="pointer primary-text">中文</a>&nbsp;-&nbsp;
+        <a class="pointer primary-text">日本人</a>
+      </p>
+
+      <img src="./description.gif" class="shadow mt-1 mb-1 readme-gif" />
+      <p align="center">
+        <strong
+          >個人的なプロジェクトやワークフローのための仮想オフラインかんばんボード。
+        </strong>
+      </p>
+
+      <p>
+        <strong>
+          <span class="primary-text"
+            ><a href="https://personalkanban.js.org" target="_blank">
+              個人かんばん</a
+            ></span
+          ></strong
+        >
+
+        は、個人レベルで作業を管理するためにかんばんを実装するオフライン対応のアプリケーションまたはツールです。作業項目は、作業プロセスの各段階を表すレコードおよび列として表すことができます。
+        <strong
+          ><i>
+            列は、「todo」、「in-progress」、「done」のように単純な場合もあれば、フローに合わせて複雑な場合もあります。</i
+          ></strong
+        >
+      </p>
+      <p>
+        これは、ワークフローを視覚化して最適化するためのツールです。物理ボードは少数の人々の間で人気がありますが、仮想ボードは
+        <strong
+          ><i
+            >パーソナルかんばんは、そのアクセシビリティ、シンプルさ、エレガントな表示を考慮して、アジャイルソフトウェア開発において重要な役割を果たします。</i
+          ></strong
+        >
+        ボードが物理的であるか仮想的であるかに関係なく、障害物やその他の依存関係を明確に識別するとともに、作業を視覚的に表現する必要があります。これらの各機能は、パーソナルかんばんによってシームレスに提供されます。
+      </p>
+
+      <p>
+        柔軟性を持って作業を計画し、ボトルネックを特定して解決し、作業全体を視覚的に概観します。
+      </p>
+      <a
+        class="primary-button"
+        href="https://personalkanban.js.org/"
+        target="_blank"
+        >今すぐ使い始める</a
+      >
+      <div>
+        <h3>特徴</h3>
+        <p>
+          パーソナルかんばんでできることのいくつか：
+        </p>
+        <ul>
+          <li>列の追加、編集、削除</li>
+
+          <li>列を移動する</li>
+
+          <li>レコードの追加、編集、削除</li>
+
+          <li>レコードの移動</li>
+
+          <li>列の仕掛品制限を制限する</li>
+
+          <li>列とレコードの背景色を管理する</li>
+
+          <li>クリアボード</li>
+
+          <li>ダークモード</li>
+
+          <li>ローカリゼーションサポート</li>
+
+          <li>オフライン対応</li>
+
+          <li>オフラインローカルストレージ</li>
+        </ul>
+      </div>
+      <div>
+        <h3>プライバシーと使用法</h3>
+        <p>
+          このアプリケーションは、ローカルストレージを使用して作業列とレコードを永続化し、個人のかんばんデータをあらゆる種類のサーバーに保存しません。
+        </p>
+      </div>
+    </div>
+    <div id="footer" class="shadow">
+      <p align="center">
+        Made with <span class="error-text">❤️</span> by
+        <a href="https://nishantpainter.github.io/" target="_blank"
+          ><strong class="primary-text">Nishant Painter</strong></a
+        >
+      </p>
+    </div>
+  </body>
+</html>
