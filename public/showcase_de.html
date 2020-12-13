@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Persönliches Kanban - Offline Persönliches Kanban Tafel</title>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-171631214-4"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "UA-171631214-4");
+    </script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Nunito", sans-serif;
+        font-size: 18px;
+      }
+
+      a,
+      a:focus,
+      a:visited,
+      a:active,
+      a:checked {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      hr {
+        width: 100%;
+      }
+
+      #header {
+        padding: 0 20px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: white;
+        box-shadow: 0 8px 40px -12px rgba(0, 0, 0, 0.3);
+      }
+
+      #header ul {
+        display: flex;
+        list-style-type: none;
+        margin: 0px;
+        padding: 0px;
+        width: 100%;
+        justify-content: flex-end;
+      }
+
+      #header li {
+        text-decoration: none;
+        position: relative;
+        white-space: nowrap;
+        padding: 12px;
+        display: list-item;
+      }
+
+      #header li a {
+        text-decoration: none;
+        transition: 0.3s;
+        font-weight: bold;
+        font-size: 1.025rem;
+      }
+
+      #content {
+        padding: 8px;
+        padding-top: 60px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      #footer {
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .pointer {
+        cursor: pointer;
+      }
+
+      .grow {
+        flex-grow: 1;
+      }
+
+      .mt-1 {
+        margin-top: 8px;
+      }
+
+      .mb-1 {
+        margin-bottom: 8px;
+      }
+
+      .shadow {
+        box-shadow: 0 8px 40px -12px rgba(0, 0, 0, 0.3);
+      }
+
+      .primary-text {
+        color: #795548;
+      }
+
+      .error-text {
+        color: red;
+      }
+
+      .white-text {
+        color: white;
+      }
+
+      a.primary-button {
+        color: white;
+      }
+
+      .primary-button {
+        padding: 8px 4px;
+        text-align: center;
+        border-radius: 4px;
+        font-weight: bold;
+        transition: all 0.3s ease-in-out;
+        cursor: pointer;
+        background-color: #795548;
+        border: 1px solid transparent;
+        color: white;
+      }
+
+      .primary-button:hover {
+        color: #795548;
+        border-color: #795548;
+        background-color: white;
+      }
+
+      .readme-logo {
+        height: 110px;
+      }
+
+      .readme-gif {
+        height: 220px;
+      }
+
+      .github-li {
+        margin-top: 5px;
+      }
+
+      @media only screen and (max-width: 600px) {
+        #content {
+          padding: 16px;
+          padding-top: 60px;
+        }
+
+        .readme-logo {
+          height: 80px;
+        }
+
+        .readme-gif {
+          height: 190px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header">
+      <img src="./readme_logo.png" alt="Logo" height="40" />
+      <div class="grow"></div>
+      <ul>
+        <li class="github-li">
+          <a href="https://github.com/nishantpainter/personal-kanban"
+            ><img src="./github.svg" alt="Github logo" height="20"
+          /></a>
+        </li>
+      </ul>
+    </div>
+    <div id="content">
+      <img src="./readme_logo_de.png" class="readme-logo" alt="logo" />
+      <p align="center" class="primary-text">
+        <a href="./showcase.html" class="pointer primary-text">English</a
+        >&nbsp;-&nbsp; <a class="pointer primary-text">Français</a>&nbsp;-&nbsp;
+        <a class="pointer primary-text">Español</a>&nbsp;-&nbsp;
+        <a class="pointer primary-text">Pусский</a>&nbsp;-&nbsp;
+        <a class="pointer primary-text">Deutsche</a>&nbsp;-&nbsp;
+        <a href="./showcase_in.html" class="pointer primary-text">हिंदी</a
+        >&nbsp;-&nbsp; <a class="pointer primary-text">中文</a>&nbsp;-&nbsp;
+        <a href="./showcase_jp.html" class="pointer primary-text">日本人</a>
+      </p>
+
+      <img src="./description.gif" class="shadow mt-1 mb-1 readme-gif" />
+      <p align="center">
+        <strong
+          >Ein virtuelles Offline-Kanban-Board für Ihre persönlichen Projekte
+          und Arbeitsabläufe.
+        </strong>
+      </p>
+
+      <p>
+        <strong>
+          <span class="primary-text"
+            ><a href="https://personalkanban.js.org" target="_blank"
+              >Persönliches Kanban</a
+            ></span
+          ></strong
+        >
+        ist eine offline-fähige Anwendung oder ein Tool, das Kanban
+        implementiert, um die Arbeit auf persönlicher Ebene zu verwalten.
+        Arbeitselemente können als Datensätze und Spalten dargestellt werden, um
+        jede Phase Ihres Arbeitsprozesses darzustellen.
+        <strong
+          ><i
+            >Spalten können so einfach wie "Aufgaben", "In Bearbeitung" und
+            "Fertig" sein oder sie können je nach Ablauf komplex sein.</i
+          ></strong
+        >
+      </p>
+      <p>
+        Es ist ein Tool zur Visualisierung und Optimierung Ihres Workflows.
+        Physische Boards sind bei wenigen beliebt, während virtuelle Boards
+        mögen
+        <strong
+          ><i
+            >Persönliches Kanban spielt eine entscheidende Rolle bei der agilen
+            Softwareentwicklung, da es leicht zugänglich, einfach und elegant zu
+            gestalten ist.</i
+          ></strong
+        >
+        Unabhängig davon, ob eine Karte physisch oder virtuell ist, muss sie die
+        Arbeit visuell darstellen und die Blockierung und andere Abhängigkeiten
+        eindeutig identifizieren. Jede dieser Funktionen wird von Personal
+        Kanban nahtlos angeboten.
+      </p>
+
+      <p>
+        Planen Sie Ihre Arbeit flexibel, identifizieren und beheben Sie Engpässe
+        und geben Sie einen Überblick über Ihre gesamte Arbeit.
+      </p>
+      <a
+        class="primary-button"
+        href="https://personalkanban.js.org/"
+        target="_blank"
+        >Starten Sie jetzt mit</a
+      >
+      <div>
+        <h3>
+          Eigenschaften
+        </h3>
+        <p>
+          Einige der Dinge, die Sie mit Personal Kanban tun können:
+        </p>
+        <ul>
+          <li>Spalten hinzufügen, bearbeiten, löschen</li>
+
+          <li>Spalten verschieben</li>
+
+          <li>Datensätze hinzufügen, bearbeiten, löschen</li>
+
+          <li>Datensätze verschieben</li>
+
+          <li>Beschränken Sie die WIP-Grenzwerte für Spalten</li>
+
+          <li>Spaltenfarben verwalten und Hintergrundfarben aufzeichnen</li>
+
+          <li>Clear Board</li>
+
+          <li>Dunkler Modus</li>
+
+          <li>Lokalisierungsunterstützung</li>
+
+          <li>Offline-fähig</li>
+
+          <li>Lokaler Offline-Speicher</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Datenschutz und Nutzung</h3>
+        <p>
+          Die Anwendung verwendet lokalen Speicher zum Speichern Ihrer
+          Arbeitsspalten und Datensätze und speichert keine persönlichen
+          Kanban-Daten auf einem Server.
+        </p>
+      </div>
+    </div>
+    <div id="footer" class="shadow">
+      <p align="center">
+        Made with <span class="error-text">❤️</span> by
+        <a href="https://nishantpainter.github.io/" target="_blank"
+          ><strong class="primary-text">Nishant Painter</strong></a
+        >
+      </p>
+    </div>
+  </body>
+</html>
