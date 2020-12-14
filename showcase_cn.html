@@ -190,7 +190,11 @@
       }
 
       .readme-logo {
-        height: 160px;
+        height: 120px;
+        background: url("./readme_logo_cn.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
       }
 
       .readme-gif {
@@ -205,10 +209,6 @@
         #content {
           padding: 16px;
           padding-top: 60px;
-        }
-
-        .readme-logo {
-          height: 110px;
         }
 
         .readme-gif {
@@ -230,7 +230,7 @@
       </ul>
     </div>
     <div id="content">
-      <img src="./readme_logo_cn.png" class="readme-logo" alt="logo" />
+      <div class="readme-logo"></div>
       <p align="center" class="primary-text">
         <a href="./showcase.html" class="pointer primary-text">English</a
         >&nbsp;-&nbsp;
