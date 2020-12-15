@@ -64,6 +64,11 @@ const ThemeProvider: React.FC<ThemeProviderProps> = (props) => {
           padding: 8,
         },
       },
+      MuiDivider: {
+        root: {
+          backgroundColor: "rgba(255,255,255,0.5)",
+        },
+      },
     },
     typography: {
       fontFamily: "'Nunito', sans-serif",
@@ -74,7 +79,7 @@ const ThemeProvider: React.FC<ThemeProviderProps> = (props) => {
     },
     props: {
       MuiDivider: {
-        light: true,
+        light: darkTheme ? false : true,
       },
       MuiTextField: {
         variant: "outlined",
