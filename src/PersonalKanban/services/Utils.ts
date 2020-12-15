@@ -58,3 +58,54 @@ export const reorderCards = ({
   newColumns[getColumnIndex(destinationColumn.id)].records = next;
   return newColumns;
 };
+
+export const getInitialState = () => {
+  return [
+    {
+      id: getId(),
+      title: "Todo",
+      color: "Orange",
+      records: [
+        {
+          id: getId(),
+          color: "Yellow",
+          title: "Clear Board",
+          description:
+            "Make a fresh start by erasing this board. Click delete button on main toolbar.",
+          createdAt: getCreatedAt(),
+        },
+      ],
+      createdAt: getCreatedAt(),
+    },
+    {
+      id: getId(),
+      title: "In-Progress",
+      color: "Red",
+      records: [
+        {
+          id: getId(),
+          color: "Purple",
+          title: "Give ratings",
+          description: "Rate and Star Personal Kanban",
+          createdAt: getCreatedAt(),
+        },
+      ],
+      createdAt: getCreatedAt(),
+    },
+    {
+      id: getId(),
+      title: "Completed",
+      color: "Green",
+      records: [
+        {
+          id: getId(),
+          color: "Indigo",
+          title: "Be Awesome",
+          description: "Rock the world with your creativity !",
+          createdAt: getCreatedAt(),
+        },
+      ],
+      createdAt: getCreatedAt(),
+    },
+  ];
+};
