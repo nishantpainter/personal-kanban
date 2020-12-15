@@ -1,4 +1,6 @@
 import { v4 as uuidv4 } from "uuid";
+import moment from "moment";
+
 import { Column } from "PersonalKanban/types";
 
 export const getId = (): string => {
@@ -10,6 +12,10 @@ export const reorder = (list: any[], startIndex: number, endIndex: number) => {
   const [removed] = result.splice(startIndex, 1);
   result.splice(endIndex, 0, removed);
   return result;
+};
+
+export const getCreatedAt = () => {
+  return `${moment().format("DD-MM-YYYY")} ${moment().format("h:mm:ss a")}`;
 };
 
 export const reorderCards = ({
