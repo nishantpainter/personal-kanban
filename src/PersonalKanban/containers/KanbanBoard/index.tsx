@@ -1,11 +1,16 @@
 import React from "react";
-import moment from "moment";
+
 import Box from "@material-ui/core/Box";
 import { makeStyles } from "@material-ui/core/styles";
 
 import KanbanBoard from "PersonalKanban/components/KanbanBoard";
 import { Column, Record } from "PersonalKanban/types";
-import { getId, reorder, reorderCards } from "PersonalKanban/services/Utils";
+import {
+  getId,
+  getCreatedAt,
+  reorder,
+  reorderCards,
+} from "PersonalKanban/services/Utils";
 import StorageService from "PersonalKanban/services/StorageService";
 import Toolbar from "PersonalKanban/containers/Toolbar";
 
@@ -15,16 +20,63 @@ const useKanbanBoardStyles = makeStyles((theme) => ({
 
 type KanbanBoardContainerProps = {};
 
-const initialState = StorageService.getColumns() || [];
+let initialState = StorageService.getColumns();
+
+if (!initialState) {
+  initialState = [
+    {
+      id: getId(),
+      title: "Todo",
+      color: "Orange",
+      records: [
+        {
+          id: getId(),
+          color: "Yellow",
+          title: "Clear Board",
+          description:
+            "Make a fresh start by erasing this board. Click delete button on main toolbar.",
+          createdAt: getCreatedAt(),
+        },
+      ],
+      createdAt: getCreatedAt(),
+    },
+    {
+      id: getId(),
+      title: "In-Progress",
+      color: "Red",
+      records: [
+        {
+          id: getId(),
+          color: "Purple",
+          title: "Give ratings",
+          description: "Rate and Star Personal Kanban",
+          createdAt: getCreatedAt(),
+        },
+      ],
+      createdAt: getCreatedAt(),
+    },
+    {
+      id: getId(),
+      title: "Completed",
+      color: "Green",
+      records: [
+        {
+          id: getId(),
+          color: "Indigo",
+          title: "Be Awesome",
+          description: "Rock the world with your creativity !",
+          createdAt: getCreatedAt(),
+        },
+      ],
+      createdAt: getCreatedAt(),
+    },
+  ];
+}
 
 const KanbanBoardContainer: React.FC<KanbanBoardContainerProps> = (props) => {
   const [columns, setColumns] = React.useState<Column[]>(initialState);
 
   const classes = useKanbanBoardStyles();
-
-  const getCreatedAt = React.useCallback(() => {
-    return `${moment().format("DD-MM-YYYY")} ${moment().format("h:mm:ss a")}`;
-  }, []);
 
   const cloneColumns = React.useCallback((columns: Column[]) => {
     return columns.map((column: Column) => ({
@@ -63,7 +115,7 @@ const KanbanBoardContainer: React.FC<KanbanBoardContainerProps> = (props) => {
         ),
       ]);
     },
-    [getCreatedAt]
+    []
   );
 
   const handleColumnMove = React.useCallback(
@@ -145,7 +197,7 @@ const KanbanBoardContainer: React.FC<KanbanBoardContainerProps> = (props) => {
         return columns;
       });
     },
-    [cloneColumns, getColumnIndex, getCreatedAt]
+    [cloneColumns, getColumnIndex]
   );
 
   const handleRecordEdit = React.useCallback(
