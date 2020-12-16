@@ -180,7 +180,7 @@ Persönliches Kanban bietet lokale Unterstützung für die Sprache, einschließl
 - Deutsche
 - हिंदी
 - 中文
-- 日本人
+- 日本語
 
 ## Offline-Nutzung
 

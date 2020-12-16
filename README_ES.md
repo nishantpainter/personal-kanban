@@ -180,7 +180,7 @@ Kanban personal ofrece soporte local para idiomas que incluyen:
 - Deutsche
 - हिंदी
 - 中文
-- 日本人
+- 日本語
 
 ## Uso sin conexión
 
