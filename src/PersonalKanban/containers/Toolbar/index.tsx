@@ -170,7 +170,7 @@ const LanguageButton: React.FC<LanguageButtonProps> = (props) => {
         <MenuItem onClick={handleChangeLanguage("ru")}>Pусский</MenuItem>
         <MenuItem onClick={handleChangeLanguage("de")}>Deutsche</MenuItem>
         <MenuItem onClick={handleChangeLanguage("in")}>हिंदी</MenuItem>
-        <MenuItem onClick={handleChangeLanguage("jp")}>日本人</MenuItem>
+        <MenuItem onClick={handleChangeLanguage("jp")}>日本語</MenuItem>
         <MenuItem onClick={handleChangeLanguage("cn")}>中文</MenuItem>
       </Menu>
     </Box>
