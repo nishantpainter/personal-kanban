@@ -35,7 +35,7 @@ export const reorderCards = ({
     columns.findIndex((c) => c.id === columnId);
 
   const getRecords = (columnId: string) => [
-    ...columns.find((c) => c.id === columnId)?.records,
+    ...columns.find((c) => c.id === columnId)?.records!,
   ];
 
   const current = getRecords(sourceColumn.id);

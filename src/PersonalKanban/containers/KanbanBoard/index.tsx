@@ -35,7 +35,7 @@ const KanbanBoardContainer: React.FC<KanbanBoardContainerProps> = (props) => {
   const cloneColumns = React.useCallback((columns: Column[]) => {
     return columns.map((column: Column) => ({
       ...column,
-      records: [...column.records],
+      records: [...column.records!],
     }));
   }, []);
 
