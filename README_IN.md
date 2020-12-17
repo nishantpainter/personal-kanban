@@ -14,7 +14,7 @@
 
 [![Current Version](https://img.shields.io/badge/version-1.0.0-green.svg)](https://nishantpainter.github.io/personal-kanban) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-orange.svg?style=flat-square)](http://makeapullrequest.com) [![License](https://img.shields.io/github/license/day8/re-frame.svg)](https://github.com/nishantpainter/personal-kanban/blob/main/license.txt) [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-blue.svg)](https://github.com/nishantpainter/personal-kanban/commits/main) [![GitHub issues](https://img.shields.io/github/issues/Naereen/StrapDown.js.svg)](https://github.com/nishantpainter/personal-kanban/issues)
 
-[English](https://github.com/nishantpainter/personal-kanban/blob/main/README.md) - [Français](https://github.com/nishantpainter/personal-kanban/blob/main/README_FR.md) - [Español](https://github.com/nishantpainter/personal-kanban/blob/main/README_ES.md) - [Pусский](https://github.com/nishantpainter/personal-kanban/blob/main/README_RU.md) - [Deutsche](https://github.com/nishantpainter/personal-kanban/blob/main/README_DE.md) - [हिंदी](https://github.com/nishantpainter/personal-kanban/blob/main/README_IN.md) - [中文](https://github.com/nishantpainter/personal-kanban/blob/main/README_CN.md) - [日本語](https://github.com/nishantpainter/personal-kanban/blob/main/README_JP.md)
+[English](https://github.com/nishantpainter/personal-kanban/blob/main/README.md) - [Français](https://github.com/nishantpainter/personal-kanban/blob/main/README_FR.md) - [Español](https://github.com/nishantpainter/personal-kanban/blob/main/README_ES.md) - [Pусский](https://github.com/nishantpainter/personal-kanban/blob/main/README_RU.md) - [Deutsch](https://github.com/nishantpainter/personal-kanban/blob/main/README_DE.md) - [हिंदी](https://github.com/nishantpainter/personal-kanban/blob/main/README_IN.md) - [中文](https://github.com/nishantpainter/personal-kanban/blob/main/README_CN.md) - [日本語](https://github.com/nishantpainter/personal-kanban/blob/main/README_JP.md)
 
 पर्सनल कानबन एक ऑफ़लाइन सक्षम अनुप्रयोग या उपकरण है जो व्यक्तिगत स्तर पर कार्य का प्रबंधन करने के लिए कानबन को लागू करता है। कार्य आइटम को आपकी कार्य प्रक्रिया के प्रत्येक चरण को दर्शाने के लिए रिकॉर्ड और कॉलम के रूप में दर्शाया जा सकता है। कॉलम "टूडू", "इन-प्रोग्रेस" और "किया" जैसे सरल हो सकते हैं, या यह आपके प्रवाह के अनुरूप जटिल हो सकते हैं।
 
@@ -179,18 +179,42 @@
 - Français
 - Español
 - Pусский
-- Deutsche
+- Deutsch
 - हिंदी
 - 中文
 - 日本語
 
 ## ऑफ़लाइन उपयोग
 
-सॉफ्टवेयर सेवा श्रमिकों के साथ पंजीकृत है और प्रोग्रेसिव वेब एप्लीकेशन एक के रूप में व्यवहार करता है ([PWA](https://en.wikipedia.org/wiki/Progressive_web_application)). ऑफ़लाइन उपयोग के लिए, आप अपने मोबाइल उपकरणों में सॉफ़्टवेयर को स्थानीय रूप से स्थापित करने के लिए, ब्राउज़र में एप्लिकेशन एक्सेस करते समय *ऐड तो होम* विकल्प का चयन कर सकते हैं।
+सॉफ्टवेयर सेवा श्रमिकों के साथ पंजीकृत है और प्रोग्रेसिव वेब एप्लीकेशन एक के रूप में व्यवहार करता है ([PWA](https://en.wikipedia.org/wiki/Progressive_web_application)). ऑफ़लाइन उपयोग के लिए, आप अपने मोबाइल उपकरणों में सॉफ़्टवेयर को स्थानीय रूप से स्थापित करने के लिए, ब्राउज़र में एप्लिकेशन एक्सेस करते समय _ऐड तो होम_ विकल्प का चयन कर सकते हैं।
 
 ## डेवलपमेंट
 
 सॉफ्टवेयर बनाया गया है create-react-app का उपयोग करते हुए ([CRA](https://create-react-app.dev/docs/getting-started/)) साथ में [टीपेसक्रिप्ट](https://www.typescriptlang.org/) टेम्पलेटिंग. आप क्लोन कर सकते हैं [पर्सनल कानबन](https://github.com/nishantpainter/personal-kanban) रिपॉजिटरी कस्टम डेवलपमेंट के लिए.
+
+अपनी मशीन पर स्थानीय रूप से एप्लिकेशन चलाने के लिए आप नीचे दिए गए चरणों का पालन कर सकते हैं :
+
+- npm का उपयोग करते हुए
+
+```
+1: git clone https://github.com/nishantpainter/personal-kanban.git
+2: cd personal-kanban
+3: npm install
+4: npm run build
+5: sudo npm install -g serve
+6: serve -s build
+```
+
+- yarn का उपयोग करते हुए
+
+```
+1: git clone https://github.com/nishantpainter/personal-kanban.git
+2: cd personal-kanban
+3: yarn install
+4: yarn build
+5: sudo npm install -g serve
+6: serve -s build
+```
 
 ## प्राइवेसी
 

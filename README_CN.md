@@ -14,11 +14,11 @@
 
 [![Current Version](https://img.shields.io/badge/version-1.0.0-green.svg)](https://nishantpainter.github.io/personal-kanban) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-orange.svg?style=flat-square)](http://makeapullrequest.com) [![License](https://img.shields.io/github/license/day8/re-frame.svg)](https://github.com/nishantpainter/personal-kanban/blob/main/license.txt) [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-blue.svg)](https://github.com/nishantpainter/personal-kanban/commits/main) [![GitHub issues](https://img.shields.io/github/issues/Naereen/StrapDown.js.svg)](https://github.com/nishantpainter/personal-kanban/issues)
 
-[English](https://github.com/nishantpainter/personal-kanban/blob/main/README.md) - [Français](https://github.com/nishantpainter/personal-kanban/blob/main/README_FR.md) - [Español](https://github.com/nishantpainter/personal-kanban/blob/main/README_ES.md) - [Pусский](https://github.com/nishantpainter/personal-kanban/blob/main/README_RU.md) - [Deutsche](https://github.com/nishantpainter/personal-kanban/blob/main/README_DE.md) - [हिंदी](https://github.com/nishantpainter/personal-kanban/blob/main/README_IN.md) - [中文](https://github.com/nishantpainter/personal-kanban/blob/main/README_CN.md) - [日本語](https://github.com/nishantpainter/personal-kanban/blob/main/README_JP.md)
+[English](https://github.com/nishantpainter/personal-kanban/blob/main/README.md) - [Français](https://github.com/nishantpainter/personal-kanban/blob/main/README_FR.md) - [Español](https://github.com/nishantpainter/personal-kanban/blob/main/README_ES.md) - [Pусский](https://github.com/nishantpainter/personal-kanban/blob/main/README_RU.md) - [Deutsch](https://github.com/nishantpainter/personal-kanban/blob/main/README_DE.md) - [हिंदी](https://github.com/nishantpainter/personal-kanban/blob/main/README_IN.md) - [中文](https://github.com/nishantpainter/personal-kanban/blob/main/README_CN.md) - [日本語](https://github.com/nishantpainter/personal-kanban/blob/main/README_JP.md)
 
 个人看板是具有脱机功能的应用程序或工具，可实现看板来管理个人级别的工作。工作项可以表示为记录和列，以描述工作过程的每个阶段。列可以很简单，例如“待办事项”，“进行中”和“完成”，也可以很复杂以适合您的流程。
 
-它是可视化和优化工作流程的工具。物理板在少数人中很流行，而诸如Personal Kanban之类的虚拟板考虑到它们的可访问性，简单性和优雅的外观，在敏捷软件开发中起着至关重要的作用。无论电路板是物理的还是虚拟的，它都必须以视觉方式描绘工作，并清楚地识别障碍物和其他依赖性。这些功能均由Personal Kanban无缝提供。
+它是可视化和优化工作流程的工具。物理板在少数人中很流行，而诸如 Personal Kanban 之类的虚拟板考虑到它们的可访问性，简单性和优雅的外观，在敏捷软件开发中起着至关重要的作用。无论电路板是物理的还是虚拟的，它都必须以视觉方式描绘工作，并清楚地识别障碍物和其他依赖性。这些功能均由 Personal Kanban 无缝提供。
 
 灵活地计划您的工作，确定并解决瓶颈，并以可视方式概述您的完整工作。
 
@@ -48,11 +48,11 @@
 
 ## 介绍
 
-它是一种敏捷的项目管理工具，可帮助您可视化工作，限制进行中的工作以及制定和优化工作流程以获取最大的输出。为此，它利用列和记录。个人看板提供视觉线索，列，wip限制，起点和终点，以帮助您成功。
+它是一种敏捷的项目管理工具，可帮助您可视化工作，限制进行中的工作以及制定和优化工作流程以获取最大的输出。为此，它利用列和记录。个人看板提供视觉线索，列，wip 限制，起点和终点，以帮助您成功。
 
 ## 特征
 
-您可以使用Personal Kanban进行的一些操作：
+您可以使用 Personal Kanban 进行的一些操作：
 
 - 添加，编辑，删除列
 - 移动列
@@ -177,23 +177,47 @@
 - Français
 - Español
 - Pусский
-- Deutsche
+- Deutsch
 - हिंदी
 - 中文
 - 日本語
 
 ## 离线使用
 
-该应用程序已向服务工作者注册，并且表现为渐进式Web应用程序 ([PWA](https://en.wikipedia.org/wiki/Progressive_web_application)). 对于离线使用，您可以选择 **加到首页** 选项，即在浏览器中访问应用程序时，将应用程序本地安装到移动设备上。
+该应用程序已向服务工作者注册，并且表现为渐进式 Web 应用程序 ([PWA](https://en.wikipedia.org/wiki/Progressive_web_application)). 对于离线使用，您可以选择 **加到首页** 选项，即在浏览器中访问应用程序时，将应用程序本地安装到移动设备上。
 
 ## 发展
 
-使用create-react-app搭建应用程序 ([CRA](https://create-react-app.dev/docs/getting-started/)) 与 [Typescript](https://www.typescriptlang.org/) 模板化. 
+使用 create-react-app 搭建应用程序 ([CRA](https://create-react-app.dev/docs/getting-started/)) 与 [Typescript](https://www.typescriptlang.org/) 模板化.
 您可以克隆 [个人看板](https://github.com/nishantpainter/personal-kanban) 用于定制开发的存储库.
+
+要在您的计算机上本地运行该应用程序，您可以按照以下步骤操作：
+
+- 使用npm
+
+```
+1: git clone https://github.com/nishantpainter/personal-kanban.git
+2: cd personal-kanban
+3: npm install
+4: npm run build
+5: sudo npm install -g serve
+6: serve -s build
+```
+
+- 使用yarn
+
+```
+1: git clone https://github.com/nishantpainter/personal-kanban.git
+2: cd personal-kanban
+3: yarn install
+4: yarn build
+5: sudo npm install -g serve
+6: serve -s build
+```
 
 ## 隐私
 
-该应用程序利用本地存储来保留您的工作列和记录，并且不会在任何类型的服务器上存储任何个人看板数据。该应用程序使用Google Analytics（分析）来获取应用程序使用情况的概述。
+该应用程序利用本地存储来保留您的工作列和记录，并且不会在任何类型的服务器上存储任何个人看板数据。该应用程序使用 Google Analytics（分析）来获取应用程序使用情况的概述。
 
 ## 其他参考
 

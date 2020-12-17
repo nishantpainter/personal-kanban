@@ -14,7 +14,7 @@
 
 [![Current Version](https://img.shields.io/badge/version-1.0.0-green.svg)](https://nishantpainter.github.io/personal-kanban) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-orange.svg?style=flat-square)](http://makeapullrequest.com) [![License](https://img.shields.io/github/license/day8/re-frame.svg)](https://github.com/nishantpainter/personal-kanban/blob/main/license.txt) [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-blue.svg)](https://github.com/nishantpainter/personal-kanban/commits/main) [![GitHub issues](https://img.shields.io/github/issues/Naereen/StrapDown.js.svg)](https://github.com/nishantpainter/personal-kanban/issues)
 
-[English](https://github.com/nishantpainter/personal-kanban/blob/main/README.md) - [Français](https://github.com/nishantpainter/personal-kanban/blob/main/README_FR.md) - [Español](https://github.com/nishantpainter/personal-kanban/blob/main/README_ES.md) - [Pусский](https://github.com/nishantpainter/personal-kanban/blob/main/README_RU.md) - [Deutsche](https://github.com/nishantpainter/personal-kanban/blob/main/README_DE.md) - [हिंदी](https://github.com/nishantpainter/personal-kanban/blob/main/README_IN.md) - [中文](https://github.com/nishantpainter/personal-kanban/blob/main/README_CN.md) - [日本語](https://github.com/nishantpainter/personal-kanban/blob/main/README_JP.md)
+[English](https://github.com/nishantpainter/personal-kanban/blob/main/README.md) - [Français](https://github.com/nishantpainter/personal-kanban/blob/main/README_FR.md) - [Español](https://github.com/nishantpainter/personal-kanban/blob/main/README_ES.md) - [Pусский](https://github.com/nishantpainter/personal-kanban/blob/main/README_RU.md) - [Deutsch](https://github.com/nishantpainter/personal-kanban/blob/main/README_DE.md) - [हिंदी](https://github.com/nishantpainter/personal-kanban/blob/main/README_IN.md) - [中文](https://github.com/nishantpainter/personal-kanban/blob/main/README_CN.md) - [日本語](https://github.com/nishantpainter/personal-kanban/blob/main/README_JP.md)
 
 Personal Kanban est une application ou un outil hors ligne qui implémente le kanban pour gérer le travail au niveau personnel. Les éléments de travail peuvent être représentés sous forme d'enregistrements et de colonnes pour décrire chaque étape de votre processus de travail. Les colonnes peuvent être aussi simples que «todo», «in-progress» et «done», ou elles peuvent être complexes en fonction de votre flux.
 
@@ -177,7 +177,7 @@ Personal Kanban offre une assistance locale pour la langue, notamment:
 - Français
 - Español
 - Pусский
-- Deutsche
+- Deutsch
 - हिंदी
 - 中文
 - 日本語
@@ -189,6 +189,30 @@ L'application est enregistrée auprès des techniciens de service et se comporte
 ## Développement
 
 L'application est échafaudée à l'aide de create-react-app ([CRA](https://create-react-app.dev/docs/getting-started/)) avec [Typescript](https://www.typescriptlang.org/) modèle. Vous pouvez cloner le [Kanban personnel](https://github.com/nishantpainter/personal-kanban) référentiel pour le développement personnalisé.
+
+Pour exécuter l'application localement sur votre machine, vous pouvez suivre les étapes ci-dessous:
+
+- Utilisation de npm
+
+```
+1: git clone https://github.com/nishantpainter/personal-kanban.git
+2: cd personal-kanban
+3: npm install
+4: npm run build
+5: sudo npm install -g serve
+6: serve -s build
+```
+
+- Utilisation de yarn
+
+```
+1: git clone https://github.com/nishantpainter/personal-kanban.git
+2: cd personal-kanban
+3: yarn install
+4: yarn build
+5: sudo npm install -g serve
+6: serve -s build
+```
 
 ## Intimité
 
