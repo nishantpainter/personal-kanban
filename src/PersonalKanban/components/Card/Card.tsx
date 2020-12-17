@@ -19,6 +19,7 @@ const useStyles = makeStyles(() => ({
     "-webkit-line-clamp": 4,
     "-webkit-box-orient": "vertical",
     overflow: "hidden",
+    whiteSpace: "pre-line",
   },
 }));
 
