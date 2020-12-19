@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 
 import PersonalKanban from "./PersonalKanban";
 import reportWebVitals from "./reportWebVitals";
+import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 
 import "./index.css";
 
@@ -13,4 +14,5 @@ ReactDOM.render(
   document.getElementById("root")
 );
 
+serviceWorkerRegistration.register();
 reportWebVitals();
