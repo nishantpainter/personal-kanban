@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import AppBar from "@material-ui/core/AppBar";
 import Box from "@material-ui/core/Box";
@@ -10,6 +10,7 @@ import MuiToolbar from "@material-ui/core/Toolbar";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import Grid from "@material-ui/core/Grid";
+import Popover from "@material-ui/core/Popover";
 import Typography from "@material-ui/core/Typography";
 import Link from "@material-ui/core/Link";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
@@ -201,6 +202,94 @@ const GitHubButton: React.FC<{}> = () => {
   );
 };
 
+const useInfoButtonStyles = makeStyles((theme) => ({
+  paper: {
+    maxWidth: 300,
+    minWidth: 300,
+    maxHeight: 300,
+    minHeight: 300,
+    padding: theme.spacing(),
+  },
+  buttonGridItem: {
+    textAlign: "center",
+  },
+}));
+
+const InfoButton: React.FC<{}> = () => {
+  const classes = useInfoButtonStyles();
+  const [anchorEl, setAnchorEl] = useState(null);
+
+  const openInfo = (event: any) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const closeInfo = () => {
+    setAnchorEl(null);
+  };
+
+  const open = Boolean(anchorEl);
+
+  const id = open ? "info-popover" : undefined;
+
+  return (
+    <>
+      <IconButton icon="info" color="primary" onClick={openInfo} />
+      <Popover
+        id={id}
+        open={open}
+        anchorEl={anchorEl}
+        onClose={closeInfo}
+        anchorOrigin={{
+          vertical: "bottom",
+          horizontal: "center",
+        }}
+        transformOrigin={{
+          vertical: "top",
+          horizontal: "center",
+        }}
+        PaperProps={{ className: classes.paper }}
+      >
+        <Grid container spacing={1}>
+          <Grid item xs={12}>
+            <Box marginTop={2} textAlign="center">
+              <img
+                src="https://stacks.rocks/site/templates/assets/images/stacks-logo-dark.svg"
+                height="30"
+                alt="Stacks"
+              />
+            </Box>
+          </Grid>
+          <Grid item xs={12}>
+            <Typography variant="body2">
+              <Link href="https://stacks.rocks/" target="_blank">
+                Stacks
+              </Link>
+              &nbsp;is a cross-platform all-in-one project management tool that
+              works on top of a local folder.
+              <br />
+              <br />
+              Get 20% off on your order by applying coupon{" "}
+              <strong>NISHANT20</strong>
+              <br />
+              <br />
+            </Typography>
+          </Grid>
+          <Grid item xs={12} className={classes.buttonGridItem}>
+            <Button variant="contained" color="primary">
+              <Link
+                color="inherit"
+                href="https://stacks.rocks/store/?coupon=NISHANT20"
+                target="_blank"
+              >
+                Order Now
+              </Link>
+            </Button>
+          </Grid>
+        </Grid>
+      </Popover>
+    </>
+  );
+};
 const useToolbarStyles = makeStyles(() => ({
   paper: {
     padding: 0,
@@ -250,6 +339,8 @@ const Toolbar: React.FC<ToolbarProps> = (props) => {
             disabled={clearButtonDisabled}
             onClear={onClearBoard}
           />
+          &nbsp;
+          <InfoButton />
           &nbsp;
           <DarkThemeButton /> &nbsp;
           <LanguageButton /> &nbsp;
