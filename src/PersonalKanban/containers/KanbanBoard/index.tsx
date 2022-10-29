@@ -14,6 +14,7 @@ import {
 } from "PersonalKanban/services/Utils";
 import StorageService from "PersonalKanban/services/StorageService";
 import Toolbar from "PersonalKanban/containers/Toolbar";
+import { useTranslation } from "react-i18next";
 
 const useKanbanBoardStyles = makeStyles((theme) => ({
   toolbar: theme.mixins.toolbar,
@@ -29,6 +30,14 @@ if (!initialState) {
 
 const KanbanBoardContainer: React.FC<KanbanBoardContainerProps> = (props) => {
   const [columns, setColumns] = React.useState<Column[]>(initialState);
+
+  // ** change direction of body
+  const { i18n } = useTranslation();
+  const dir = i18n.dir();
+  console.log(dir);
+  React.useEffect(() => {
+    document.body.dir = dir;
+  }, [dir]);
 
   const classes = useKanbanBoardStyles();
 

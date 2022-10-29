@@ -23,6 +23,10 @@ import StorageService from "PersonalKanban/services/StorageService";
 import Vazir from "../assets/fonts/vazir.css";
 import { useTranslation } from "react-i18next";
 
+import { create } from "jss";
+import rtl from "jss-rtl";
+import { StylesProvider, jssPreset } from "@material-ui/core/styles";
+
 declare module "@material-ui/core/styles/createMuiTheme" {
   interface Theme {
     custom?: any;
@@ -43,9 +47,9 @@ const pastelCode = 200;
 const ThemeProvider: React.FC<ThemeProviderProps> = (props) => {
   const { children } = props;
 
-  const {
-    i18n: { language },
-  } = useTranslation();
+  const { i18n } = useTranslation();
+
+  const jss = create({ plugins: [...jssPreset().plugins, rtl()] });
 
   const [darkTheme, setDarkTheme] = React.useState(
     props.darkTheme || StorageService.getDarkMode()
@@ -59,6 +63,7 @@ const ThemeProvider: React.FC<ThemeProviderProps> = (props) => {
   }, []);
 
   const theme: Theme = createMuiTheme({
+    direction: i18n?.dir() ?? "ltr",
     palette: {
       primary: darkTheme ? lightGreen : brown,
       secondary: blueGrey,
@@ -83,7 +88,10 @@ const ThemeProvider: React.FC<ThemeProviderProps> = (props) => {
       },
     },
     typography: {
-      fontFamily: language === 'fa' ? "'Vazir', sans-serif" : "'Nunito', sans-serif",
+      fontFamily:
+        i18n?.language === "fa"
+          ? "'Vazir', sans-serif"
+          : "'Nunito', sans-serif",
       fontWeightLight: 300,
       fontWeightMedium: 400,
       fontWeightRegular: 400,
@@ -129,12 +137,14 @@ const ThemeProvider: React.FC<ThemeProviderProps> = (props) => {
   );
 
   return (
-    <ThemeContext.Provider value={value}>
-      <MuiThemeProvider theme={theme}>
-        <CssBaseline />
-        {children}
-      </MuiThemeProvider>
-    </ThemeContext.Provider>
+    <StylesProvider jss={jss}>
+      <ThemeContext.Provider value={value}>
+        <MuiThemeProvider theme={theme}>
+          <CssBaseline />
+          {children}
+        </MuiThemeProvider>
+      </ThemeContext.Provider>
+    </StylesProvider>
   );
 };
 
