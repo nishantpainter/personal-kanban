@@ -20,6 +20,9 @@ import {
 
 import StorageService from "PersonalKanban/services/StorageService";
 
+import Vazir from "../assets/fonts/vazir.css";
+import { useTranslation } from "react-i18next";
+
 declare module "@material-ui/core/styles/createMuiTheme" {
   interface Theme {
     custom?: any;
@@ -40,6 +43,10 @@ const pastelCode = 200;
 const ThemeProvider: React.FC<ThemeProviderProps> = (props) => {
   const { children } = props;
 
+  const {
+    i18n: { language },
+  } = useTranslation();
+
   const [darkTheme, setDarkTheme] = React.useState(
     props.darkTheme || StorageService.getDarkMode()
   );
@@ -58,6 +65,11 @@ const ThemeProvider: React.FC<ThemeProviderProps> = (props) => {
       type: darkTheme ? "dark" : "light",
     },
     overrides: {
+      MuiCssBaseline: {
+        "@global": {
+          "@font-face": [Vazir],
+        },
+      },
       MuiPaper: {
         root: {
           cursor: "pointer",
@@ -71,7 +83,7 @@ const ThemeProvider: React.FC<ThemeProviderProps> = (props) => {
       },
     },
     typography: {
-      fontFamily: "'Nunito', sans-serif",
+      fontFamily: language === 'fa' ? "'Vazir', sans-serif" : "'Nunito', sans-serif",
       fontWeightLight: 300,
       fontWeightMedium: 400,
       fontWeightRegular: 400,
