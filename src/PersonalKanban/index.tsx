@@ -8,11 +8,11 @@ interface PersonalKanbanProps {}
 
 const PersonalKanban: React.FC<PersonalKanbanProps> = () => {
   return (
-    <ThemeProvider>
-      <TranslationProvider>
+    <TranslationProvider>
+      <ThemeProvider>
         <KanbanBoardContainer />
-      </TranslationProvider>
-    </ThemeProvider>
+      </ThemeProvider>
+    </TranslationProvider>
   );
 };
 
