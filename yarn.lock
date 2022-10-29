@@ -9050,6 +9050,13 @@ jss-plugin-vendor-prefixer@^10.0.3:
     css-vendor "^2.0.8"
     jss "10.4.0"
 
+jss-rtl@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/jss-rtl/-/jss-rtl-0.3.0.tgz#386961615956f9655bd5e9ec7e9d08bef223e4af"
+  integrity sha512-rg9jJmP1bAyhNOAp+BDZgOP/lMm4+oQ76qGueupDQ68Wq+G+6SGvCZvhIEg8OHSONRWOwFT6skCI+APGi8DgmA==
+  dependencies:
+    rtl-css-js "^1.13.1"
+
 jss@10.4.0, jss@^10.0.3:
   version "10.4.0"
   resolved "https://registry.yarnpkg.com/jss/-/jss-10.4.0.tgz#473a6fbe42e85441020a07e9519dac1e8a2e79ca"
@@ -12518,6 +12525,13 @@ rsvp@^4.8.4:
   version "4.8.5"
   resolved "https://registry.yarnpkg.com/rsvp/-/rsvp-4.8.5.tgz#c8f155311d167f68f21e168df71ec5b083113734"
   integrity sha512-nfMOlASu9OnRJo1mbEk2cz0D56a1MBNrJ7orjRZQG10XDyuvwksKbuXNp6qa+kbn839HwjwhBzhFmdsaEAfauA==
+
+rtl-css-js@^1.13.1:
+  version "1.16.0"
+  resolved "https://registry.yarnpkg.com/rtl-css-js/-/rtl-css-js-1.16.0.tgz#e8d682982441aadb63cabcb2f7385f3fb78ff26e"
+  integrity sha512-Oc7PnzwIEU4M0K1J4h/7qUUaljXhQ0kCObRsZjxs2HjkpKsnoTMvSmvJ4sqgJZd0zBoEfAyTdnK/jMIYvrjySQ==
+  dependencies:
+    "@babel/runtime" "^7.1.2"
 
 run-async@^2.2.0, run-async@^2.4.0:
   version "2.4.1"

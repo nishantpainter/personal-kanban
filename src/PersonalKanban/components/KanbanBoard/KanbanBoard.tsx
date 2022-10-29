@@ -79,27 +79,29 @@ const KanbanBoard: React.FC<KanbanBoardProps> = (props) => {
   );
 
   return (
-    <DragDropContext onDragEnd={handleDragEnd}>
-      <Droppable droppableId="BOARD" type="COLUMN" direction="horizontal">
-        {(provided) => (
-          <>
-            <Board
-              innerRef={provided.innerRef}
-              ColumnComponent={ColumnComponent}
-              {...provided.droppableProps}
-              columns={columns}
-              placeholder={provided.placeholder}
-              onColumnEdit={onColumnEdit}
-              onColumnDelete={onColumnDelete}
-              onAddRecord={onAddRecord}
-              onRecordEdit={onRecordEdit}
-              onRecordDelete={onRecordDelete}
-              onAllRecordDelete={onAllRecordDelete}
-            />
-          </>
-        )}
-      </Droppable>
-    </DragDropContext>
+    <div style={{ direction: "ltr" }}>
+      <DragDropContext onDragEnd={handleDragEnd}>
+        <Droppable droppableId="BOARD" type="COLUMN" direction="horizontal">
+          {(provided) => (
+            <>
+              <Board
+                innerRef={provided.innerRef}
+                ColumnComponent={ColumnComponent}
+                {...provided.droppableProps}
+                columns={columns}
+                placeholder={provided.placeholder}
+                onColumnEdit={onColumnEdit}
+                onColumnDelete={onColumnDelete}
+                onAddRecord={onAddRecord}
+                onRecordEdit={onRecordEdit}
+                onRecordDelete={onRecordDelete}
+                onAllRecordDelete={onAllRecordDelete}
+              />
+            </>
+          )}
+        </Droppable>
+      </DragDropContext>
+    </div>
   );
 };
 
