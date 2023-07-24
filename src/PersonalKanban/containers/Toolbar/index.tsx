@@ -206,8 +206,8 @@ const useInfoButtonStyles = makeStyles((theme) => ({
   paper: {
     maxWidth: 300,
     minWidth: 300,
-    maxHeight: 300,
-    minHeight: 300,
+    maxHeight: 250,
+    minHeight: 250,
     padding: theme.spacing(),
   },
   buttonGridItem: {
@@ -253,7 +253,7 @@ const InfoButton: React.FC<{}> = () => {
           <Grid item xs={12}>
             <Box marginTop={2} textAlign="center">
               <img
-                src="https://stacks.rocks/site/templates/assets/images/stacks-logo-dark.svg"
+                src="https://tinymanager.js.org/readme_logo.png"
                 height="30"
                 alt="Stacks"
               />
@@ -261,27 +261,23 @@ const InfoButton: React.FC<{}> = () => {
           </Grid>
           <Grid item xs={12}>
             <Typography variant="body2">
-              <Link href="https://stacks.rocks/" target="_blank">
-                Stacks
+              <Link href="https://tinymanager.js.org/" target="_blank">
+                Tiny Manager{" "}
               </Link>
-              &nbsp;is a cross-platform all-in-one project management tool that
-              works on top of a local folder.
-              <br />
-              <br />
-              Get 20% off on your order by applying coupon{" "}
-              <strong>NISHANT20</strong>
-              <br />
-              <br />
+              is an offline first simple application that assists you in
+              managing your pet projects. Along with project management it
+              allows mundane management using todos and a simple notepad
+              application, all at one place.
             </Typography>
           </Grid>
           <Grid item xs={12} className={classes.buttonGridItem}>
             <Button variant="contained" color="primary">
               <Link
                 color="inherit"
-                href="https://stacks.rocks/store/?coupon=NISHANT20"
+                href="https://tinymanager.js.org/"
                 target="_blank"
               >
-                Order Now
+                Get Started
               </Link>
             </Button>
           </Grid>
