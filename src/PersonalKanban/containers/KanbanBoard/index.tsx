@@ -14,6 +14,38 @@ import {
 } from "PersonalKanban/services/Utils";
 import StorageService from "PersonalKanban/services/StorageService";
 import Toolbar from "PersonalKanban/containers/Toolbar";
+import IconButton from "PersonalKanban/components/IconButton";
+import Link from "@material-ui/core/Link";
+
+const useTinyManagerStyles = makeStyles((theme) => ({
+  button: {
+    position: "fixed",
+    bottom: theme.spacing(2),
+    right: theme.spacing(2),
+    padding: theme.spacing(),
+    backgroundColor: "#3f51b5",
+    color: "#ffffff",
+    "&:hover": {
+      backgroundColor: "#ffffff",
+      color: "#3f51b5",
+      border: "1px solid #3f51b5",
+    },
+  },
+}));
+
+const TinyManagerButton = () => {
+  const styles = useTinyManagerStyles();
+  return (
+    <IconButton
+      icon="list"
+      href="https://tinymanager.js.org/showcase.html"
+      component={Link}
+      target="_blank"
+      title="Tiny Manager"
+      className={styles.button}
+    />
+  );
+};
 
 const useKanbanBoardStyles = makeStyles((theme) => ({
   toolbar: theme.mixins.toolbar,
@@ -220,6 +252,7 @@ const KanbanBoardContainer: React.FC<KanbanBoardContainerProps> = (props) => {
           onAllRecordDelete={handleAllRecordDelete}
         />
       </Box>
+      <TinyManagerButton />
     </>
   );
 };

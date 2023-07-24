@@ -14,6 +14,7 @@ import LanguageIcon from "@material-ui/icons/Translate";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import DeveloperBoardIcon from "@material-ui/icons/DeveloperBoard";
 import InfoIcon from "@material-ui/icons/Info";
+import ListIcon from "@material-ui/icons/List";
 
 const icons = {
   edit: EditIcon,
@@ -27,6 +28,7 @@ const icons = {
   language: LanguageIcon,
   personalKanban: DeveloperBoardIcon,
   info: InfoIcon,
+  list: ListIcon,
 };
 
 type IconButtonProps = MuiIconButtonProps & {
