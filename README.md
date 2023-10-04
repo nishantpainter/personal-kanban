@@ -1,16 +1,7 @@
 <p align="center">
-  <a href="https://nishantpainter.github.io/personal-kanban/" rel="noopener" target="_blank"><img width="756" src="https://nishantpainter.github.io/personal-kanban/readme_logo.png" alt="Personal Kanban logo"></a></p>
-</p>
-
-#
-
-<p align="center">
   A virtual offline Kanban Board for your personal projects and work flows.
 </p>
 
-<p align="center">
-  <img width="650" src="https://nishantpainter.github.io/personal-kanban/description.gif" alt="Description GIF" style="border-radius:16px"></p>
-</p>
 
 [![Current Version](https://img.shields.io/badge/version-1.0.0-green.svg)](https://nishantpainter.github.io/personal-kanban) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-orange.svg?style=flat-square)](http://makeapullrequest.com) [![License](https://img.shields.io/github/license/day8/re-frame.svg)](https://github.com/nishantpainter/personal-kanban/blob/main/license.txt) [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-blue.svg)](https://github.com/nishantpainter/personal-kanban/commits/main) [![GitHub issues](https://img.shields.io/github/issues/Naereen/StrapDown.js.svg)](https://github.com/nishantpainter/personal-kanban/issues)
 
